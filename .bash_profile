@@ -1,7 +1,8 @@
+# Yea, I'm a Vim guy.
 VIMRUNTIME=/usr/bin
 EDITOR=/usr/bin/vim
 
-# Source virtualenvwrapper for manging python libraries
+# Source virtualenvwrapper for managing python libraries
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
@@ -11,7 +12,7 @@ if [ -f ~/.private_profile ]; then
     source ~/.private_profile
 fi
 
-# virtualenv aliases
+# Virtualenv aliases
 # http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
 alias v='workon'
 alias v.deactivate='deactivate'
@@ -32,7 +33,7 @@ alias gs.use='rvm gemset use'
 alias g.list='gem list'
 alias gs.list='rvm gemset list'
 
-# Enviornment Variables
+# Enviornment variables
 export WORKON_HOME=~/Virtualenvs
 export MYVIMRC=~/.vimrc
 export PGDATA=/usr/local/var/postgres
