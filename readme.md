@@ -15,6 +15,6 @@
     git submodules init
     git submodules update
 
-# Adding new plugins:
-    git submodule add [PLUGIN_GIT_REPO] bundle/[PLUGIN_NAME]
+# Adding new vim plugins:
+    git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME]
     cat .gitmodules
