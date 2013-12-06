@@ -14,7 +14,9 @@
     git submodule init
     git submodule update
 
-### If you want Ack the plugin: [Install Ack](http://beyondgrep.com/install/)
+### Install Tools
+[Install Ack](http://beyondgrep.com/install/)
+[Install Ctags](http://ctags.sourceforge.net/)
 
 # Updating:
     git pull

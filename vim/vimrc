@@ -87,6 +87,14 @@ set shiftwidth=4
 " Remap Ctrl-p
 :nmap <leader>p <C-p>
 :nnoremap <leader>P :set invpaste!<CR>
+:nnoremap <leader>. :CtrlPTag<CR>
+
+" Ctags mapping
+:nnoremap <leader>g <C-]>
+:nnoremap <leader>b <C-t>
+
+" Tagbar
+:nnoremap <leader>] :TagbarToggle<CR>
 
 " Misc
 :nnoremap ; :
