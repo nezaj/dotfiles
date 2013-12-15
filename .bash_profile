@@ -2,14 +2,19 @@
 VIMRUNTIME=/usr/bin
 EDITOR=/usr/bin/vim
 
-# Source virtualenvwrapper for managing python libraries
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+# Source bashrc
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
 fi
 
 # Source private enviornment variables
 if [ -f ~/.private_profile ]; then
     source ~/.private_profile
+fi
+
+# Source virtualenvwrapper for managing python libraries
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Virtualenv aliases
