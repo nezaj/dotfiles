@@ -26,12 +26,12 @@
     git submodules update
 
 # Adding new vim plugins:
-    git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME]
-    cat .gitmodules
+    git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 
 # Current Plugins
 * [Ack]
 * [Ctrlp]
+* [Fugitive]
 * [Lightline]
 * [NerdTree]
 * [Tagbar]
@@ -40,6 +40,7 @@
 [1]: http://ctags.sourceforge.net/
 [Ack]: https://github.com/mileszs/ack.vim.git
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
+[Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [Tagbar]: https://github.com/majutsushi/tagbar.git
