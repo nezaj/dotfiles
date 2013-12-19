@@ -1,0 +1,20 @@
+[user]
+	name = Joe Averbukh
+	email = joeaverbukh@gmail.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = upstream
+[color]
+	ui = true
+[color "grep"]
+    filename=magenta
+[rerere]
+	enabled = true
+[pack]
+	threads = 0
+[merge]
+	conflictstyle = diff3
+[alias]
+    co = checkout
+    br = branch

@@ -14,12 +14,12 @@ set showcmd                             " Show incomplete commands at bottom
 set showmode                            " Show current mode down the bottom
 set gcr=a:blinkon0                      " Disable cursor blink
 set visualbell                          " No Sounds
-" set noshowmode                        " uncomment once you get powerline
+set noshowmode                          " using lightlightline instead
 set ruler                               " show the cursor position all the time
 set history=100                         " keep 50 lines of command line history
 set noswapfile                          " Annoying
 set ttyfast                             " Tell vim we're using a fast terminal connection
-" set laststatus=2                        " vim-powerline needs this to display status when opening first buffer
+set laststatus=2                        " lightline needs this to display status when opening first buffer
 set scrolloff=8                         " Start scrolling 8 lines away form
 set shortmess+=I                        " Remove Vim startup message for empty file
 set splitbelow                          " Default horizontal split below
@@ -117,6 +117,12 @@ call pathogen#incubate()
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(swp|pyc)$'
+    \ }
+
+let g:lightline = {
+    \ 'colorscheme': 'jellybeans',
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
 
 " ============================ Functions ============================
