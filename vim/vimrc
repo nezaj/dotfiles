@@ -121,7 +121,14 @@ let g:ctrlp_custom_ignore = {
 
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
-    \ 'separator': { 'left': '', 'right': '' },
+    \ 'mode_map': { 'c': 'NORMAL' },
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'MyFugitive'
+    \ },
+    \ 'separator': { 'left': "", 'right': '' },
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
 
@@ -140,6 +147,14 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+function! MyFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? "\u00A7 "._ : ''
+  endif
+  return ''
+endfunction
+
 " autocmd config
 if has("autocmd")
     " Enable filetype detection
@@ -153,4 +168,3 @@ if has("autocmd")
     " Clean up trailing white spaces
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 endif
-
