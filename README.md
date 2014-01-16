@@ -11,7 +11,7 @@
     ln -s ~/dotfiles/.bashrc ~/.bashrc
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
-### Switch to the `~/.vim` directory, and fetch submodules:
+### Switch to the `~/dotfiles` directory and fetch submodules:
     cd ~/dotfiles
     git submodule init
     git submodule update

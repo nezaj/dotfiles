@@ -1,20 +1,20 @@
 [user]
-	name = Joe Averbukh
-	email = joeaverbukh@gmail.com
+    name = Joe Averbukh
+    email = joeaverbukh@gmail.com
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [push]
-	default = upstream
+    default = upstream
 [color]
-	ui = true
+    ui = true
 [color "grep"]
     filename=magenta
 [rerere]
-	enabled = true
+    enabled = true
 [pack]
-	threads = 0
+    threads = 0
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
 [alias]
     co = checkout
     br = branch

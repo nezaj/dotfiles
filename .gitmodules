@@ -1,18 +1,18 @@
 [submodule "vim/bundle/ack"]
-        path = vim/bundle/ack
-        url = https://github.com/mileszs/ack.vim.git
+    path = vim/bundle/ack
+    url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/ctrlp"]
-        path = vim/bundle/ctrlp
-        url = https://github.com/kien/ctrlp.vim.git
+    path = vim/bundle/ctrlp
+    url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/nerdtree"]
-        path = vim/bundle/nerdtree
-        url = https://github.com/scrooloose/nerdtree.git
+    path = vim/bundle/nerdtree
+    url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
+    path = vim/bundle/tagbar
+    url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/lightline"]
-	path = vim/bundle/lightline
-	url = https://github.com/itchyny/lightline.vim
+    path = vim/bundle/lightline
+    url = https://github.com/itchyny/lightline.vim
 [submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+    path = vim/bundle/fugitive
+    url = https://github.com/tpope/vim-fugitive.git

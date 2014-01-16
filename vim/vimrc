@@ -61,6 +61,9 @@ set shiftwidth=4
 :nnoremap <leader>q :q!<CR>
 :nnoremap <leader>z :qa!<CR>
 
+" Reload all windows in all tabs
+:nnoremap <leader>r :tabdo exec 'windo e'<cr>
+
 " Edit/reload vimrc file
 :nnoremap <silent><leader>ev :e $MYVIMRC<CR>
 :nnoremap <silent><leader>sv :so $MYVIMRC<CR>
@@ -68,9 +71,18 @@ set shiftwidth=4
 " Clear search
 :nnoremap <silent> ,/ :nohlsearch<CR>
 
+" Easy Command Mode
+:nnoremap ; :
+
+" Toggle NerdTree
+:nnoremap <leader>nt :NERDTreeToggle<return>
+
+" Toggle show formatting
+:nnoremap <leader>l :set list!<CR>
+
 " Window Manipulation
 :nnoremap <leader>v :vsp<CR>
-:nnoremap <leader>80 :vertical resize 80<CR>
+:nnoremap <leader>m :vertical resize 80<CR>
 
 " Shortcuts for switching tabs
 :nnoremap <leader>1 1gt
@@ -80,6 +92,8 @@ set shiftwidth=4
 :nnoremap <leader>5 5gt
 :nnoremap <leader>6 6gt
 :nnoremap <leader>7 7gt
+:nnoremap <leader>8 8gt
+:nnoremap <leader>9 9gt
 :nnoremap <leader>0 :tablast<CR>
 :nnoremap <leader>x :tabclose<CR>
 :nnoremap <leader>t :0tabnew<CR>
@@ -96,16 +110,11 @@ set shiftwidth=4
 " Tagbar
 :nnoremap <leader>] :TagbarToggle<CR>
 
-" Misc
-:nnoremap ; :
-:nnoremap <leader>nt :NERDTreeToggle<return>
-:nnoremap <leader>l :set list!<CR>
-
 " Don't use arrow keys :)
-:noremap <Left>  <NOP>
-:noremap <Right> <NOP>
-:noremap <Up>    <NOP>
-:noremap <Down>  <NOP>
+:nnoremap <Left>  <NOP>
+:nnoremap <Right> <NOP>
+:nnoremap <Up>    <NOP>
+:nnoremap <Down>  <NOP>
 
 " ============================ Plugins ============================
 
@@ -164,6 +173,7 @@ if has("autocmd")
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType htmlcheetah setlocal ts=2 sts=2 sw=2 et
 
     " Clean up trailing white spaces
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
