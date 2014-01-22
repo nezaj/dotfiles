@@ -84,6 +84,15 @@ set shiftwidth=4
 :nnoremap <leader>v :vsp<CR>
 :nnoremap <leader>m :vertical resize 80<CR>
 
+" Fugitive Shortcuts
+:nnoremap <leader>gs :Gstatus<CR>
+:nnoremap <leader>gd :Gdiff<CR>
+:nnoremap <leader>gc :Gcommit<CR>
+:nnoremap <leader>gb :Gblame<CR>
+:nnoremap <leader>gl :Glog<CR>
+:nnoremap <leader>gp :Gpush<CR>
+:nnoremap <leader>gw :Gwrite<CR>
+
 " Shortcuts for switching tabs
 :nnoremap <leader>1 1gt
 :nnoremap <leader>2 2gt
