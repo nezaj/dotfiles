@@ -90,8 +90,6 @@ set shiftwidth=4
 :nnoremap <leader>gc :Gcommit<CR>
 :nnoremap <leader>gb :Gblame<CR>
 :nnoremap <leader>gl :Glog<CR>
-:nnoremap <leader>gp :Gpush<CR>
-:nnoremap <leader>gw :Gwrite<CR>
 
 " Shortcuts for switching tabs
 :nnoremap <leader>1 1gt
@@ -132,6 +130,7 @@ call pathogen#infect()
 call pathogen#incubate()
 
 " Ignore these files when using ctrlp
+set wildignore+="/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(swp|pyc)$'
@@ -180,8 +179,8 @@ if has("autocmd")
 
     " White Space Settings for different file types
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
+    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 et
     autocmd FileType htmlcheetah setlocal ts=2 sts=2 sw=2 et
 
     " Clean up trailing white spaces
