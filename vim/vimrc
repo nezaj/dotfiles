@@ -123,6 +123,9 @@ set winheight=999
 " Tagbar
 :nnoremap <leader>] :TagbarToggle<CR>
 
+" Ack
+:nnoremap <leader>a :Ack
+
 " Easy commenting
 :nnoremap // :TComment<CR>
 :vnoremap // :Tcomment<CR>
