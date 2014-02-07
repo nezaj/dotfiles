@@ -30,11 +30,19 @@ alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
 
-# RVM
+# Source RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # RVM aliases
-alias gs.use='rvm gemset use'
+function gs.use() {
+    rvm gemset use "$1";
+    if [ "$1" != "default" ]
+    then
+        PS1="("$1")\h:\W \u\$ ";
+    else
+        PS1="\h:\W \u\$ ";
+    fi
+}
 alias g.list='gem list'
 alias gs.list='rvm gemset list'
 
