@@ -117,6 +117,10 @@ set shiftwidth=4
 " Tagbar
 :nnoremap <leader>] :TagbarToggle<CR>
 
+" Easy commenting
+:nnoremap // :TComment<CR>
+:vnoremap // :Tcomment<CR>
+
 " Don't use arrow keys :)
 :nnoremap <Left>  <NOP>
 :nnoremap <Right> <NOP>
