@@ -1,7 +1,7 @@
-# Installation:
+## Installation:
     git clone git://github.com/nezaj/dotfiles.git ~/dotfiles
 
-### Create symlinks:
+#### Create symlinks:
     ln -s ~/dotfiles/vim ~/.vim
     ln -s ~/dotfiles/vim/vimrc ~/.vimrc
     rm -rf ~/.bash_profile
@@ -9,32 +9,34 @@
     rm ~/.gitconfig
     ln -s ~/dotfiles/.bash_profile ~/.bash_profile
     ln -s ~/dotfiles/.bashrc ~/.bashrc
+    ln -s ~/dotfiles/.ackrc ~/.ackrc
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
-### Switch to the `~/dotfiles` directory and fetch submodules:
+#### Switch to the `~/dotfiles` directory and fetch submodules:
     cd ~/dotfiles
     git submodule init
     git submodule update
 
-### Install Tools
+#### Additional Tools
 * [Install Ack][0]
 * [Install Ctags][1]
 
-# Updating:
+## Updating:
     git pull
     git submodules init
     git submodules update
 
-# Adding new vim plugins:
+## Adding new vim plugins:
     git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 
-# Current Plugins
+## Current Plugins
 * [Ack]
 * [Ctrlp]
 * [Fugitive]
 * [Lightline]
 * [NerdTree]
 * [Tagbar]
+* [TComment]
 
 [0]: http://beyondgrep.com/install/
 [1]: http://ctags.sourceforge.net/
@@ -44,3 +46,4 @@
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [Tagbar]: https://github.com/majutsushi/tagbar.git
+[TComment]: https://github.com/tomtom/tcomment_vim
