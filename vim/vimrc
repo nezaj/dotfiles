@@ -43,6 +43,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+" Auto adjust window sizes when they become current
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " ============================ Key Mappings ============================
 
 " Easy Navigating
