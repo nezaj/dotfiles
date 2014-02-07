@@ -43,6 +43,7 @@ function gs.use() {
         PS1="\h:\W \u\$ ";
     fi
 }
+alias gs.deactivate='gs.use default'
 alias g.list='gem list'
 alias gs.list='rvm gemset list'
 
