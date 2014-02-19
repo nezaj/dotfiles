@@ -128,7 +128,7 @@ set winheight=999
 
 " Easy commenting
 :nnoremap // :TComment<CR>
-:vnoremap // :Tcomment<CR>
+:vnoremap // :TComment<CR>
 
 " Don't use arrow keys :)
 :nnoremap <Left>  <NOP>
