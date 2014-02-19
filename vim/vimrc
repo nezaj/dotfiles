@@ -65,7 +65,7 @@ set winheight=999
 " Save/Discard
 :noremap <leader>w :w<CR>
 :nnoremap <leader>q :q!<CR>
-:nnoremap <leader>z :qa!<CR>
+:nnoremap <leader>zz :qa!<CR>
 
 " Reload all windows in all tabs
 :nnoremap <leader>r :tabdo exec 'windo e'<cr>
