@@ -5,6 +5,7 @@ set hidden                              " Buffers can exist in background
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
 colorscheme jellybeans                  " Ahh yeaa
+set term=screen-256color                " Prevent terminal bg color bleeding in
 
 " ============================ General Config ============================
 
