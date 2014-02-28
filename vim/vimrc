@@ -52,6 +52,9 @@ set winheight=999
 
 " ============================ Key Mappings ============================
 
+" Highlight intials in notes
+:match Todo /JA:/
+
 " Easy Navigating
 :inoremap jk <Esc>
 :nnoremap j gj
@@ -150,6 +153,7 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(swp|pyc)$'
     \ }
 
+" Lightline Settings
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
     \ 'mode_map': { 'c': 'NORMAL' },
@@ -162,6 +166,9 @@ let g:lightline = {
     \ 'separator': { 'left': "", 'right': '' },
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
+
+" NERDTree settings
+let NERDTreeIgnore = ['\.pyc$']
 
 " ============================ Functions ============================
 
