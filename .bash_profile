@@ -49,7 +49,13 @@ alias gs.list='rvm gemset list'
 
 # Enviornment variables
 export WORKON_HOME=~/Virtualenvs
+
+export MYBASH=~/.bash_profile
+export MYPRIVATE=~/.private_profile
 export MYVIMRC=~/.vimrc
+export MYTMUXCONF=~/.tmux.conf
+export MYTODOS=~/todos.md
+
 export PGDATA=/usr/local/var/postgres
 export PATH=/usr/local/bin:$PATH
 

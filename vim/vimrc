@@ -74,9 +74,15 @@ set winheight=999
 " Reload all windows in all tabs
 :nnoremap <leader>r :tabdo exec 'windo e'<cr>
 
-" Edit/reload vimrc file
-:nnoremap <silent><leader>ev :e $MYVIMRC<CR>
+" Reload vimrc file
 :nnoremap <silent><leader>sv :so $MYVIMRC<CR>
+
+" Edit useful files
+:nnoremap <silent><leader>ev :e $MYVIMRC<CR>
+:nnoremap <silent><leader>et :e $MYTMUXCONF<CR>
+:nnoremap <silent><leader>eb :e $MYBASH<CR>
+:nnoremap <silent><leader>ep :e $MYPRIVATE<CR>
+:nnoremap <silent><leader>ed :e $MYTODOS<CR>
 
 " Clear search
 :nnoremap <silent> ,/ :nohlsearch<CR>
