@@ -90,6 +90,12 @@ set winheight=999
 " Easy Command Mode
 :nnoremap ; :
 
+" Swap to previous file
+:nnoremap ;; <c-^>
+
+" Quick newline
+:nnoremap <CR> o<Esc>
+
 " Toggle NerdTree
 :nnoremap <leader>nt :NERDTreeToggle<return>
 
@@ -97,7 +103,7 @@ set winheight=999
 :nnoremap <leader>l :set list!<CR>
 
 " Window Manipulation
-:nnoremap <leader>v :vsp<CR>
+:nnoremap <leader>\ :vsp<CR>
 :nnoremap <leader>m :vertical resize 80<CR>
 
 " Fugitive Shortcuts
