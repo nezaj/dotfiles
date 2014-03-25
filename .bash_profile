@@ -48,7 +48,7 @@ alias g.list='gem list'
 alias gs.list='rvm gemset list'
 
 # Enviornment variables
-export WORKON_HOME=~/Virtualenvs
+export WORKON_HOME=~/.virtualenvs
 
 export MYBASH=~/.bash_profile
 export MYPRIVATE=~/.private_profile
