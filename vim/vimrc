@@ -218,4 +218,7 @@ if has("autocmd")
 
     " Clean up trailing white spaces
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+    " Turn on spell-checker by default for markdown
+    autocmd BufRead,BufNewFile *.md setlocal spell
 endif
