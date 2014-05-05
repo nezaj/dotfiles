@@ -58,4 +58,3 @@ export MYTODOS=~/todos.md
 
 export PGDATA=/usr/local/var/postgres
 export PATH=/usr/local/bin:$PATH
-
