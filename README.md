@@ -5,7 +5,8 @@ My secret sauce for getting things done.
 * [Installing](#installing)
 * [Vim Plugins](#vim-plugins)
 
-### Dependencies
+### Getting Started
+#### Dependencies
 We need to brew some tools
 ```
 brew install tmux
@@ -13,7 +14,7 @@ brew install ack
 brew install ctags
 ```
 
-### Installing
+#### Installing
 Clone this repo and run `./setup.sh` to create the symlinks. Now we need the Vim plugins so let's fetch and update them
 ```
 cd ~/dotfiles
