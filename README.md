@@ -2,20 +2,19 @@
 My secret sauce for getting things done.
 
 * [Dependencies](#dependencies)
-* [Installing](#installing)
-* [Vim Plugins](#vim-plugins)
+* [Vim setup](#vim-setup)
+* [Vim plugins](#vim-plugins)
 
-### Getting Started
-#### Dependencies
-We need to brew some tools
+### Dependencies
 ```
 brew install tmux
 brew install ack
-brew install ctags
 ```
 
-#### Installing
-Clone this repo and run `./setup.sh` to create the symlinks. Now we need the Vim plugins so let's fetch and update them
+### Vim setup
+1. Clone this repo.
+2. Create symlinks with `./setup.sh`
+3. Fetch and update vim plugins
 ```
 cd ~/dotfiles
 git submodule init
@@ -25,15 +24,13 @@ If you want to add a new plugin use the following command
 ```
 git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 ```
-Sweet, we're done!
 
-### Vim Plugins
+### Vim plugins
 * [Ack][Ack]
 * [Ctrlp][Ctrlp]
 * [Fugitive][Fugitive]
 * [Lightline][Lightline]
 * [NerdTree][NerdTree]
-* [Tagbar][Tagbar]
 * [TComment][TComment]
 
 [Ack]: https://github.com/mileszs/ack.vim.git
@@ -41,5 +38,4 @@ Sweet, we're done!
 [Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
-[Tagbar]: https://github.com/majutsushi/tagbar.git
 [TComment]: https://github.com/tomtom/tcomment_vim
