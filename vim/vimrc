@@ -136,9 +136,6 @@ set winheight=999
 :nnoremap <leader>g <C-]>
 :nnoremap <leader>b <C-t>
 
-" Tagbar
-:nnoremap <leader>] :TagbarToggle<CR>
-
 " Ack
 :nnoremap <leader>a :Ack
 
