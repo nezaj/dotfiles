@@ -30,3 +30,7 @@ app
 plugin
 symlinks
 plugins
+Dotfiles
+postgres
+env
+TODO
