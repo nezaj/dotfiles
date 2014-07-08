@@ -30,6 +30,7 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 * [Ctrlp][Ctrlp]
 * [Fugitive][Fugitive]
 * [Lightline][Lightline]
+* [Neocomplcache][Neocomplcache]
 * [NerdTree][NerdTree]
 * [TComment][TComment]
 
@@ -37,5 +38,6 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim
+[Neocomplcache]: https://github.com/Shougo/neocomplcache.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim

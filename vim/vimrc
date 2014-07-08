@@ -141,6 +141,10 @@ set winheight=999
 " Ack
 :nnoremap <leader>a :Ack
 
+" Neocomplcache <TAB>: completion.
+:inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+:inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+
 " Easy commenting
 :nnoremap // :TComment<CR>
 :vnoremap // :TComment<CR>
@@ -181,6 +185,25 @@ let g:lightline = {
 " NERDTree settings
 let NERDTreeIgnore = ['\.pyc$']
 
+""" Necomplcache settings
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+""" End necomplcache settings
+
 " ============================ Functions ============================
 
 " Strip whitespace and save cursor position
@@ -204,6 +227,11 @@ function! MyFugitive()
   return ''
 endfunction
 
+" Add newline for complete on enter
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+
 " autocmd config
 if has("autocmd")
     " Enable filetype detection
@@ -220,4 +248,11 @@ if has("autocmd")
 
     " Turn on spell-checker by default for markdown
     autocmd BufRead,BufNewFile *.md setlocal spell
+
+    " Enable omni completion
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
