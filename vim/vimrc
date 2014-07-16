@@ -27,6 +27,7 @@ set scrolloff=8                         " Start scrolling 8 lines away form
 set shortmess+=I                        " Remove Vim startup message for empty file
 set splitbelow                          " Default horizontal split below
 set splitright                          " Default vertical split right
+set foldnestmax=2                       " Don't automatically fold more than two levels deep
 
 " Wrap settings
 set wrap
@@ -91,6 +92,9 @@ set winheight=999
 
 " Easy Command Mode
 :nnoremap ; :
+
+" Easy code folding
+:nnoremap <Space> za
 
 " Swap to previous file
 :nnoremap ;; <c-^>
@@ -248,6 +252,10 @@ if has("autocmd")
 
     " Turn on spell-checker by default for markdown
     autocmd BufRead,BufNewFile *.md setlocal spell
+
+    " Set foldmethod for python, open all folds by default
+    autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
+    autocmd BufRead,BufNewFile *.py normal zR
 
     " Enable omni completion
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
