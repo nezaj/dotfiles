@@ -20,10 +20,8 @@ cd ~/dotfiles
 git submodule init
 git submodule update
 ```
-If you want to add a new plugin use the following command
-```
-git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
-```
+
+And we're done. Huzzah!
 
 ### Vim plugins
 * [Ack][Ack]
@@ -33,6 +31,11 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 * [Neocomplcache][Neocomplcache]
 * [NerdTree][NerdTree]
 * [TComment][TComment]
+
+If you want to add a new plugin use the following command
+```
+git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
+```
 
 [Ack]: https://github.com/mileszs/ack.vim.git
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
