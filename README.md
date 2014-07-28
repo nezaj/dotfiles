@@ -26,6 +26,7 @@ And we're done. Huzzah!
 ### Vim plugins
 * [Ack][Ack]
 * [Ctrlp][Ctrlp]
+* [Emmet-Vim][Emmet-Vim]
 * [Fugitive][Fugitive]
 * [Lightline][Lightline]
 * [Neocomplcache][Neocomplcache]
@@ -39,6 +40,7 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 
 [Ack]: https://github.com/mileszs/ack.vim.git
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
+[Emmet-Vim]: https://github.com/mattn/emmet-vim
 [Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim
 [Neocomplcache]: https://github.com/Shougo/neocomplcache.vim

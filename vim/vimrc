@@ -171,6 +171,9 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(swp|pyc)$'
     \ }
 
+" Make emmet-vim easier to use
+let g:user_emmet_leader_key='cc'
+
 " Lightline Settings
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
@@ -262,4 +265,8 @@ if has("autocmd")
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+    " Enable emmet-vim only for html/css
+    let g:user_emmet_install_global = 0
+    autocmd FileType html,css EmmetInstall
 endif
