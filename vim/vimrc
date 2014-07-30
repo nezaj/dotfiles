@@ -93,6 +93,10 @@ set winheight=999
 " Easy Command Mode
 :nnoremap ; :
 
+" Easy begin/end line navigation
+:nnoremap H 0
+:nnoremap L $
+
 " Easy code folding
 :nnoremap <Space> za
 
@@ -268,5 +272,5 @@ if has("autocmd")
 
     " Enable emmet-vim only for html/css
     let g:user_emmet_install_global = 0
-    autocmd FileType html,css EmmetInstall
+    autocmd FileType html,htmlcheetah,css EmmetInstall
 endif
