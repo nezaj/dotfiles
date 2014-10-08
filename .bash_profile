@@ -22,6 +22,7 @@ fi
 alias v='workon'
 alias v.deactivate='deactivate'
 alias v.mk='mkvirtualenv --no-site-packages'
+alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages' # Makes python3 virtualenv
 alias v.mk_withsitepackages='mkvirtualenv'
 alias v.rm='rmvirtualenv'
 alias v.switch='workon'
@@ -46,6 +47,9 @@ function gs.use() {
 alias gs.deactivate='gs.use default'
 alias g.list='gem list'
 alias gs.list='rvm gemset list'
+
+# Use Java 1.7!
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 # Enviornment variables
 export WORKON_HOME=~/.virtualenvs
