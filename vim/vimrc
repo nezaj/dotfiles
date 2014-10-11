@@ -195,7 +195,8 @@ let g:lightline = {
 """ NERDTree settings
 
 " Files and directories I don't want to see
-let NERDTreeIgnore = ['\.(pyc|swp)$', '\.(git|hg|svn)$[[dir]]']
+" Note the use of vim-style regex
+let NERDTreeIgnore = ['\.\(pyc\|swp\)$', '\.\(git\|hg\|svn\)$[[dir]]']
 
 " I do want to see dotfiles (like .gitignore)
 let NERDTreeShowHidden=1
