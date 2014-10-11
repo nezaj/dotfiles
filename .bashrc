@@ -95,7 +95,7 @@ function set_prompt() {
 
     # Saves me from always having to type git branch
     _git_branch=$(git symbolic-ref HEAD 2>/dev/null)
-    _git_branch=${_branch#refs/heads/} # apparently faster than sed
+    _git_branch=${_git_branch#refs/heads/} # apparently faster than sed
 
     # It's convenient to know whether I have uncommitted changes
     # http://henrik.nyh.se/2008/12/git-dirty-prompt#comment-8325834
