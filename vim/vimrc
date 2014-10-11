@@ -55,7 +55,7 @@ set winheight=999
 
 " ============================ Key Mappings ============================
 
-" Highlight intials in notes
+" Highlight initials in notes
 :match Todo /JA:/
 
 " Easy Navigating
@@ -192,10 +192,15 @@ let g:lightline = {
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
 
-" NERDTree settings
-let NERDTreeIgnore = ['\.pyc$']
+""" NERDTree settings
 
-""" Necomplcache settings
+" Files and directories I don't want to see
+let NERDTreeIgnore = ['\.(pyc|swp)$', '\.(git|hg|svn)$[[dir]]']
+
+" I do want to see dotfiles (like .gitignore)
+let NERDTreeShowHidden=1
+
+""" Necomplcache
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -211,8 +216,6 @@ if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-""" End necomplcache settings
 
 " ============================ Functions ============================
 

@@ -1,13 +1,7 @@
-
-# Sort files
+# It's nice when things are in order
 --sort-files
 
-# Use color
---color
-
+# I'm never looking through these
+--ignore-dir=.webassets-cache
 --ignore-dir=log
 --ignore-dir=tmp
-
-# For Flask projects
---ignore-dir=.webassets-cache
-
