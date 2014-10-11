@@ -145,7 +145,7 @@ function set_prompt() {
     end="${NIL}\$${NIL} "
 
     # Time to put it all together
-    export PS1="${myuser}${branch}${path}${venv}${end}"
+    export PS1="${myuser}${git}${path}${venv}${end}"
 }
 
 # Bash will call this before displaying the prompt
