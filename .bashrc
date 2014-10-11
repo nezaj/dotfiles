@@ -5,12 +5,11 @@ if [ -f ~/.private_profile ];
     then source ~/.private_profile
 fi
 
-# I like Vim
+# I like vim
 VIMRUNTIME=/usr/bin
 EDITOR=/usr/bin/vim
 
-# I like to edit these files so often I have keyboard
-# mappings for them in Vim
+# I edit these often, even set key-bindings for them in vim
 export MYBASH=~/.bashrc
 export MYPRIVATE=~/.private_profile
 export MYVIMRC=~/.vimrc
@@ -39,16 +38,10 @@ fi
 # Useful virtualenvwrapper aliases
 # http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
 alias v='workon'
-alias v.deactivate='deactivate'
 alias v.mk='mkvirtualenv --no-site-packages'
-alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages' # Makes python3 virtualenv
-alias v.mk_withsitepackages='mkvirtualenv'
+alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages'
 alias v.rm='rmvirtualenv'
-alias v.switch='workon'
-alias v.add2virtualenv='add2virtualenv'
-alias v.cdsitepackages='cdsitepackages'
-alias v.cd='cdvirtualenv'
-alias v.lssitepackages='lssitepackages'
+alias v.cd='cdsitepackages'
 
 # Default location to save virtualenvs
 export WORKON_HOME=~/.virtualenvs
@@ -62,7 +55,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # ============================= Ruby ===============================
 
-# Use RVM for environment management for ruby projects
+# Use RVM for isolating ruby projects
 # http://rvm.io/rvm/about
 if [ -f ~/.rvm/scripts/rvm ]
     then source ~/.rvm/scripts/rvm
@@ -106,7 +99,9 @@ function set_prompt() {
 
     # It's convenient to know whether I have uncommitted changes
     # http://henrik.nyh.se/2008/12/git-dirty-prompt#comment-8325834
-    if git update-index -q --refresh 2>/dev/null; git diff-index --quiet --cached HEAD --ignore-submodules -- 2>/dev/null && git diff-files --quiet --ignore-submodules 2>/dev/null
+    if git update-index -q --refresh 2>/dev/null;
+       git diff-index --quiet --cached HEAD --ignore-submodules -- 2>/dev/null && \
+       git diff-files --quiet --ignore-submodules 2>/dev/null
         then _dirty=""
     else
        _dirty="${RED}(dirty)${NIL}"
