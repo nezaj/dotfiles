@@ -8,6 +8,7 @@ colorscheme jellybeans                  " Favorite so far
 set term=screen-256color                " Prevent terminal bg color bleeding in
 set encoding=utf-8                      " Use utf-8 when reading files
 set fileencoding=utf-8                  " Files are written using utf-8
+set autoread                            " Reload files when outside changes made
 
 " ============================ General Config ============================
 
@@ -262,6 +263,7 @@ if has("autocmd")
 
     " Turn on spell-checker by default for markdown
     autocmd BufRead,BufNewFile *.md setlocal spell
+    autocmd BufRead,BufNewFile *.md setlocal spelllang=en
 
     " Set foldmethod for python, open all folds by default
     autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
@@ -277,4 +279,10 @@ if has("autocmd")
     " Enable emmet-vim only for html/css
     let g:user_emmet_install_global = 0
     autocmd FileType html,htmlcheetah,css EmmetInstall
+
+    " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
+    " triggers autoread whenever I switch buffer or when focusing vim again
+    au FocusGained,BufEnter * :silent! !
+    " files are always saved when leaving a buffer or vim, avoiding conflict situations
+    au FocusLost,WinLeave * :silent! w
 endif
