@@ -22,5 +22,6 @@
     st = status
     unstage = reset HEAD --
     last = log -1 HEAD
+    graph = log --graph --decorate --oneline
 [core]
     editor = /usr/bin/vim
