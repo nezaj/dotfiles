@@ -25,6 +25,7 @@ And we're done. Huzzah!
 
 ### Vim plugins
 * [Ack][Ack]
+* [Autoclose][Autoclose]
 * [Ctrlp][Ctrlp]
 * [Emmet-Vim][Emmet-Vim]
 * [Fugitive][Fugitive]
@@ -39,6 +40,7 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 ```
 
 [Ack]: https://github.com/mileszs/ack.vim.git
+[Autoclose]: https://github.com/Townk/vim-autoclose
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Emmet-Vim]: https://github.com/mattn/emmet-vim
 [Fugitive]: https://github.com/tpope/vim-fugitive
