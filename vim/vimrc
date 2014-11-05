@@ -1,130 +1,137 @@
-" ============================ Initial Configs ============================
+" vim:foldmethod=marker:foldlevel=0
 
+" Vim settings {{{1
+
+" Important {{{2
 set nocompatible                        " Enable Vim features
-set hidden                              " Buffers can exist in background
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
 colorscheme jellybeans                  " Favorite so far
 set term=screen-256color                " Prevent terminal bg color bleeding in
 set encoding=utf-8                      " Use utf-8 when reading files
 set fileencoding=utf-8                  " Files are written using utf-8
+set lazyredraw                          " Don't redraw while executing macros
+set ttyfast                             " Faster redraws and smoother vim
+set modelines=1                         " Read the modeline at the top
+
+" Ignore these files in Vim's file explorer
+set wildignore+="/tmp/*,*.so,*.swp,*.zip
+
+" General {{{2
 set autoread                            " Reload files when outside changes made
-
-" ============================ General Config ============================
-
-set number                              " Line numbers!
 set backspace=indent,eol,start          " Allow backspace in insert mode
-set showcmd                             " Show incomplete commands at bottom
-set showmode                            " Show current mode down the bottom
+set foldnestmax=10                      " Sets max fold level. 10 should be more than enough
 set gcr=a:blinkon0                      " Disable cursor blink
-set visualbell                          " No Sounds
-set noshowmode                          " using Lightline instead
-set ruler                               " show the cursor position all the time
-set history=100                         " keep 100 lines of command line history
-set noswapfile                          " Annoying
-set ttyfast                             " Tell vim we're using a fast terminal connection
+set hidden                              " Buffers can exist in background
+set history=1000                        " keep 100 lines of command line history
 set laststatus=2                        " lightline needs this to display status when opening first buffer
+set noshowmode                          " using Lightline to show status bar instead
+set noswapfile                          " Disable swap files. I don't use them
+set number                              " Line numbers!
+set ruler                               " show the cursor position all the time
 set scrolloff=8                         " Start scrolling 8 lines away from bottom
 set shortmess+=I                        " Remove Vim startup message for empty file
+set showcmd                             " Show incomplete commands at bottom
+set showmode                            " Show current mode down the bottom
 set splitbelow                          " Default horizontal split below
 set splitright                          " Default vertical split right
-set foldnestmax=2                       " Don't automatically fold more than two levels deep
+set visualbell                          " Disable sounds
 
-" Wrap settings
+" Wrap {{{2
 set wrap
 set linebreak                           " Wrap lines at convienent points
 set textwidth=0
 set wrapmargin=0
 
-" Searching
+" Searching {{{2
 set hlsearch                            " highlight searching
 set incsearch                           " do incremental searching
 set ignorecase                          " searches are case insensitive
 set smartcase                           " unless you search with a capital letter
 
-" Tabs and Spaces
+" Tabs and Spaces {{{2
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Auto adjust window sizes when they become current
+" Auto adjust window sizes when they become current {{{2
 set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
 
-" ============================ Key Mappings ============================
+" Key mappings {{{1
 
-" Highlight initials in notes
+" Highlight initials in notes {{{2
 :match Todo /JA:/
 
-" Easy Navigating
+" Easy Navigating {{{2
 :inoremap jk <Esc>
 :nnoremap j gj
 :nnoremap k gk
 
-" Easy Window cycling
+" Easy window cycling {{{2
 :nnoremap <C-h> <C-w>h
 :nnoremap <C-j> <C-w>j
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-l> <C-w>l
 
-" Save/Discard
+" Easy save/quit {{{2
 :noremap <leader>w :w<CR>
 :nnoremap <leader>q :q!<CR>
 :nnoremap <leader>zz :qa!<CR>
 
-" Reload all windows in all tabs
+" Reload all windows in all tabs {{{2
 :nnoremap <leader>r :tabdo exec 'windo e'<cr>
 
-" Reload vimrc file
+" Reload vimrc file {{{2
 :nnoremap <silent><leader>sv :so $MYVIMRC<CR>
 
-" Edit useful files
+" Edit useful files {{{2
 :nnoremap <silent><leader>ev :e $MYVIMRC<CR>
 :nnoremap <silent><leader>et :e $MYTMUXCONF<CR>
 :nnoremap <silent><leader>eb :e $MYBASH<CR>
 :nnoremap <silent><leader>ep :e $MYPRIVATE<CR>
 :nnoremap <silent><leader>ed :e $MYTODOS<CR>
 
-" Clear search
-:nnoremap <silent> ,/ :nohlsearch<CR>
+" Clear search {{{2
+:nnoremap <silent><leader>/ :nohlsearch<CR>
 
-" Easy Command Mode
+" Easy command Mode {{{2
 :nnoremap ; :
 
-" Easy begin/end line navigation
+" Easy begin/end line navigation {{{2
 :nnoremap H 0
 :nnoremap L $
 
-" Easy code folding
+" Easy code folding {{{2
 :nnoremap <Space> za
 
-" Swap to previous file
+" Swap to previous file {{{2
 :nnoremap ;; <c-^>
 
-" Quick newline
+" Quick newline {{{2
 :nnoremap <CR> o<Esc>
 
-" Toggle NerdTree
+" Toggle NERDTree {{{2
 :nnoremap <leader>nt :NERDTreeToggle<return>
 
-" Toggle show formatting
+" Toggle show formatting {{{2
 :nnoremap <leader>l :set list!<CR>
 
-" Window Manipulation
+" Window manipulation {{{2
 :nnoremap <leader>\ :vsp<CR>
 :nnoremap <leader>m :vertical resize 80<CR>
 
-" Fugitive Shortcuts
+" Fugitive shortcuts {{{2
 :nnoremap <leader>gs :Gstatus<CR>
 :nnoremap <leader>gd :Gdiff<CR>
 :nnoremap <leader>gc :Gcommit<CR>
 :nnoremap <leader>gb :Gblame<CR>
 :nnoremap <leader>gl :Glog<CR>
 
-" Shortcuts for switching tabs
+" Tab switching {{{2
 :nnoremap <leader>1 1gt
 :nnoremap <leader>2 2gt
 :nnoremap <leader>3 3gt
@@ -138,48 +145,53 @@ set winheight=999
 :nnoremap <leader>x :tabclose<CR>
 :nnoremap <leader>t :0tabnew<CR>
 
-" Remap Ctrl-p
+" Easy CtrlP {{{2
 :nmap <leader>p <C-p>
 :nnoremap <leader>P :set invpaste!<CR>
 
-" Ctags mapping
+" Ctags navigation {{{2
 :nnoremap <leader>g <C-]>
 :nnoremap <leader>b <C-t>
 
-" Ack
+" Easy Ack {{{2
 :nnoremap <leader>a :Ack
 
-" Neocomplcache <TAB>: completion.
+" Neocomplcache <TAB>: completion. {{{2
 :inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 :inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
-" Easy commenting
+" Easy commenting {{{2
 :nnoremap // :TComment<CR>
 :vnoremap // :TComment<CR>
 
-" Don't use arrow keys :)
+" Don't use arrow keys :) {{{2
 :nnoremap <Left>  <NOP>
 :nnoremap <Right> <NOP>
 :nnoremap <Up>    <NOP>
 :nnoremap <Down>  <NOP>
 
-" ============================ Plugins ============================
+" Plugins {{{1
 
-" Enable Pathogen
+" Pathogen {{{2
 call pathogen#infect()
 call pathogen#incubate()
 
+" CtriP {{{2
+
 " Ignore these files when using ctrlp
-set wildignore+="/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(swp|pyc)$'
     \ }
 
-" Make emmet-vim easier to use
+" Emmet-Vim {{{2
+
+" Easy emmet-vim
 let g:user_emmet_leader_key='cc'
 
-" Lightline Settings
+" Lightline  {{{2
+
+" General settings
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
     \ 'mode_map': { 'c': 'NORMAL' },
@@ -193,7 +205,7 @@ let g:lightline = {
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
 
-""" NERDTree settings
+" NERDTree {{{2
 
 " Files and directories I don't want to see
 " Note the use of vim-style regex
@@ -202,7 +214,7 @@ let NERDTreeIgnore = ['\.\(pyc\|swp\)$', '\.\(git\|hg\|svn\)$[[dir]]']
 " I do want to see dotfiles (like .gitignore)
 let NERDTreeShowHidden=1
 
-""" Necomplcache
+" Necomplcache {{{2
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -219,9 +231,9 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" ============================ Functions ============================
+" Custom functions {{{1
 
-" Strip whitespace and save cursor position
+" Strip whitespace and save cursor position {{{2
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -234,6 +246,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" Displays current git branch in powerline {{{2
 function! MyFugitive()
   if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
     let _ = fugitive#head()
@@ -242,45 +255,46 @@ function! MyFugitive()
   return ''
 endfunction
 
-" Add newline for autocomplete with enter key
+" Add newline for autocomplete with enter key {{{2
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
 
-" Automatically run these commands whenever opening a file
+" Autocommands {{{1
+
 if has("autocmd")
-    " Enable filetype detection
+    " Enable filetype detection {{{2
     filetype on
 
-    " White Space Settings for different file types
+    " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType htmlcheetah setlocal ts=2 sts=2 sw=2 et
 
-    " Clean up trailing white spaces
+    " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-    " Turn on spell-checker by default for markdown
+    " Turn on spell-checker by default for markdown {{{2
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd BufRead,BufNewFile *.md setlocal spelllang=en
 
-    " Set foldmethod for python, open all folds by default
+    " Set foldmethod for python, open all folds by default {{{2
     autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
     autocmd BufRead,BufNewFile *.py normal zR
 
-    " Enable omni completion
+    " Enable omni completion {{{2
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-    " Enable emmet-vim only for html/css
+    " Enable emmet-vim only for html/css {{{2
     let g:user_emmet_install_global = 0
     autocmd FileType html,htmlcheetah,css EmmetInstall
 
-    " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
+    " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591 {{{2
     " triggers autoread whenever I switch buffer or when focusing vim again
     au FocusGained,BufEnter * :silent! !
     " files are always saved when leaving a buffer or vim, avoiding conflict situations
