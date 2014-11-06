@@ -21,7 +21,7 @@ set wildignore+="/tmp/*,*.so,*.swp,*.zip
 " General {{{2
 set autoread                            " Reload files when outside changes made
 set backspace=indent,eol,start          " Allow backspace in insert mode
-set foldnestmax=10                      " Sets max fold level. 10 should be more than enough
+set foldnestmax=2                       " Sets max fold level.
 set gcr=a:blinkon0                      " Disable cursor blink
 set hidden                              " Buffers can exist in background
 set history=1000                        " keep 100 lines of command line history
@@ -284,9 +284,9 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd BufRead,BufNewFile *.md setlocal spelllang=en
 
-    " Set foldmethod for python, open all folds by default {{{2
+    " Set foldmethod for python, close all folds by default {{{2
     autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
-    autocmd BufRead,BufNewFile *.py normal zR
+    autocmd BufRead,BufNewFile *.py normal zM
 
     " Enable omni completion {{{2
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
