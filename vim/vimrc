@@ -60,6 +60,7 @@ set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+" }}} End section
 
 " Key mappings {{{1
 
@@ -169,6 +170,7 @@ set winheight=999
 :nnoremap <Right> <NOP>
 :nnoremap <Up>    <NOP>
 :nnoremap <Down>  <NOP>
+"}}} End section
 
 " Plugins {{{1
 
@@ -230,6 +232,7 @@ if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+"}}} End section
 
 " Custom functions {{{1
 
@@ -259,12 +262,13 @@ endfunction
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
+" }}}
 
 " Autocommands {{{1
 
-if has("autocmd")
-    " Enable filetype detection {{{2
-    filetype on
+augroup configgroup
+    " Clear previous autocmds
+    autocmd!
 
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
@@ -299,4 +303,6 @@ if has("autocmd")
     au FocusGained,BufEnter * :silent! !
     " files are always saved when leaving a buffer or vim, avoiding conflict situations
     au FocusLost,WinLeave * :silent! w
-endif
+" }}} End section
+
+augroup END
