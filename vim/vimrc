@@ -18,6 +18,9 @@ set modelines=1                         " Read the modeline at the top
 " Ignore these files in Vim's file explorer
 set wildignore+="/tmp/*,*.so,*.swp,*.zip
 
+" Make clipboard the default register
+set clipboard=unnamed
+
 " General {{{2
 set autoread                            " Reload files when outside changes made
 set backspace=indent,eol,start          " Allow backspace in insert mode
@@ -149,6 +152,8 @@ set winheight=999
 
 " Easy CtrlP {{{2
 :nmap <leader>p <C-p>
+
+" Toggle paste mode {{{2
 :nnoremap <leader>P :set invpaste!<CR>
 
 " Ctags navigation {{{2
