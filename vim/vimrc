@@ -4,7 +4,7 @@
 
 " Important {{{2
 set nocompatible                        " Enable Vim features
-filetype indent on                      " Enable filetype detection and load indent files
+filetype plugin indent on               " Enable filetype detection and load indent files
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
 colorscheme jellybeans                  " Favorite so far
