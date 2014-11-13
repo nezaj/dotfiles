@@ -113,6 +113,9 @@ set winheight=999
 " Easy code folding {{{2
 :nnoremap <Space> za
 
+" Focus fold {{{2
+:nnoremap <leader>f zMzA
+
 " Swap to previous file {{{2
 :nnoremap ;; <c-^>
 
