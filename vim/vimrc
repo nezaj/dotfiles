@@ -15,11 +15,18 @@ set lazyredraw                          " Don't redraw on macros -- boosts perfo
 set ttyfast                             " Faster redraws and smoother vim
 set modelines=1                         " Read the modeline at the top
 
-" Ignore these files in Vim's file explorer
+" Ignore these files in Vim's file explorer {{{2
 set wildignore+="/tmp/*,*.so,*.swp,*.zip
 
-" Make clipboard the default register
+" Make clipboard the default register {{{2
 set clipboard=unnamed
+
+" Highlight current line {{{2
+set cursorline
+
+" Highlight column 81 {{{2
+set colorcolumn=81
+highlight ColorColumn ctermbg=234
 
 " General {{{2
 set autoread                            " Reload files when outside changes made
