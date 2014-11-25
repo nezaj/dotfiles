@@ -103,7 +103,7 @@ set winheight=999
 " Edit useful files {{{2
 :nnoremap <silent><leader>ev :e $MYVIMRC<CR>
 :nnoremap <silent><leader>et :e $MYTMUXCONF<CR>
-:nnoremap <silent><leader>eb :e $MYBASH<CR>
+:nnoremap <silent><leader>ez :e $MYZSH<CR>
 :nnoremap <silent><leader>ep :e $MYPRIVATE<CR>
 :nnoremap <silent><leader>ed :e $MYTODOS<CR>
 
