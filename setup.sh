@@ -1,12 +1,20 @@
-# Add symlinks
-ln -sfn ~/dotfiles/vim ~/.vim
-ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
-rm -rf ~/.bash_profile
-rm ~/.bashrc
-rm ~/.gitconfig
-ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+# Ack
 ln -sf ~/dotfiles/.ackrc ~/.ackrc
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+# Environment settings
+ln -sf ~/dotfiles/.profile ~/.profile
+
+# Git
+rm ~/.gitconfig
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore ~/.gitignore
+
+# Tmux
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+# Vim
+ln -sfn ~/dotfiles/vim ~/.vim
+ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
+
+# Zsh
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
