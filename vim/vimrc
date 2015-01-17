@@ -104,7 +104,7 @@ set winheight=999
 :nnoremap <silent><leader>ev :e $MYVIMRC<CR>
 :nnoremap <silent><leader>et :e $MYTMUXCONF<CR>
 :nnoremap <silent><leader>ez :e $MYZSH<CR>
-:nnoremap <silent><leader>ep :e $MYPRIVATE<CR>
+:nnoremap <silent><leader>ep :e $MYPROFILE<CR>
 :nnoremap <silent><leader>ed :e $MYTODOS<CR>
 
 " Clear search {{{2
