@@ -198,8 +198,8 @@ call pathogen#incubate()
 
 " Ignore these files when using ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(swp|pyc)$'
+    \ 'dir': '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(swp|pyc|min\.css|min\.js)$'
     \ }
 
 " Emmet-Vim {{{2
