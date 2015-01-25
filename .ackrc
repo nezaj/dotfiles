@@ -1,7 +1,28 @@
-# It's nice when things are in order
+# Don't search through minified assets
+--type-set=minifiedcss=.min.css
+--type-set=minifiedjs=.min.js
+--nominifiedcss
+--nominifiedjs
+
+# Sort files
 --sort-files
 
-# I'm never looking through these
---ignore-dir=.webassets-cache
+# only search with case sensitivity if there is mixed case
+--smart-case
+
+# General
+--ignore-dir=lib
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-file=ext:db
+--ignore-file=ext:gitignore
+
+# Python/Flask related
+--ignore-dir=.webassets-cache
+--ignore-file=match:.coverage
+--ignore-file=match:coverage.xml
+--ignore-file=match:pylintrc
+--ignore-file=match:pytests.xml
+
+# vi/vim swap files
+--ignore-file=match:/[._].*\.swp$/
