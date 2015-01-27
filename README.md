@@ -24,16 +24,16 @@ git submodule update
 And we're done. Huzzah!
 
 ### Vim plugins
-* [Ack][Ack]
-* [Autoclose][Autoclose]
-* [Ctrlp][Ctrlp]
-* [Emmet-Vim][Emmet-Vim]
-* [Fugitive][Fugitive]
-* [Lightline][Lightline]
-* [Neocomplcache][Neocomplcache]
-* [NerdTree][NerdTree]
-* [TComment][TComment]
-* [vim-jsbeautify][jsbeautify]
+* [Ack][Ack] -- Grep across project directory
+* [Autoclose][Autoclose] -- Autoclose parenthesis, curly braces, etc.
+* [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
+* [Emmet-Vim][Emmet-Vim] -- Generate html fast
+* [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
+* [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
+* [Neocomplcache][Neocomplcache] -- Awesome autocomplete plugin
+* [NerdTree][NerdTree] -- File directory browser
+* [TComment][TComment] -- Comment code super easily
+* [vim-jsbeautify][jsbeautify] -- Beautify html, css, and js
 
 If you want to add a new plugin use the following command
 ```
