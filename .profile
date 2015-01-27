@@ -42,14 +42,6 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-### Set virtualenvwrapper aliases {{{3
-### http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
-alias v='workon'
-alias v.cd='cdsitepackages'
-alias v.ls='lsvirtualenv -b'
-alias v.mk='mkvirtualenv --no-site-packages'
-alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages'
-alias v.rm='rmvirtualenv'
 
 ### Set default location for virtualenvs {{{3
 export WORKON_HOME=~/.virtualenvs
@@ -64,3 +56,15 @@ export PIP_RESPECT_VIRTUALENV=true
 
 ### Cache pip-installed packages to avoid re-downloading {{{3
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+
+# Aliases {{{1
+
+# Virtualenvwrapper {{{2
+# http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
+alias v='workon'
+alias v.cd='cdsitepackages'
+alias v.ls='lsvirtualenv -b'
+alias v.mk='mkvirtualenv --no-site-packages'
+alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages'
+alias v.rm='rmvirtualenv'
