@@ -33,6 +33,7 @@ And we're done. Huzzah!
 * [Neocomplcache][Neocomplcache]
 * [NerdTree][NerdTree]
 * [TComment][TComment]
+* [vim-jsbeautify][jsbeautify]
 
 If you want to add a new plugin use the following command
 ```
@@ -48,3 +49,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [Neocomplcache]: https://github.com/Shougo/neocomplcache.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
+[jsbeautify]: https://github.com/maksimr/vim-jsbeautify
