@@ -246,12 +246,15 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
-
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" vim-jsbeautify {{{2
+let g:editorconfig_Beautifier = expand("~/") . 'dotfiles/.vim-jsbeautifyconfig'
+
 "}}} End section
 
 " Custom functions {{{1
@@ -318,11 +321,22 @@ augroup configgroup
     let g:user_emmet_install_global = 0
     autocmd FileType html,htmlcheetah,css EmmetInstall
 
-    " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591 {{{2
-    " triggers autoread whenever I switch buffer or when focusing vim again
+    " Trigger autoread whenever I switch buffer or when focusing vim again {{{2
+    " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
     au FocusGained,BufEnter * :silent! !
-    " files are always saved when leaving a buffer or vim, avoiding conflict situations
+    " Save whenever leaving a buffer or exiting vim {{{2
     au FocusLost,WinLeave * :silent! w
+
+    " Beautify html, css, js {{{2
+    autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+    autocmd FileType html,htmlcheetah noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+    autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+    " Beautify selected lines {{{2
+    autocmd FileType javascript vnoremap <buffer> <c-f> :call RangeJsBeautify()<cr>
+    autocmd FileType html,htmlcheetah vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+    autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr> "
 " }}} End section
+
 
 augroup END

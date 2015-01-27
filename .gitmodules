@@ -26,3 +26,6 @@
 [submodule "vim/bundle/autoclose"]
 	path = vim/bundle/autoclose
 	url = https://github.com/Townk/vim-autoclose.git
+[submodule "vim/bundle/vim-jsbeautify"]
+    path = vim/bundle/vim-jsbeautify
+    url = https://github.com/maksimr/vim-jsbeautify
