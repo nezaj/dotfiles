@@ -181,6 +181,11 @@ set winheight=999
 :nnoremap // :TComment<CR>
 :vnoremap // :TComment<CR>
 
+" Prevent overwriting default register (system clipboard) when inconvenient {{{2
+vnoremap x "_x
+vnoremap c "_c
+vnoremap p "_dP
+
 " Don't use arrow keys :) {{{2
 :nnoremap <Left>  <NOP>
 :nnoremap <Right> <NOP>
