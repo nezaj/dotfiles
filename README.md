@@ -22,6 +22,13 @@ git submodule init
 git submodule update
 ```
 
+### Python setup
+```
+brew install python
+pip install virtualenv
+pip install virtualenvwrapper
+```
+
 And we're done. Huzzah!
 
 ### Vim plugins
