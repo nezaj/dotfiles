@@ -1,9 +1,10 @@
-## Dotfiles
 My secret sauce for getting things done.
 
-* [Dependencies](#dependencies)
-* [Vim setup](#vim-setup)
-* [Vim plugins](#vim-plugins)
+* [Instructions](#instructions)
+* [Plugins](#vim-plugins)
+
+## Instructions
+Clone this repo into `~/dotfiles`
 
 ### Dependencies
 ```
@@ -12,21 +13,29 @@ brew install tmux
 brew install ack
 ```
 
+### Python setup
+```
+brew install python
+pip install virtualenv
+pip install virtualenvwrapper
+```
+
 ### Vim setup
-1. Clone this repo.
-2. Create symlinks with `./setup.sh`
-3. Fetch and update vim plugins
 ```
 cd ~/dotfiles
 git submodule init
 git submodule update
 ```
 
-### Python setup
+### Zsh setup
 ```
-brew install python
-pip install virtualenv
-pip install virtualenvwrapper
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+cp ~/dotfiles/zsh/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
+```
+
+Finally, add all the symlinks
+```
+./symlinks.sh
 ```
 
 And we're done. Huzzah!
