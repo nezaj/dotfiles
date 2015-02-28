@@ -7,6 +7,7 @@ My secret sauce for getting things done.
 
 ### Dependencies
 ```
+brew install reattach-to-user-namespace
 brew install tmux
 brew install ack
 ```
