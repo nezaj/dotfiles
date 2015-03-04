@@ -123,6 +123,9 @@ set winheight=999
 " Focus fold {{{2
 :nnoremap <leader>f zMzA
 
+" Autoformat to textwidth, useful for text documents {{{2
+:nnoremap <leader>F gggqG
+
 " Swap to previous file {{{2
 :nnoremap ;; <c-^>
 
