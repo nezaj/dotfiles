@@ -30,12 +30,12 @@ git submodule update
 ### Zsh setup
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-cp ~/dotfiles/zsh/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
+cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 ```
 
 Finally, add all the symlinks
 ```
-./symlinks.sh
+. symlinks.sh
 ```
 
 And we're done. Huzzah!
