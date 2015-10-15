@@ -50,6 +50,7 @@ And we're done. Huzzah!
 * [Neocomplcache][Neocomplcache] -- Awesome autocomplete plugin
 * [NerdTree][NerdTree] -- File directory browser
 * [TComment][TComment] -- Comment code super easily
+* [vim-go][vimgo] -- Awesome plugin for Go development using Vim
 * [vim-jsbeautify][jsbeautify] -- Beautify html, css, and js
 
 If you want to add a new plugin use the following command
@@ -67,3 +68,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
 [jsbeautify]: https://github.com/maksimr/vim-jsbeautify
+[vimgo]: https://github.com/fatih/vim-go
