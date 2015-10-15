@@ -5,6 +5,10 @@ My secret sauce for getting things done.
 
 ## Instructions
 Clone this repo into `~/dotfiles`
+Get homebrew
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 ### Dependencies
 ```
@@ -20,6 +24,13 @@ pip install virtualenv
 pip install virtualenvwrapper
 ```
 
+### Java setup
+```
+brew tap caskroom/cask
+brew install brew-cask
+brew cask install java
+```
+
 ### Vim setup
 ```
 cd ~/dotfiles
@@ -31,6 +42,11 @@ git submodule update
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
+```
+
+### Additional tools
+```
+brew install jq
 ```
 
 Finally, add all the symlinks
