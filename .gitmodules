@@ -20,15 +20,9 @@
 [submodule "vim/bundle/neocomplcache"]
     path = vim/bundle/neocomplcache
     url = https://github.com/Shougo/neocomplcache.vim
-[submodule "vim/bundle/emmet-vim"]
-    path = vim/bundle/emmet-vim
-    url = https://github.com/mattn/emmet-vim
 [submodule "vim/bundle/autoclose"]
 	path = vim/bundle/autoclose
 	url = https://github.com/Townk/vim-autoclose.git
-[submodule "vim/bundle/vim-jsbeautify"]
-    path = vim/bundle/vim-jsbeautify
-    url = https://github.com/maksimr/vim-jsbeautify
-[submodule "vim/bundle/vim-go"]
-	path = vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json

@@ -216,11 +216,6 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(swp|pyc|min\.css|min\.js)$'
     \ }
 
-" Emmet-Vim {{{2
-
-" Easy emmet-vim
-let g:user_emmet_leader_key='cc'
-
 " Lightline  {{{2
 
 " General settings
@@ -265,9 +260,6 @@ if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" vim-jsbeautify {{{2
-let g:editorconfig_Beautifier = expand("~/") . 'dotfiles/.vim-jsbeautifyconfig'
 
 "}}} End section
 
@@ -331,25 +323,11 @@ augroup configgroup
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-    " Enable emmet-vim only for html/css {{{2
-    let g:user_emmet_install_global = 0
-    autocmd FileType html,htmlcheetah,css EmmetInstall
-
     " Trigger autoread whenever I switch buffer or when focusing vim again {{{2
     " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
     au FocusGained,BufEnter * :silent! !
     " Save whenever leaving a buffer or exiting vim {{{2
     au FocusLost,WinLeave * :silent! w
-
-    " Beautify html, css, js {{{2
-    autocmd FileType javascript,json noremap <buffer> <c-f> :call JsBeautify()<cr>
-    autocmd FileType html,htmlcheetah noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-    autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-
-    " Beautify selected lines {{{2
-    autocmd FileType javascript vnoremap <buffer> <c-f> :call RangeJsBeautify()<cr>
-    autocmd FileType html,htmlcheetah vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-    autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr> "
 " }}} End section
 
 
