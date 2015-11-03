@@ -24,6 +24,7 @@ export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Ho
 ## Fix PGDATA {{{2
 export PGDATA=/usr/local/var/postgres
 
+
 ## Customize PATH {{{2
 ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 LOCAL_TOOLBELT="/usr/local/bin"
@@ -68,3 +69,9 @@ alias v.ls='lsvirtualenv -b'
 alias v.mk='mkvirtualenv --no-site-packages'
 alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages'
 alias v.rm='rmvirtualenv'
+
+
+# Pretty print json curls {{{2
+function jcurl {
+    curl "$@" | jq '.'
+}
