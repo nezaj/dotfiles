@@ -33,6 +33,7 @@ brew cask install java
 
 ### Vim setup
 ```
+brew install vim
 cd ~/dotfiles
 git submodule init
 git submodule update

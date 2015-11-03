@@ -7,8 +7,8 @@ if [ -f ~/.private_profile ];
 fi
 
 ## Set vim as default editor {{{2
-VIMRUNTIME=/usr/bin
-EDITOR=/usr/bin/vim
+VIMRUNTIME=/usr/local/bin
+EDITOR=/usr/local/bin/vim
 
 ## Export frequently edited conf/rc files {{{2
 export MYZSH=~/.zshrc
