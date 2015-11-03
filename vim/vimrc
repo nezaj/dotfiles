@@ -22,7 +22,7 @@ set wildignore+="/tmp/*,*.so,*.swp,*.zip
 set clipboard=unnamed
 
 " Highlight current line {{{2
-set cursorline
+set cursorline cursorcolumn
 
 " Highlight column 81 {{{2
 set colorcolumn=81
