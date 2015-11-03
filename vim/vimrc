@@ -212,7 +212,7 @@ call pathogen#incubate()
 
 " Ignore these directories and files when using ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules)$',
+    \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|_vendor|env)$',
     \ 'file': '\v\.(swp|pyc|min\.css|min\.js)$'
     \ }
 

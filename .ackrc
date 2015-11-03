@@ -14,6 +14,7 @@
 --ignore-dir=lib
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=env
 --ignore-file=ext:db
 --ignore-file=ext:gitignore
 
@@ -26,3 +27,6 @@
 
 # vi/vim swap files
 --ignore-file=match:/[._].*\.swp$/
+
+# Go projects
+--ignore-dir=_vendor
