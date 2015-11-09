@@ -15,6 +15,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install reattach-to-user-namespace
 brew install tmux
 brew install ack
+brew install editorconfig
 ```
 
 ### Python setup
@@ -61,6 +62,7 @@ And we're done. Huzzah!
 * [Ack][Ack] -- Grep across project directory
 * [Autoclose][Autoclose] -- Autoclose parenthesis, curly braces, etc.
 * [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
+* [Editorconfig-vim][editconfig] -- Per project editor configurations
 * [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
 * [Neocomplcache][Neocomplcache] -- Awesome autocomplete plugin
@@ -74,6 +76,7 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 
 [Ack]: https://github.com/mileszs/ack.vim.git
 [Autoclose]: https://github.com/Townk/vim-autoclose
+[editconfig]: https://github.com/editorconfig/editorconfig-vim
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim

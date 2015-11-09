@@ -261,6 +261,14 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
+" Editorconfig {{{2
+
+" Disable Editorconfig for fugitive and remote files
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" Path to Editorconfig core executable (generated via brew install
+" editorconfig)
+let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+
 "}}} End section
 
 " Custom functions {{{1
