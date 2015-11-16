@@ -1,9 +1,15 @@
 # vim:foldmethod=marker:foldlevel=0
 
+
 # Environment variables  {{{1
 ## Source sensitive configs I don't want in SVN {{{2
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
+fi
+
+## Source urx aliases {{{2
+if [ -f ~/.urx_profile ];
+    then source ~/.urx_profile
 fi
 
 ## Set vim as default editor {{{2

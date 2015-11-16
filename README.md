@@ -21,6 +21,7 @@ brew install editorconfig
 ### Python setup
 ```
 brew install python
+pip install ipython
 pip install virtualenv
 pip install virtualenvwrapper
 ```
