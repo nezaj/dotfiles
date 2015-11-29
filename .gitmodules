@@ -26,3 +26,6 @@
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

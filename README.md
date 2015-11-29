@@ -38,13 +38,19 @@ brew cask install java
 brew install vim
 cd ~/dotfiles
 git submodule init
-git submodule update
+git submodule update --init --recursive
 ```
 
 ### Zsh setup
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
+```
+
+### YouCompleteMe setup
+```
+cd vim/bundle/YouCompleteMe
+./install.py --clang-completer
 ```
 
 ### Additional tools
@@ -68,6 +74,7 @@ And we're done. Huzzah!
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
 * [NerdTree][NerdTree] -- File directory browser
 * [TComment][TComment] -- Comment code super easily
+* [YouCompleteMe][YouCompleteMe] -- Awesome autocomplete plugin
 
 If you want to add a new plugin use the following command
 ```
@@ -82,3 +89,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
+[YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
