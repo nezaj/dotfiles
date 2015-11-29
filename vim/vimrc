@@ -182,9 +182,6 @@ set winheight=999
 " Easy Ack {{{2
 :nnoremap <leader>a :Ack
 
-" Neocomplcache <TAB>: completion. {{{2
-:inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-:inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
 " Easy commenting {{{2
 :nnoremap // :TComment<CR>
@@ -245,22 +242,6 @@ let NERDTreeIgnore = [
 " I do want to see dotfiles (like .gitignore)
 let NERDTreeShowHidden=1
 
-" Necomplcache {{{2
-
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
 " Editorconfig {{{2
 
 " Disable Editorconfig for fugitive and remote files
@@ -295,10 +276,6 @@ function! MyFugitive()
   return ''
 endfunction
 
-" Add newline for autocomplete with enter key {{{2
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
-endfunction
 " }}}
 
 " Autocommands {{{1

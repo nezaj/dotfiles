@@ -66,7 +66,6 @@ And we're done. Huzzah!
 * [Editorconfig-vim][editconfig] -- Per project editor configurations
 * [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
-* [Neocomplcache][Neocomplcache] -- Awesome autocomplete plugin
 * [NerdTree][NerdTree] -- File directory browser
 * [TComment][TComment] -- Comment code super easily
 
@@ -81,6 +80,5 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim
-[Neocomplcache]: https://github.com/Shougo/neocomplcache.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
