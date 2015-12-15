@@ -21,8 +21,6 @@ set wildignore+="/tmp/*,*.so,*.swp,*.zip
 " Make clipboard the default register {{{2
 set clipboard=unnamed
 
-" Highlight current line {{{2
-set cursorline cursorcolumn
 
 " Highlight column 81 {{{2
 set colorcolumn=81
