@@ -29,3 +29,9 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/vim/bundle/vim-jinja"]
+	path = vim/vim/bundle/vim-jinja
+	url = https://github.com/mitsuhiko/vim-jinja
+[submodule "vim/bundle/vim-jinja"]
+	path = vim/bundle/vim-jinja
+	url = https://github.com/mitsuhiko/vim-jinja
