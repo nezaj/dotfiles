@@ -28,5 +28,4 @@ for function in ~/dotfiles/zsh/functions/*; do
   source $function
 done
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$PATH"
