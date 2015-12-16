@@ -55,7 +55,9 @@ cd vim/bundle/YouCompleteMe
 
 ### Additional tools
 ```
-brew install jq
+brew install jq  # CLI for json parsing
+brew install tidy-html5  # html static analysis
+brew install httpie  # User-friendly cURL replacement
 ```
 
 Finally, add all the symlinks
@@ -75,6 +77,7 @@ And we're done. Huzzah!
 * [NerdTree][NerdTree] -- File directory browser
 * [TComment][TComment] -- Comment code super easily
 * [YouCompleteMe][YouCompleteMe] -- Awesome autocomplete plugin
+* [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
 
 If you want to add a new plugin use the following command
 ```
@@ -90,3 +93,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
 [YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
+[vim-jinja]: https://github.com/mitsuhiko/vim-jinja
