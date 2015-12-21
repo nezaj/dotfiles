@@ -274,6 +274,19 @@ function! MyFugitive()
   return ''
 endfunction
 
+" Javascript folding
+" Thanks: http://amix.dk/blog/post/19132
+function! JavaScriptFold()
+    setl foldmethod=syntax
+    setl foldlevelstart=1
+    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+
+    function! FoldText()
+        return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    endfunction
+    setl foldtext=FoldText()
+endfunction
+
 " }}}
 
 " Autocommands {{{1
@@ -295,9 +308,14 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd BufRead,BufNewFile *.md setlocal spelllang=en
 
-    " Set foldmethod for python, close all folds by default {{{2
-    autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
-    autocmd BufRead,BufNewFile *.py normal zM
+    " Python folding, close all folds by default {{{2
+    au FileType python setlocal foldmethod=indent
+    au FileType python normal zM
+
+    " Javascript folding, open one foldlevel by default {{{2
+    au FileType javascript call JavaScriptFold()
+    au FileType javascript setl fen
+    au FileType javascript normal zMzr
 
     " Enable vim-jinja highlighting for .jinja files
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
