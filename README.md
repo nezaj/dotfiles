@@ -49,6 +49,7 @@ cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 
 ### YouCompleteMe setup
 ```
+brew install cmake
 cd vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 ```
