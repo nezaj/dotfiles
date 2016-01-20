@@ -80,6 +80,7 @@ And we're done. Huzzah!
 * [YouCompleteMe][YouCompleteMe] -- Awesome autocomplete plugin
 * [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
 * [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
+* [vim-jsx][vim-jsx] -- Syntax highlighting for jsx files
 
 If you want to add a new plugin use the following command
 ```
@@ -97,3 +98,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
 [vim-jinja]: https://github.com/mitsuhiko/vim-jinja
 [vim-javascript]: https://github.com/pangloss/vim-javascript
+[vim-jsx]: https://github.com/mxw/vim-jsx

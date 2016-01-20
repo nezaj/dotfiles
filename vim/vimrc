@@ -248,6 +248,11 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " editorconfig)
 let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 
+" vim-jsx {{{2
+
+" Enable jsx highlighting for .js files
+let g:jsx_ext_required = 0
+
 "}}} End section
 
 " Custom functions {{{1
