@@ -79,6 +79,7 @@ And we're done. Huzzah!
 * [TComment][TComment] -- Comment code super easily
 * [YouCompleteMe][YouCompleteMe] -- Awesome autocomplete plugin
 * [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
+* [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
 
 If you want to add a new plugin use the following command
 ```
@@ -95,3 +96,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [TComment]: https://github.com/tomtom/tcomment_vim
 [YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
 [vim-jinja]: https://github.com/mitsuhiko/vim-jinja
+[vim-javascript]: https://github.com/pangloss/vim-javascript
