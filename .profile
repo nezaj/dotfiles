@@ -32,10 +32,11 @@ export PGDATA=/usr/local/var/postgres
 
 
 ## Customize PATH {{{2
-ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 LOCAL_TOOLBELT="/usr/local/bin"
+NODE_PATH="./node_modules/.bin"
 HEROKU_TOOLBELT="/usr/local/heroku/bin"
-export PATH="$LOCAL_TOOLBELT:$HEROKU_TOOLBELT:$ETC_PATHS"
+ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$LOCAL_TOOLBELT:$NODE_PATH:$HEROKU_TOOLBELT:$ETC_PATHS"
 
 # Python {{{1
 # Configures tools and settings specifically related to python development
