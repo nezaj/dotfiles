@@ -15,8 +15,14 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=env
+--ignore-dir=.git/
 --ignore-file=ext:db
 --ignore-file=ext:gitignore
+
+# Node related
+--ignore-dir=node_modules/
+--ignore-dir=dist/
+--ignore-dir=build/
 
 # Python/Flask related
 --ignore-dir=.webassets-cache
