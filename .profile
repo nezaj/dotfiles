@@ -7,11 +7,6 @@ if [ -f ~/.private_profile ];
     then source ~/.private_profile
 fi
 
-## Source urx aliases {{{2
-if [ -f ~/.urx_profile ];
-    then source ~/.urx_profile
-fi
-
 ## Set vim as default editor {{{2
 VIMRUNTIME=/usr/local/bin
 EDITOR=/usr/local/bin/vim
