@@ -205,6 +205,10 @@ call pathogen#incubate()
 
 " CtriP {{{2
 
+" Do not zoom to project's root, www is huge so this makes fuzzy search slow
+" Thanks: https://github.com/kien/ctrlp.vim/issues/173#issuecomment-5040299
+let g:ctrlp_working_path_mode = 0
+
 " Ignore these directories and files when using ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|_vendor|env)$',
@@ -270,14 +274,6 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-" Displays current git branch in powerline {{{2
-function! MyFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? "\u00A7 "._ : ''
-  endif
-  return ''
-endfunction
 
 " }}}
 
