@@ -26,9 +26,6 @@
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "vim/bundle/vim-jinja"]
 	path = vim/bundle/vim-jinja
 	url = https://github.com/mitsuhiko/vim-jinja
@@ -38,3 +35,6 @@
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx
+[submodule "vim/bundle/vim-hack"]
+	path = vim/bundle/vim-hack
+	url = https://github.com/hhvm/vim-hack
