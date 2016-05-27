@@ -3,3 +3,6 @@
 
 # Vim spell files
 vim/spell
+
+# Private profile
+.private_profile

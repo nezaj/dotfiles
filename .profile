@@ -2,14 +2,11 @@
 
 
 # Environment variables  {{{1
-## Source sensitive configs I don't want in SVN {{{2
-if [ -f ~/.private_profile ];
-    then source ~/.private_profile
-fi
 
 ## Set vim as default editor {{{2
-VIMRUNTIME=/usr/local/bin
-EDITOR=/usr/local/bin/vim
+VIMRUNTIME=/usr/bin
+EDITOR=/usr/bin/vim
+VISUAL=/usr/bin/vim
 
 ## Export frequently edited conf/rc files {{{2
 export MYZSH=~/.zshrc
@@ -60,6 +57,10 @@ export PIP_RESPECT_VIRTUALENV=true
 ### Cache pip-installed packages to avoid re-downloading {{{3
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
+## Source sensitive configs I don't want in SVN {{{2
+if [ -f ~/.private_profile ];
+    then source ~/.private_profile
+fi
 
 # Aliases {{{1
 
