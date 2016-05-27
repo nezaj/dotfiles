@@ -285,7 +285,7 @@ augroup configgroup
 
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
-    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType javascript,php setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
 
@@ -307,24 +307,11 @@ augroup configgroup
     " Enable vim-jinja highlighting for .jinja files
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
 
-    " Enable omni completion {{{2
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
     " Trigger autoread whenever I switch buffer or when focusing vim again {{{2
     " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
     au FocusGained,BufEnter * :silent! !
     " Save whenever leaving a buffer or exiting vim {{{2
     au FocusLost,WinLeave * :silent! w
-    " Close the Omni-Completion tip window when a selection is made
-    " These lines close it on movement in insert mode or when leaving insert mode
-    " Thanks:
-    " http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
-    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-    autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " }}} End section
 
 augroup END
