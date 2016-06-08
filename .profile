@@ -25,7 +25,7 @@ export PGDATA=/usr/local/var/postgres
 
 ## Customize PATH {{{2
 LOCAL_TOOLBELT="/usr/local/bin"
-NODE_PATH="./node_modules/.bin"
+NODE_PATH="/usr/local/node_modules/bin"
 HEROKU_TOOLBELT="/usr/local/heroku/bin"
 ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$LOCAL_TOOLBELT:$NODE_PATH:$HEROKU_TOOLBELT:$ETC_PATHS"

@@ -38,3 +38,9 @@
 [submodule "vim/bundle/vim-hack"]
 	path = vim/bundle/vim-hack
 	url = https://github.com/hhvm/vim-hack
+[submodule "vim/bundle/VimCompletesMe"]
+	path = vim/bundle/VimCompletesMe
+	url = https://github.com/ajh17/VimCompletesMe
+[submodule "vim/bundle/vim-lawrencium"]
+	path = vim/bundle/vim-lawrencium
+	url = https://github.com/ludovicchabant/vim-lawrencium

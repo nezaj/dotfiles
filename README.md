@@ -75,6 +75,7 @@ And we're done. Huzzah!
 * [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
 * [Editorconfig-vim][editconfig] -- Per project editor configurations
 * [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
+* [Lawrencium][Lawrencium]  -- Hg wrapper inside Vim, I only use this for Hgannotate
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
 * [NerdTree][NerdTree] -- File directory browser
 * [TComment][TComment] -- Comment code super easily
@@ -82,6 +83,7 @@ And we're done. Huzzah!
 * [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
 * [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
 * [vim-jsx][vim-jsx] -- Syntax highlighting for jsx files
+* [VimCompletesMe][VimCompletesMe] -- Lightweight autocomplete
 
 If you want to add a new plugin use the following command
 ```
@@ -93,6 +95,7 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [editconfig]: https://github.com/editorconfig/editorconfig-vim
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Fugitive]: https://github.com/tpope/vim-fugitive
+[Lawrencium]: https://github.com/ludovicchabant/vim-lawrencium
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
@@ -100,3 +103,4 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [vim-jinja]: https://github.com/mitsuhiko/vim-jinja
 [vim-javascript]: https://github.com/pangloss/vim-javascript
 [vim-jsx]: https://github.com/mxw/vim-jsx
+[VimCompletesMe]: https://github.com/ajh17/VimCompletesMe

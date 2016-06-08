@@ -153,6 +153,9 @@ set winheight=999
 :nnoremap <leader>gb :Gblame<CR>
 :nnoremap <leader>gl :Glog<CR>
 
+" Lawrencium shortcuts {{{2
+:nnoremap <leader>hb :Hgannotate<CR>
+
 " Tab switching {{{2
 :nnoremap <leader>1 1gt
 :nnoremap <leader>2 2gt
