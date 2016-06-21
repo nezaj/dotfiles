@@ -1,16 +1,6 @@
 # vim:foldmethod=marker:foldlevel=0
 
-
 # Environment variables  {{{1
-## Source sensitive configs I don't want in SVN {{{2
-if [ -f ~/.private_profile ];
-    then source ~/.private_profile
-fi
-
-## Set vim as default editor {{{2
-VIMRUNTIME=/usr/local/bin
-EDITOR=/usr/local/bin/vim
-
 ## Export frequently edited conf/rc files {{{2
 export MYZSH=~/.zshrc
 export MYPROFILE=~/.profile
@@ -19,19 +9,23 @@ export MYVIMRC=~/.vimrc
 export MYTMUXCONF=~/.tmux.conf
 export MYTODOS=~/todos.md
 
-## Fix JAVA_HOME {{{2
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-
 ## Fix PGDATA {{{2
 export PGDATA=/usr/local/var/postgres
 
-
 ## Customize PATH {{{2
+
+# Tools Path
 LOCAL_TOOLBELT="/usr/local/bin"
 NODE_PATH="./node_modules/.bin"
+TOOLS_PATH="$LOCAL_TOOLBELT:$NODE_PATH"
+
+# Extra Paths
 HEROKU_TOOLBELT="/usr/local/heroku/bin"
 ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$LOCAL_TOOLBELT:$NODE_PATH:$HEROKU_TOOLBELT:$ETC_PATHS"
+EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
+
+# Export actual path
+export PATH="$TOOLS_PATH:$EXTRAS_PATH"
 
 # Python {{{1
 # Configures tools and settings specifically related to python development
@@ -44,7 +38,6 @@ export PATH="$LOCAL_TOOLBELT:$NODE_PATH:$HEROKU_TOOLBELT:$ETC_PATHS"
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
-
 
 ### Set default location for virtualenvs {{{3
 export WORKON_HOME=~/.virtualenvs
@@ -59,7 +52,6 @@ export PIP_RESPECT_VIRTUALENV=true
 
 ### Cache pip-installed packages to avoid re-downloading {{{3
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
 
 # Aliases {{{1
 
@@ -77,3 +69,8 @@ alias v.rm='rmvirtualenv'
 function jcurl {
     curl "$@" | jq '.'
 }
+
+# Source sensitive configs I don't want in SVN {{{1
+if [ -f ~/.private_profile ];
+    then source ~/.private_profile
+fi

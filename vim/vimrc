@@ -203,16 +203,14 @@ set winheight=999
 call pathogen#infect()
 call pathogen#incubate()
 
-" CtriP {{{2
-
+" CtrlP {{{{2j
 " Ignore these directories and files when using ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|_vendor|env)$',
     \ 'file': '\v\.(swp|pyc|min\.css|min\.js)$'
     \ }
 
-" Lightline  {{{2
-
+" Lightline {{{2
 " General settings
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
@@ -296,11 +294,8 @@ augroup configgroup
     " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-    " Turn on spell-checker by default for markdown {{{2
-    autocmd BufRead,BufNewFile *.md setlocal spell
-    autocmd BufRead,BufNewFile *.md setlocal spelllang=en
-
     " Python folding, close all folds by default {{{2
+
     au FileType python setlocal foldmethod=indent
     au FileType python setlocal foldlevel=0
 
@@ -332,3 +327,8 @@ augroup configgroup
 " }}} End section
 
 augroup END
+
+" Source private vimrc {{{1
+if filereadable(expand("~/.vim/vimrc.private.after"))
+  source ~/.vim/vimrc.private.after
+endif
