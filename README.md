@@ -47,13 +47,6 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 ```
 
-### YouCompleteMe setup
-```
-brew install cmake
-cd vim/bundle/YouCompleteMe
-./install.py --clang-completer
-```
-
 ### Additional tools
 ```
 brew install jq  # CLI for json parsing
@@ -77,7 +70,6 @@ And we're done. Huzzah!
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
 * [NerdTree][NerdTree] -- File directory browser
 * [TComment][TComment] -- Comment code super easily
-* [YouCompleteMe][YouCompleteMe] -- Awesome autocomplete plugin
 * [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
 * [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
 * [vim-jsx][vim-jsx] -- Syntax highlighting for jsx files
@@ -95,7 +87,6 @@ git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [TComment]: https://github.com/tomtom/tcomment_vim
-[YouCompleteMe]: https://github.com/Valloric/YouCompleteMe
 [vim-jinja]: https://github.com/mitsuhiko/vim-jinja
 [vim-javascript]: https://github.com/pangloss/vim-javascript
 [vim-jsx]: https://github.com/mxw/vim-jsx

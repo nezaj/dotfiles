@@ -306,13 +306,6 @@ augroup configgroup
     " Enable vim-jinja highlighting for .jinja files
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
 
-    " Enable omni completion {{{2
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
     " Trigger autoread whenever I switch buffer or when focusing vim again {{{2
     " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
     au FocusGained,BufEnter * :silent! !
