@@ -15,6 +15,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install reattach-to-user-namespace
 brew install tmux
 brew install ack
+brew install ag
 brew install editorconfig
 ```
 
@@ -67,8 +68,10 @@ And we're done. Huzzah!
 * [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
 * [Editorconfig-vim][editconfig] -- Per project editor configurations
 * [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
+* [Lawrencium][Lawrencium]  -- Hg wrapper inside Vim, I only use this for Hgannotate
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
 * [NerdTree][NerdTree] -- File directory browser
+* [SuperTab][SuperTab] -- Better tab completion behavior
 * [TComment][TComment] -- Comment code super easily
 * [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
 * [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
@@ -79,13 +82,23 @@ If you want to add a new plugin use the following command
 git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
 ```
 
+To delete a plugin use the following commands
+```
+git submodule deinit vim/bundle/[PLUGIN_NAME]
+git rm vim/bundle/[PLUGIN_NAME]
+git rm --cached vim/bundle/[PLUGIN_NAME]
+rm -rf .git/modules/bundle/[PLUGIN_NAME]
+```
+
 [Ack]: https://github.com/mileszs/ack.vim.git
 [Autoclose]: https://github.com/Townk/vim-autoclose
 [editconfig]: https://github.com/editorconfig/editorconfig-vim
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Fugitive]: https://github.com/tpope/vim-fugitive
+[Lawrencium]: https://github.com/ludovicchabant/vim-lawrencium
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
+[SuperTab]: https://github.com/ervandew/supertab]
 [TComment]: https://github.com/tomtom/tcomment_vim
 [vim-jinja]: https://github.com/mitsuhiko/vim-jinja
 [vim-javascript]: https://github.com/pangloss/vim-javascript

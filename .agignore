@@ -1,0 +1,27 @@
+# General
+/lib/
+/log/
+/tmp/
+/env/
+/.git/
+*.db
+*.gitignore
+
+# Javascript
+/node_modules/
+/dist/
+/build/
+
+# Python/Flask
+/.webassets-cache/
+.coverage
+coverage.xml
+pylintrc
+pytests.xml
+
+# vi/vim swap files
+/[._].*\.swp$/
+
+# Go projects
+/_vendor/
+

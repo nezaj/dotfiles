@@ -1,10 +1,8 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " Vim settings {{{1
-
 " Important {{{2
 set nocompatible                        " Enable Vim features
-filetype plugin indent on               " Enable filetype detection and load indent files
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
 colorscheme jellybeans                  " Favorite so far
@@ -72,7 +70,6 @@ set winheight=999
 " }}} End section
 
 " Key mappings {{{1
-
 " Highlight initials in notes {{{2
 :match Todo /JA:/
 
@@ -147,11 +144,10 @@ set winheight=999
 :nnoremap <leader>m :vertical resize 80<CR>
 
 " Fugitive shortcuts {{{2
-:nnoremap <leader>gs :Gstatus<CR>
-:nnoremap <leader>gd :Gdiff<CR>
-:nnoremap <leader>gc :Gcommit<CR>
 :nnoremap <leader>gb :Gblame<CR>
-:nnoremap <leader>gl :Glog<CR>
+
+" Lawrencium shortcuts {{{2
+:nnoremap <leader>hb :Hgannotate<CR>
 
 " Tab switching {{{2
 :nnoremap <leader>1 1gt
@@ -177,9 +173,8 @@ set winheight=999
 :nnoremap <leader>g <C-]>
 :nnoremap <leader>b <C-t>
 
-" Easy Ack {{{2
+" Easy Ack/Ag {{{2
 :nnoremap <leader>a :Ack
-
 
 " Easy commenting {{{2
 :nnoremap // :TComment<CR>
@@ -197,18 +192,43 @@ set winheight=999
 :nnoremap <Down>  <NOP>
 "}}} End section
 
-" Plugins {{{1
-
-" Pathogen {{{2
+" Pathogen {{{1
 call pathogen#infect()
 call pathogen#incubate()
 
-" CtrlP {{{{2j
+" Post-Pathogen Setup {{{1
+
+" Enables filetype detection and loads indent files {{{2
+" Note: It's important this called after vim/bundle is added to vim's
+" runtime path so that ftdetect will be loaded
+" Thanks:  http://stackoverflow.com/a/19314347
+filetype plugin indent on
+
+" Use Omni-Completion
+set omnifunc=syntaxcomplete#Complete
+
+" Plugins {{{1
+" Ack/Ag {{{2
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " use ag over ack
+  " Still using ack.vim though due to github licensing issues
+  " See: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" CtrlP {{{2
 " Ignore these directories and files when using ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|_vendor|env)$',
     \ 'file': '\v\.(swp|pyc|min\.css|min\.js)$'
     \ }
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Lightline {{{2
 " General settings
@@ -239,22 +259,22 @@ let NERDTreeIgnore = [
 let NERDTreeShowHidden=1
 
 " Editorconfig {{{2
-
 " Disable Editorconfig for fugitive and remote files
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " Path to Editorconfig core executable (generated via brew install
 " editorconfig)
 let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 
-" vim-jsx {{{2
+" vim-javascript {{{2
+" Enable syntax highlighting for flow
+let g:javascript_plugin_flow = 1
 
+" vim-jsx {{{2
 " Enable jsx highlighting for .js files
 let g:jsx_ext_required = 0
-
 "}}} End section
 
 " Custom functions {{{1
-
 " Strip whitespace and save cursor position {{{2
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -280,38 +300,38 @@ endfunction
 " }}}
 
 " Autocommands {{{1
-
 augroup configgroup
     " Clear previous autocmds
     autocmd!
 
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
-    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType javascript,jsx setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
 
     " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-    " Python folding, close all folds by default {{{2
-
+    " Python folding {{{2
     au FileType python setlocal foldmethod=indent
     au FileType python setlocal foldlevel=0
 
-    " Javascript folding, open one foldlevel by default {{{2
-    au FileType javascript setlocal foldmethod=syntax
-    au FileType javascript setlocal foldlevel=1
+    " Javascript folding {{{2
+    au FileType javascript,jsx setlocal foldmethod=syntax
+    au FileType javascript,jsx setlocal foldlevel=1
 
-    " Enable vim-jinja highlighting for .jinja files
+    " Enable vim-jinja highlighting for .jinja files {{{2
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
 
     " Trigger autoread whenever I switch buffer or when focusing vim again {{{2
     " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
     au FocusGained,BufEnter * :silent! !
+
     " Save whenever leaving a buffer or exiting vim {{{2
     au FocusLost,WinLeave * :silent! w
-    " Close the Omni-Completion tip window when a selection is made
+
+    " Close the Omni-Completion tip window when a selection is made {{{2
     " These lines close it on movement in insert mode or when leaving insert mode
     " Thanks:
     " http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
