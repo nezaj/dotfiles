@@ -53,6 +53,7 @@ cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 brew install jq  # CLI for json parsing
 brew install tidy-html5  # html static analysis
 brew install httpie  # User-friendly cURL replacement
+pip install grip  # Github-flavored markdown previewer
 ```
 
 Finally, add all the symlinks
