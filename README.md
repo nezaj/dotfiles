@@ -91,6 +91,16 @@ git rm --cached vim/bundle/[PLUGIN_NAME]
 rm -rf .git/modules/bundle/[PLUGIN_NAME]
 ```
 
+### Updating dotfiles on machine
+```
+cd ~/dotfiles
+git pull
+git submodule init
+git submodule update --init --recursive
+. symlinks.sh
+. ~/.profile
+```
+
 [Ack]: https://github.com/mileszs/ack.vim.git
 [Autoclose]: https://github.com/Townk/vim-autoclose
 [editconfig]: https://github.com/editorconfig/editorconfig-vim
