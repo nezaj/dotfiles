@@ -216,7 +216,7 @@ if executable('ag')
   " use ag over ack
   " Still using ack.vim though due to github licensing issues
   " See: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag -s -H --nocolor --nogroup --column --vimgrep'
 endif
 
 " CtrlP {{{2
