@@ -6,3 +6,6 @@ vim/spell
 
 # Private vimrc
 vim/vimrc.private*
+
+# Private tmux
+tmux/.tmux.private*
