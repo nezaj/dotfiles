@@ -70,7 +70,7 @@ function jcurl {
     curl "$@" | jq '.'
 }
 
-# Source sensitive configs I don't want in SVN {{{1
+# Source sensitive configs I don't want in git {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
 fi
