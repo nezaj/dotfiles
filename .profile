@@ -28,42 +28,19 @@ EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 export PATH="$TOOLS_PATH:$EXTRAS_PATH"
 
 # Python {{{1
-# Configures tools and settings specifically related to python development
+# Configures tools and settings for javascript development
 
-## Configure virtualenvwrapper {{{2
-## Virtualenvwrapper makes it easy to work with python virtualenvs
-## http://virtualenvwrapper.readthedocs.org/en/latest/
+## Initialize pyenv {{{2
+eval "$(pyenv init -)"
 
-### Source virtualenvwrapper {{{3
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+# Javascript {{{1
+# Configures tools and settings for javascript development
 
-### Set default location for virtualenvs {{{3
-export WORKON_HOME=~/.virtualenvs
-
-## Configure pip {{{2
-## pip is a tool for installing and managing python packages
-## https://pypi.python.org/pypi/pip
-
-### Ensure pip installs to virtualenvs only {{{3
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-
-### Cache pip-installed packages to avoid re-downloading {{{3
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+## Node Version Manager (NVM) {{{2
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Aliases {{{1
-
-# Virtualenvwrapper {{{2
-# http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
-alias v='workon'
-alias v.cd='cdsitepackages'
-alias v.ls='lsvirtualenv -b'
-alias v.mk='mkvirtualenv --no-site-packages'
-alias v.mk3='mkvirtualenv --python=/usr/local/bin/python3 --no-site-packages'
-alias v.rm='rmvirtualenv'
-
 
 # Pretty print json curls {{{2
 function jcurl {
@@ -74,3 +51,6 @@ function jcurl {
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

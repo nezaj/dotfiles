@@ -258,13 +258,6 @@ let NERDTreeIgnore = [
 " I do want to see dotfiles (like .gitignore)
 let NERDTreeShowHidden=1
 
-" Editorconfig {{{2
-" Disable Editorconfig for fugitive and remote files
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-" Path to Editorconfig core executable (generated via brew install
-" editorconfig)
-let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
-
 " vim-javascript {{{2
 " Enable syntax highlighting for flow
 let g:javascript_plugin_flow = 1
@@ -320,6 +313,9 @@ augroup configgroup
     " Javascript folding {{{2
     au FileType javascript,jsx setlocal foldmethod=syntax
     au FileType javascript,jsx setlocal foldlevel=1
+
+    " Markdown spell {{{2
+    au FileType markdown setlocal spell spelllang=en_us
 
     " Enable vim-jinja highlighting for .jinja files {{{2
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
