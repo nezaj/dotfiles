@@ -87,7 +87,7 @@ To delete a plugin use the following commands
 git submodule deinit vim/bundle/[PLUGIN_NAME]
 git rm vim/bundle/[PLUGIN_NAME]
 git rm --cached vim/bundle/[PLUGIN_NAME]
-rm -rf .git/modules/bundle/[PLUGIN_NAME]
+rm -rf .git/modules/vim/bundle/[PLUGIN_NAME]
 ```
 
 ### Updating dotfiles on machine

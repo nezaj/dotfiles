@@ -246,7 +246,6 @@ let g:lightline = {
     \ }
 
 " NERDTree {{{2
-
 " Files and directories I don't want to see
 " Note the use of vim-style regex
 let NERDTreeIgnore = [
@@ -300,6 +299,7 @@ augroup configgroup
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
     autocmd FileType javascript,jsx setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 et
     autocmd FileType css setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
