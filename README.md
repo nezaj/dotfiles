@@ -69,7 +69,6 @@ And we're done. Huzzah!
 * [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
 * [Editorconfig-vim][editconfig] -- Per project editor configurations
 * [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
-* [Lawrencium][Lawrencium]  -- Hg wrapper inside Vim, I only use this for Hgannotate
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
 * [NerdTree][NerdTree] -- File directory browser
 * [SuperTab][SuperTab] -- Better tab completion behavior
@@ -106,7 +105,6 @@ git submodule update --init --recursive
 [editconfig]: https://github.com/editorconfig/editorconfig-vim
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
 [Fugitive]: https://github.com/tpope/vim-fugitive
-[Lawrencium]: https://github.com/ludovicchabant/vim-lawrencium
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
 [SuperTab]: https://github.com/ervandew/supertab]

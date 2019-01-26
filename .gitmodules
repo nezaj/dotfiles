@@ -35,6 +35,3 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vim/bundle/vim_lawrencium"]
-	path = vim/bundle/vim_lawrencium
-	url = https://github.com/ludovicchabant/vim-lawrencium
