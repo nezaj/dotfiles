@@ -125,7 +125,7 @@ set winheight=999
 :nnoremap <leader>f zMzA
 
 " Autoformat to textwidth, useful for text documents {{{2
-:nnoremap <leader>F gggqG
+:nnoremap <leader>F :ALEFix<CR><CR>
 
 " Swap to previous file {{{2
 :nnoremap ;; <c-^>
@@ -146,8 +146,6 @@ set winheight=999
 " Fugitive shortcuts {{{2
 :nnoremap <leader>gb :Gblame<CR>
 
-" Lawrencium shortcuts {{{2
-:nnoremap <leader>hb :Hgannotate<CR>
 
 " Tab switching {{{2
 :nnoremap <leader>1 1gt
@@ -261,6 +259,27 @@ let NERDTreeShowHidden=1
 " Enable syntax highlighting for flow
 let g:javascript_plugin_flow = 1
 
+" ale {{{2
+" Configure error and warning formatting
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+let g:ale_lint_on_enter = 1 " Lint files on open
+let g:ale_sign_column_always = 1 " Keep column open by default
+
+" Only run in js
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_linters_explicit = 1
+
+" Run prettier
+let g:ale_fixers = {
+  \ 'javascript': ['eslint']
+  \ }
+
 " vim-jsx {{{2
 " Enable jsx highlighting for .js files
 let g:jsx_ext_required = 0
@@ -306,6 +325,9 @@ augroup configgroup
 
     " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+    " Autoformat js {{{2
+    autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
     " Python folding {{{2
     au FileType python setlocal foldmethod=indent

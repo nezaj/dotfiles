@@ -17,7 +17,7 @@ export PGDATA=/usr/local/var/postgres
 # Tools Path
 LOCAL_TOOLBELT="/usr/local/bin"
 NODE_PATH="./node_modules/.bin"
-TOOLS_PATH="$LOCAL_TOOLBELT:$NODE_PATH"
+TOOLS_PATH="$NODE_PATH:$LOCAL_TOOLBELT"
 
 # Extra Paths
 HEROKU_TOOLBELT="/usr/local/heroku/bin"
@@ -26,12 +26,6 @@ EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 
 # Export actual path
 export PATH="$TOOLS_PATH:$EXTRAS_PATH"
-
-# Python {{{1
-# Configures tools and settings for javascript development
-
-## Initialize pyenv {{{2
-eval "$(pyenv init -)"
 
 # Javascript {{{1
 # Configures tools and settings for javascript development
@@ -51,6 +45,3 @@ function jcurl {
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
