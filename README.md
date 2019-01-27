@@ -23,8 +23,6 @@ brew install editorconfig
 ```
 brew install python
 pip install ipython
-pip install virtualenv
-pip install virtualenvwrapper
 ```
 
 ### Java setup
@@ -65,6 +63,8 @@ And we're done. Huzzah!
 
 ### Vim plugins
 * [Ack][Ack] -- Grep across project directory
+* [Ale][Ale] -- Aysnc linting, requires Vim8+
+* [aysncrun.vim][asyncrun] -- Run shell commands in background, requires Vim8+
 * [Autoclose][Autoclose] -- Autoclose parenthesis, curly braces, etc.
 * [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
 * [Editorconfig-vim][editconfig] -- Per project editor configurations
@@ -101,6 +101,8 @@ git submodule update --init --recursive
 ```
 
 [Ack]: https://github.com/mileszs/ack.vim.git
+[Ale]: https://github.com/w0rp/ale
+[asyncrun]: https://github.com/skywind3000/asyncrun.vim
 [Autoclose]: https://github.com/Townk/vim-autoclose
 [editconfig]: https://github.com/editorconfig/editorconfig-vim
 [CtrlP]: https://github.com/kien/ctrlp.vim.git
