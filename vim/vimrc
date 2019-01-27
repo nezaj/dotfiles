@@ -1,5 +1,9 @@
 " vim:foldmethod=marker:foldlevel=0
 
+" Nezaj's vimrc -- my magic sauce for getting things done!
+" -----------------------------------------------------------------------------
+" TODO: Add comprehensive autocomplete for js w/o performance issues
+
 " Vim settings {{{1
 " Important {{{2
 set nocompatible                        " Enable Vim features
