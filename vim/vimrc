@@ -128,8 +128,11 @@ set winheight=999
 " Focus fold {{{2
 :nnoremap <leader>f zMzA
 
-" Autoformat to textwidth, useful for text documents {{{2
-:nnoremap <leader>F :ALEFix<CR><CR>
+" Run Prettier for js {{{2
+:nnoremap <leader>F :AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %<CR><CR>
+
+" Toggle lint errors/warnings
+:nnoremap <leader>A :ALEToggle<CR><CR>
 
 " Swap to previous file {{{2
 :nnoremap ;; <c-^>
@@ -270,7 +273,7 @@ let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-let g:ale_lint_on_enter = 1 " Lint files on open
+let g:ale_lint_on_enter = 0 " Don't lint files on open
 let g:ale_sign_column_always = 1 " Keep column open by default
 
 " Only run in js
@@ -322,16 +325,12 @@ augroup configgroup
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
     autocmd FileType javascript,jsx setlocal ts=2 sts=2 sw=2 et
-    autocmd FileType javascript.jsx setlocal ts=2 sts=2 sw=2 et
     autocmd FileType css setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
 
     " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-    " Autoformat js {{{2
-    autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
     " Python folding {{{2
     au FileType python setlocal foldmethod=indent
