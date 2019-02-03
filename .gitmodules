@@ -41,3 +41,6 @@
 [submodule "vim/bundle/asyncrun"]
 	path = vim/bundle/asyncrun
 	url = https://github.com/skywind3000/asyncrun.vim
+[submodule "vim/bundle/editorconfig-vim"]
+	path = vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
