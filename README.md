@@ -24,6 +24,12 @@ brew install python
 pip install ipython
 ```
 
+### JS setup
+```
+brew install node
+brew install yarn
+```
+
 ### Java setup
 ```
 brew tap caskroom/cask
@@ -43,6 +49,14 @@ git submodule update --init --recursive
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
+```
+
+### Apple setup
+```
+# make keys repeat properly
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 ```
 
 ### Additional tools

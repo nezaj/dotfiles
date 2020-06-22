@@ -2,7 +2,6 @@
 
 " Nezaj's vimrc -- my magic sauce for getting things done!
 " -----------------------------------------------------------------------------
-" TODO: Add comprehensive autocomplete for js w/o performance issues
 
 " Vim settings {{{1
 " Important {{{2
@@ -198,6 +197,8 @@ set winheight=999
 "}}} End section
 
 " Pathogen {{{1
+" Seems like vim-plug is the rage these days but I haven't gotten around
+" to updating yet, perhaps will get to it eventually
 call pathogen#infect()
 call pathogen#incubate()
 
@@ -276,13 +277,13 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 let g:ale_lint_on_enter = 0 " Don't lint files on open
 let g:ale_sign_column_always = 1 " Keep column open by default
 
-" Only run in js
+" Linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 let g:ale_linters_explicit = 1
 
-" Run prettier
+" Fixers
 let g:ale_fixers = {
   \ 'javascript': ['eslint']
   \ }
@@ -324,7 +325,7 @@ augroup configgroup
 
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
-    autocmd FileType javascript,jsx setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType javascript,jsx,tsx setlocal ts=2 sts=2 sw=2 et
     autocmd FileType css setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
@@ -337,8 +338,8 @@ augroup configgroup
     au FileType python setlocal foldlevel=0
 
     " Javascript folding {{{2
-    au FileType javascript,jsx setlocal foldmethod=syntax
-    au FileType javascript,jsx setlocal foldlevel=1
+    au FileType javascript,jsx,tsx setlocal foldmethod=syntax
+    au FileType javascript,jsx,tsx setlocal foldlevel=1
 
     " Markdown spell {{{2
     au FileType markdown setlocal spell spelllang=en_us
