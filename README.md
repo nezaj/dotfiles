@@ -12,7 +12,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 ### Dependencies
 ```
-brew install tmux
 brew install ack
 brew install ag
 brew install editorconfig
@@ -35,6 +34,14 @@ brew install yarn
 brew tap caskroom/cask
 brew install brew-cask
 brew cask install java
+```
+
+### Tmux setup
+```
+brew install tmux
+cd ~/dotfiles
+git submodule init
+git submodule update --init --recursive
 ```
 
 ### Vim setup
@@ -73,6 +80,27 @@ Finally, add all the symlinks
 
 And we're done. Huzzah!
 
+### Tmux plugins
+* [TPM][TPM] -- Tmux plugin manager
+* [Resurrect][resurrect] -- Save and restore tmux sessions
+* [Continuum][continuum] -- Continuously save tmux sessions
+* [Yank][yank] -- Enable tmux copy
+* [Copycat][copycat] -- Better tmux search
+
+
+If you want to add a new plugin use the following command
+```
+git submodule add [PLUGIN_GIT_REPO] tmux/plugin/[PLUGIN_NAME] cat .gitmodules
+```
+
+To delete a plugin use the following commands
+```
+git submodule deinit tmux/plugin/[PLUGIN_NAME]
+git rm tmux/plugin/[PLUGIN_NAME]
+git rm --cached tmux/plugin/[PLUGIN_NAME]
+rm -rf .git/modules/tmux/plugin/[PLUGIN_NAME]
+```
+
 ### Vim plugins
 * [Ack][Ack] -- Grep across project directory
 * [Ale][Ale] -- Aysnc linting, requires Vim8+
@@ -102,6 +130,8 @@ git rm --cached vim/bundle/[PLUGIN_NAME]
 rm -rf .git/modules/vim/bundle/[PLUGIN_NAME]
 ```
 
+Additionally add or delete the plugin from `.tmux.conf`
+
 ### Updating dotfiles on machine
 ```
 cd ~/dotfiles
@@ -111,6 +141,12 @@ git submodule update --init --recursive
 . symlinks.sh
 . ~/.profile
 ```
+
+[TPM]: https://github.com/tmux-plugins/tpm
+[resurrect]: https://github.com/tmux-plugins/tmux-resurrect
+[continuum]: https://github.com/tmux-plugins/tmux-continuum
+[yank]: https://github.com/tmux-plugins/tmux-yank
+[copycat]: https://github.com/tmux-plugins/tmux-copycat
 
 [Ack]: https://github.com/mileszs/ack.vim.git
 [Ale]: https://github.com/w0rp/ale
