@@ -12,7 +12,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 ### Dependencies
 ```
-brew install reattach-to-user-namespace
 brew install tmux
 brew install ack
 brew install ag
@@ -49,7 +48,6 @@ cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 ### Additional tools
 ```
 brew install jq  # CLI for json parsing
-brew install tidy-html5  # html static analysis
 brew install httpie  # User-friendly cURL replacement
 pip install grip  # Github-flavored markdown previewer
 ```
