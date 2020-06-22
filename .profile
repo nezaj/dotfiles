@@ -1,7 +1,7 @@
 # vim:foldmethod=marker:foldlevel=0
 
 # Environment variables  {{{1
-## Export frequently edited conf/rc files {{{2
+## Export frequently edited conf/rc files
 export MYZSH=~/.zshrc
 export MYPROFILE=~/.profile
 export MYPRIVATE=~/.private_profile
@@ -9,11 +9,10 @@ export MYVIMRC=~/.vimrc
 export MYTMUXCONF=~/.tmux.conf
 export MYTODOS=~/todos.md
 
-## Fix PGDATA {{{2
+## Fix PGDATA
 export PGDATA=/usr/local/var/postgres
 
-## Customize PATH {{{2
-
+## Customize PATH
 # Tools Path
 LOCAL_TOOLBELT="/usr/local/bin"
 NODE_PATH="./node_modules/.bin"
@@ -28,15 +27,30 @@ EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 export PATH="$TOOLS_PATH:$EXTRAS_PATH"
 
 # Javascript {{{1
-# Configures tools and settings for javascript development
-
-## Node Version Manager (NVM) {{{2
+## Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# Aliases {{{1
+# fzf {{{1
+# Load fzf configs (assuming fzf installed via brew)
+if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  source /usr/local/opt/fzf/shell/completion.zsh
+fi
 
-# Pretty print json curls {{{2
+# fzf + ag configuration
+if _has fzf && _has ag; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi
+
+# Aliases {{{1
+# Pretty print json curls
 function jcurl {
     curl "$@" | jq '.'
 }

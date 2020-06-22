@@ -1,9 +1,6 @@
 [submodule "vim/bundle/ack"]
     path = vim/bundle/ack
     url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/ctrlp"]
-    path = vim/bundle/ctrlp
-    url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/nerdtree"]
     path = vim/bundle/nerdtree
     url = https://github.com/scrooloose/nerdtree.git
@@ -26,9 +23,6 @@
 [submodule "vim/bundle/vim-jinja"]
 	path = vim/bundle/vim-jinja
 	url = https://github.com/mitsuhiko/vim-jinja
-[submodule "vim/bundle/vim-jsx"]
-	path = vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
@@ -59,3 +53,12 @@
 [submodule "tmux/plugins/tmux-copycat"]
 	path = tmux/plugins/tmux-copycat
 	url = https://github.com/tmux-plugins/tmux-copycat
+[submodule "vim/bundle/vim-jsx-pretty"]
+	path = vim/bundle/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/bundle/vim-rainbow"]
+	path = vim/bundle/vim-rainbow
+	url = https://github.com/frazrepo/vim-rainbow

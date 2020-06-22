@@ -26,7 +26,8 @@ pip install ipython
 ### JS setup
 ```
 brew install node
-brew install yarn
+npm i -g prettier
+npm i -g yarn
 ```
 
 ### Java setup
@@ -106,7 +107,7 @@ rm -rf .git/modules/tmux/plugin/[PLUGIN_NAME]
 * [Ale][Ale] -- Aysnc linting, requires Vim8+
 * [aysncrun.vim][asyncrun] -- Run shell commands in background, requires Vim8+
 * [Autoclose][Autoclose] -- Autoclose parenthesis, curly braces, etc.
-* [Ctrlp][Ctrlp] -- Fuzzy file searching across project directory
+* [fzf][fzf] -- Fuzzy file searching across project directory
 * [Editorconfig-vim][editconfig] -- Per project editor configurations
 * [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
 * [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
@@ -115,7 +116,8 @@ rm -rf .git/modules/tmux/plugin/[PLUGIN_NAME]
 * [TComment][TComment] -- Comment code super easily
 * [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
 * [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
-* [vim-jsx][vim-jsx] -- Syntax highlighting for jsx files
+* [vim-jsx-pretty][vim-jsx-pretty] -- Syntax highlighting for jsx files
+* [vim-rainbow][vim-rainbow] -- Rainbow brackets and parenthesis
 
 If you want to add a new plugin use the following command
 ```
@@ -153,7 +155,7 @@ git submodule update --init --recursive
 [asyncrun]: https://github.com/skywind3000/asyncrun.vim
 [Autoclose]: https://github.com/Townk/vim-autoclose
 [editconfig]: https://github.com/editorconfig/editorconfig-vim
-[CtrlP]: https://github.com/kien/ctrlp.vim.git
+[fzf]: https://github.com/junegunn/fzf.vim
 [Fugitive]: https://github.com/tpope/vim-fugitive
 [LightLine]: https://github.com/itchyny/lightline.vim
 [NerdTree]: https://github.com/scrooloose/nerdtree.git
@@ -161,4 +163,5 @@ git submodule update --init --recursive
 [TComment]: https://github.com/tomtom/tcomment_vim
 [vim-jinja]: https://github.com/mitsuhiko/vim-jinja
 [vim-javascript]: https://github.com/pangloss/vim-javascript
-[vim-jsx]: https://github.com/mxw/vim-jsx
+[vim-jsx-pretty]: https://github.com/MaxMEllon/vim-jsx-pretty
+[vim-rainbow]: https://github.com/frazrepo/vim-rainbow

@@ -133,9 +133,6 @@ set winheight=999
 " Toggle lint errors/warnings
 :nnoremap <leader>A :ALEToggle<CR><CR>
 
-" Swap to previous file {{{2
-:nnoremap ;; <c-^>
-
 " Quick newline {{{2
 :nnoremap <CR> o<Esc>
 
@@ -167,8 +164,9 @@ set winheight=999
 :nnoremap <leader>x :tabclose<CR>
 :nnoremap <leader>t :0tabnew<CR>
 
-" Easy CtrlP {{{2
-:nmap <leader>p <C-p>
+" Easy fzf {{{2
+nmap ; :Buffers<CR>
+nmap <leader>p :Files<CR>
 
 " Toggle paste mode {{{2
 :nnoremap <leader>P :set invpaste!<CR>
@@ -210,6 +208,9 @@ call pathogen#incubate()
 " Thanks:  http://stackoverflow.com/a/19314347
 filetype plugin indent on
 
+" Set path for fzf
+set rtp+=/usr/local/opt/fzf
+
 " Use Omni-Completion
 set omnifunc=syntaxcomplete#Complete
 
@@ -223,17 +224,6 @@ if executable('ag')
   " Still using ack.vim though due to github licensing issues
   " See: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
   let g:ackprg = 'ag -s -H --nocolor --nogroup --column --vimgrep'
-endif
-
-" CtrlP {{{2
-" Ignore these directories and files when using ctrlp
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|_vendor|env)$',
-    \ 'file': '\v\.(swp|pyc|min\.css|min\.js)$'
-    \ }
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " Lightline {{{2
@@ -288,10 +278,11 @@ let g:ale_fixers = {
   \ 'javascript': ['eslint']
   \ }
 
-" vim-jsx {{{2
-" Enable jsx highlighting for .js files
-let g:jsx_ext_required = 0
-"}}} End section
+
+" vim-jsx-pretty {{{2
+" Colorful style
+let g:vim_jsx_pretty_colorful_config = 1
+
 
 " Custom functions {{{1
 " Strip whitespace and save cursor position {{{2
@@ -341,8 +332,8 @@ augroup configgroup
     au FileType javascript,jsx,tsx setlocal foldmethod=syntax
     au FileType javascript,jsx,tsx setlocal foldlevel=1
 
-    " Markdown spell {{{2
-    au FileType markdown setlocal spell spelllang=en_us
+    " Rainbow-ify parens/brackets for selected file types {{{2
+    au FileType javascript,javascriptreact,jsx,tsx,python,css,ruby,html,htmljinja call rainbow#load()
 
     " Enable vim-jinja highlighting for .jinja files {{{2
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
