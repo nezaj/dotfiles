@@ -74,6 +74,8 @@ brew install httpie  # User-friendly cURL replacement
 pip install grip  # Github-flavored markdown previewer
 ```
 
+Install [Visual Studio](https://code.visualstudio.com/docs/setup/mac)
+
 Finally, add all the symlinks
 ```
 . symlinks.sh

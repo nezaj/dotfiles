@@ -1,0 +1,45 @@
+{
+    "python.pythonPath": "/usr/local/bin/python3",
+    "vim.leader": ",",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>", "\\"],
+          "commands": ["workbench.action.splitEditor"]
+        },
+        {
+          "before": ["<leader>", "w"],
+          "commands": ["workbench.action.files.save"]
+        },
+        {
+          "before": ["<leader>", "q"],
+          "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["<leader>", "c"],
+            "commands": [
+                "editor.action.commentLine",
+            ],
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": [
+                "revealInExplorer",
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "c"],
+            "commands": [
+                "editor.action.commentLine",
+                "extension.vim_escape"
+            ],
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+}

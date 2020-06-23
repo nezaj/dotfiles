@@ -22,3 +22,7 @@ ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 
 # Zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+
+# VSCode
+ln -sf ~/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -sf ~/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
