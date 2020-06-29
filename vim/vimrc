@@ -333,7 +333,7 @@ augroup configgroup
     au FileType javascript,jsx,tsx setlocal foldlevel=1
 
     " Rainbow-ify parens/brackets for selected file types {{{2
-    au FileType javascript,javascriptreact,jsx,tsx,python,css,ruby,html,htmljinja call rainbow#load()
+    au FileType javascriptreact,jsx call rainbow#load()
 
     " Enable vim-jinja highlighting for .jinja files {{{2
     autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
