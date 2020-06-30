@@ -29,7 +29,7 @@
         "commands": ["workbench.action.files.save"]
     },
     {
-        "key": ", t", 
+        "key": "<leader> t", 
         "command": "workbench.action.toggleSidebarVisibility", 
         "when": "!editorTextFocus"
     },

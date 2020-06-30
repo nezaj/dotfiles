@@ -28,6 +28,7 @@ pip install ipython
 brew install node
 npm i -g prettier
 npm i -g yarn
+npm i -g create-react-app
 ```
 
 ### Java setup
