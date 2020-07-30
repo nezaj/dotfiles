@@ -9,3 +9,6 @@ vim/vimrc.private*
 
 # Private tmux
 tmux/.tmux.private*
+
+# Deritus
+.DS_STORE

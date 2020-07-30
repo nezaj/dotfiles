@@ -56,5 +56,6 @@
   },
   "[css]": {
     "editor.formatOnSave": true
-  }
+  },
+  "window.zoomLevel": 0
 }

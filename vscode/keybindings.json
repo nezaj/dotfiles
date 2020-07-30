@@ -88,5 +88,5 @@
         "key": "ctrl+k",
         "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
-    }
+    },
 ]
