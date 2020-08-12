@@ -33,9 +33,8 @@ npm i -g create-react-app
 
 ### Java setup
 ```
-brew tap caskroom/cask
-brew install brew-cask
-brew cask install java
+brew install java
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 ```
 
 ### Tmux setup

@@ -23,8 +23,11 @@ HEROKU_TOOLBELT="/usr/local/heroku/bin"
 ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 
+# Java
+JDK_PATH="/usr/local/opt/openjdk/bin"
+
 # Export actual path
-export PATH="$TOOLS_PATH:$EXTRAS_PATH"
+export PATH="$TOOLS_PATH:$EXTRAS_PATH:$JDK_PATH"
 
 # Javascript {{{1
 ## Node Version Manager (NVM)
