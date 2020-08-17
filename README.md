@@ -35,6 +35,10 @@ npm i -g create-react-app
 ```
 brew install java
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+# For clojure
+brew install clojure
+brew install leiningen
 ```
 
 ### Tmux setup
