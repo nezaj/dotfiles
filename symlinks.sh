@@ -29,3 +29,6 @@ ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 
 # Emacs
 ln -sf ~/dotfiles/emacs ~/.emacs.d
+
+# Lein
+ln -sf ~/dotfiles/lein ~/.lein
