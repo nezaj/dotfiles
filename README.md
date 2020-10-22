@@ -88,12 +88,7 @@ Finally, add all the symlinks
 And we're done. Huzzah!
 
 ### Tmux plugins
-* [TPM][TPM] -- Tmux plugin manager
-* [Resurrect][resurrect] -- Save and restore tmux sessions
-* [Continuum][continuum] -- Continuously save tmux sessions
-* [Yank][yank] -- Enable tmux copy
-* [Copycat][copycat] -- Better tmux search
-
+For the list of installed tmux plugins run `ls ~/dotfiles/.git/modules/tmux/plugin`
 
 If you want to add a new plugin use the following command
 ```
@@ -106,24 +101,11 @@ git submodule deinit tmux/plugin/[PLUGIN_NAME]
 git rm tmux/plugin/[PLUGIN_NAME]
 git rm --cached tmux/plugin/[PLUGIN_NAME]
 rm -rf .git/modules/tmux/plugin/[PLUGIN_NAME]
+rm -rf tmux/plugin/[PLUGIN_NAME]
 ```
 
 ### Vim plugins
-* [Ack][Ack] -- Grep across project directory
-* [Ale][Ale] -- Aysnc linting, requires Vim8+
-* [aysncrun.vim][asyncrun] -- Run shell commands in background, requires Vim8+
-* [Autoclose][Autoclose] -- Autoclose parenthesis, curly braces, etc.
-* [fzf][fzf] -- Fuzzy file searching across project directory
-* [Editorconfig-vim][editconfig] -- Per project editor configurations
-* [Fugitive][Fugitive]  -- Git wrapper inside Vim, I only use this for Gblame
-* [Lightline][Lightline] -- Like PowerLine but no need to download special fonts
-* [NerdTree][NerdTree] -- File directory browser
-* [SuperTab][SuperTab] -- Better tab completion behavior
-* [TComment][TComment] -- Comment code super easily
-* [vim-jinja][vim-jinja] -- Syntax highlighting for jinja2 templates
-* [vim-javascript][vim-javascript] -- Syntax highlighting for javascript
-* [vim-jsx-pretty][vim-jsx-pretty] -- Syntax highlighting for jsx files
-* [vim-rainbow][vim-rainbow] -- Rainbow brackets and parenthesis
+For the list of installed vim plugins run `ls ~/dotfiles/.git/modules/vim/bundle`
 
 If you want to add a new plugin use the following command
 ```
@@ -136,6 +118,7 @@ git submodule deinit vim/bundle/[PLUGIN_NAME]
 git rm vim/bundle/[PLUGIN_NAME]
 git rm --cached vim/bundle/[PLUGIN_NAME]
 rm -rf .git/modules/vim/bundle/[PLUGIN_NAME]
+rm -rf vim/bundle/[PLUGIN_NAME]
 ```
 
 Additionally add or delete the plugin from `.tmux.conf`
@@ -150,24 +133,5 @@ git submodule update --init --recursive
 . ~/.profile
 ```
 
-[TPM]: https://github.com/tmux-plugins/tpm
-[resurrect]: https://github.com/tmux-plugins/tmux-resurrect
-[continuum]: https://github.com/tmux-plugins/tmux-continuum
-[yank]: https://github.com/tmux-plugins/tmux-yank
-[copycat]: https://github.com/tmux-plugins/tmux-copycat
-
-[Ack]: https://github.com/mileszs/ack.vim.git
-[Ale]: https://github.com/w0rp/ale
-[asyncrun]: https://github.com/skywind3000/asyncrun.vim
-[Autoclose]: https://github.com/Townk/vim-autoclose
-[editconfig]: https://github.com/editorconfig/editorconfig-vim
-[fzf]: https://github.com/junegunn/fzf.vim
-[Fugitive]: https://github.com/tpope/vim-fugitive
-[LightLine]: https://github.com/itchyny/lightline.vim
-[NerdTree]: https://github.com/scrooloose/nerdtree.git
-[SuperTab]: https://github.com/ervandew/supertab]
-[TComment]: https://github.com/tomtom/tcomment_vim
-[vim-jinja]: https://github.com/mitsuhiko/vim-jinja
-[vim-javascript]: https://github.com/pangloss/vim-javascript
-[vim-jsx-pretty]: https://github.com/MaxMEllon/vim-jsx-pretty
-[vim-rainbow]: https://github.com/frazrepo/vim-rainbow
+### Known issues
+* 10/22/20 -- There's an issue between `vim-fireplace` and `vim-cljfmt` where vim-cljfmt is clearing the buffer. The current fix is reverting `vim-fireplace` to commit `8a4f232e9844d73adb41eb29148f0c046c730f98`
