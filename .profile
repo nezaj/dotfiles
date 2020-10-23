@@ -56,6 +56,8 @@ function jcurl {
     curl "$@" | jq '.'
 }
 
+alias ctags="`brew --prefix`/bin/ctags"
+
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile

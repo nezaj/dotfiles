@@ -83,3 +83,6 @@
 [submodule "vim/bundle/vim-prettier"]
 	path = vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
+[submodule "vim/bundle/vim-autotag"]
+	path = vim/bundle/vim-autotag
+	url = https://github.com/craigemery/vim-autotag

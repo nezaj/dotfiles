@@ -31,4 +31,7 @@ ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 ln -sf ~/dotfiles/emacs ~/.emacs.d
 
 # Lein
-ln -sf ~/dotfiles/lein ~/.lein
+ln -sf ~/dotfiles/lein/profiles.clj ~/.lein/profiles.clj
+
+# Ctags
+ln -sf ~/dotfiles/ctags ~/.ctags

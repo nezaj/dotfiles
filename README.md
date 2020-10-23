@@ -15,6 +15,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install ack
 brew install ag
 brew install editorconfig
+brew install ctags
 ```
 
 ### Python setup
@@ -74,7 +75,6 @@ defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 ### Additional tools
 ```
 brew install jq  # CLI for json parsing
-brew install httpie  # User-friendly cURL replacement
 pip install grip  # Github-flavored markdown previewer
 ```
 
