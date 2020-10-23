@@ -134,4 +134,6 @@ git submodule update --init --recursive
 ```
 
 ### Known issues
-* 10/22/20 -- There's an issue between `vim-fireplace` and `vim-cljfmt` where vim-cljfmt is clearing the buffer. The current fix is reverting `vim-fireplace` to commit `8a4f232e9844d73adb41eb29148f0c046c730f98`
+* 10/22/20 -- There's an issue between `vim-fireplace` and `vim-cljfmt` where vim-cljfmt is clearing the buffer. The current fix is reverting `vim-fireplace` to commit `8a4f232e9844d73adb41eb29148f0c046c730f98` [See issue][cljfmt-issue]
+
+[cljfmt-issue]: https://github.com/venantius/vim-cljfmt/issues/48
