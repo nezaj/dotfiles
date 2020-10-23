@@ -127,9 +127,6 @@ set winheight=999
 " Focus fold {{{2
 :nnoremap <leader>f zMzA
 
-" Run Prettier for js {{{2
-:nnoremap <leader>F :AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %<CR><CR>
-
 " Toggle lint errors/warnings
 :nnoremap <leader>A :ALEToggle<CR><CR>
 
@@ -282,7 +279,9 @@ let g:ale_fixers = {
 " vim-jsx-pretty {{{2
 " Colorful style
 let g:vim_jsx_pretty_colorful_config = 1
-
+" vim-prettier {{{2
+" Run prettier async
+let g:prettier#exec_cmd_async = 1
 
 " Custom functions {{{1
 " Strip whitespace and save cursor position {{{2
@@ -344,6 +343,9 @@ augroup configgroup
 
     " Save whenever leaving a buffer or exiting vim {{{2
     au FocusLost,WinLeave * :silent! w
+
+    " Run prettier async on save for front-end files
+    au BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
     " Close the Omni-Completion tip window when a selection is made {{{2
     " These lines close it on movement in insert mode or when leaving insert mode
