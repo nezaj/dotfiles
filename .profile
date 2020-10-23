@@ -57,6 +57,7 @@ function jcurl {
 }
 
 alias ctags="`brew --prefix`/bin/ctags"
+alias makectags="ctags -R -f ./.git/tags ."
 
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
