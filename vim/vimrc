@@ -306,7 +306,6 @@ function! MyFugitive()
   endif
   return ''
 endfunction
-
 " }}}
 
 " Autocommands {{{1
@@ -331,6 +330,19 @@ augroup configgroup
     " Javascript folding {{{2
     au FileType javascript,jsx,tsx setlocal foldmethod=syntax
     au FileType javascript,jsx,tsx setlocal foldlevel=1
+
+    " Clojure send to repl {{{2
+    " Send form to repl (visually selects form, yanks and saves to v buffer,
+    " sends to nearest repl pane in tmux via vimux
+    au BufEnter *.cljs,*.clj,*.cljs.hl nmap sf vaf"vy:call VimuxRunCommand(@v)<CR>
+
+    " Send block to repl (highest form before empty line). Similar ideas as
+    " above but for some reason need to pass in 0 to prevent an additional
+    " return sent to runner
+    au BufEnter *.cljs,*.clj,*.cljs.hl nmap sb vip"vy:call VimuxRunCommand(@v, 0)<CR>
+
+    " Send the currently visually selected text to the repl
+    au BufEnter *.cljs,*.clj,*.cljs.hl vnoremap <leader>sr "vy:call VimuxRunCommand(@v)<CR>
 
     " Rainbow-ify parens/brackets for selected file types {{{2
     au FileType javascriptreact,jsx call rainbow#load()
