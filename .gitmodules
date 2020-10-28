@@ -92,3 +92,9 @@
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = https://github.com/benmills/vimux
+[submodule "vim/bundle/vim-action-ag"]
+	path = vim/bundle/vim-action-ag
+	url = https://github.com/Chun-Yang/vim-action-ag
+[submodule "vim/bundle/ag"]
+	path = vim/bundle/ag
+	url = https://github.com/epmatsw/ag.vim

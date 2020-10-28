@@ -2,7 +2,6 @@
 /lib/
 /log/
 /tmp/
-/env/
 /.git/
 *.db
 *.gitignore

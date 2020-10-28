@@ -14,7 +14,6 @@
 --ignore-dir=lib
 --ignore-dir=log
 --ignore-dir=tmp
---ignore-dir=env
 --ignore-dir=.git/
 --ignore-file=ext:db
 --ignore-file=ext:gitignore

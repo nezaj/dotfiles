@@ -174,7 +174,7 @@ nmap <leader>p :Files<CR>
 :nnoremap <leader>b <C-t>
 
 " Easy Ack/Ag {{{2
-:nnoremap <leader>a :Ack
+:nnoremap <leader>a :Ag
 
 " Easy commenting {{{2
 :nnoremap // :TComment<CR>
@@ -213,15 +213,13 @@ set rtp+=/usr/local/opt/fzf
 set omnifunc=syntaxcomplete#Complete
 
 " Plugins {{{1
-" Ack/Ag {{{2
+" Ag {{{2
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   " use ag over ack
-  " Still using ack.vim though due to github licensing issues
-  " See: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
-  let g:ackprg = 'ag -s -H --nocolor --nogroup --column --vimgrep'
+  let g:ackprg = 'ag --vimgrep'
 endif
 
 " Lightline {{{2
