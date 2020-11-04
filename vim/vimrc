@@ -113,7 +113,7 @@ set winheight=999
 :nnoremap ; :
 
 " Easy begin/end line navigation {{{2
-:nnoremap H 0
+:nnoremap H 0w
 :nnoremap L $
 
 " Easy clipboard copy {{{2
@@ -185,12 +185,21 @@ nmap <leader>p :Files<CR>
 :vnoremap c "_c
 :vnoremap p "_dP
 
-" Don't use arrow keys :) {{{2
+" Don't use arrow keys in normal mode :) {{{2
 :nnoremap <Left>  <NOP>
 :nnoremap <Right> <NOP>
 :nnoremap <Up>    <NOP>
 :nnoremap <Down>  <NOP>
-"}}} End section
+
+" In insert or command mode, move normally by using Ctrl {{{2
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
 
 " Pathogen {{{1
 " Seems like vim-plug is the rage these days but I haven't gotten around
@@ -283,6 +292,7 @@ let g:ale_fixers = {
 " vim-jsx-pretty {{{2
 " Colorful style
 let g:vim_jsx_pretty_colorful_config = 1
+
 " vim-prettier {{{2
 " Run prettier async
 let g:prettier#exec_cmd_async = 1
@@ -357,8 +367,8 @@ augroup configgroup
     " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
     au FocusGained,BufEnter * :silent! !
 
-    " Save whenever leaving a buffer or exiting vim {{{2
-    au FocusLost,WinLeave * :silent! w
+    " Save whenever switching between windows and buffers {{{2
+    au FocusLost,BufLeave,WinLeave * :silent! w
 
     " Run prettier async on save for front-end files
     au BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync

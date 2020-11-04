@@ -65,9 +65,6 @@
 [submodule "vim/bundle/vim-fireplace"]
 	path = vim/bundle/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace
-[submodule "vim/bundle/vim-salve"]
-	path = vim/bundle/vim-salve
-	url = https://github.com/tpope/vim-salve
 [submodule "vim/bundle/vim-clojure-static"]
 	path = vim/bundle/vim-clojure-static
 	url = https://github.com/guns/vim-clojure-static
