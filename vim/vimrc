@@ -135,8 +135,8 @@ set winheight=999
 :nnoremap <CR> o<Esc>
 
 " Toggle NERDTree {{{2
-:nnoremap <leader>nt :NERDTreeToggle<return>
-
+:nnoremap <leader>nt :NERDTree<CR>
+"
 " Toggle show formatting {{{2
 :nnoremap <leader>l :set list!<CR>
 
@@ -248,6 +248,10 @@ let NERDTreeIgnore = [
 
 " I do want to see dotfiles (like .gitignore)
 let NERDTreeShowHidden=1
+
+" Pretty NERDTree
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " vim-javascript {{{2
 " Enable syntax highlighting for flow
