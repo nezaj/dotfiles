@@ -93,8 +93,6 @@ set winheight=999
 :nnoremap <leader>q :q!<CR>
 :nnoremap <leader>zz :qa!<CR>
 
-" Reload all windows in all tabs {{{2
-:nnoremap <leader>r :tabdo exec 'windo e'<cr>
 
 " Reload vimrc file {{{2
 :nnoremap <silent><leader>sv :so $MYVIMRC<CR>
@@ -121,6 +119,9 @@ set winheight=999
 
 " Easy clipboard paste {{{2
 :nnoremap <silent><leader>v :r !pbpaste<CR><CR>
+
+" Easy grep under cursor {{{2
+:nmap <silent><leader>r viw"ry:Ag! <C-R>r<CR><CR>
 
 " Easy code folding {{{2
 :nnoremap <Space> za
