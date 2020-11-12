@@ -15,8 +15,12 @@ export PGDATA=/usr/local/var/postgres
 ## Customize PATH
 # Tools Path
 LOCAL_TOOLBELT="/usr/local/bin"
+
+# (TODO): Conditionally add this to PATH to handle if PG isn't installed
+PG_PATH="/Applications/Postgres.app/Contents/Versions/latest/bin"
+
 NODE_PATH="./node_modules/.bin"
-TOOLS_PATH="$NODE_PATH:$LOCAL_TOOLBELT"
+TOOLS_PATH="$NODE_PATH:$PG_PATH:$LOCAL_TOOLBELT"
 
 # Extra Paths
 HEROKU_TOOLBELT="/usr/local/heroku/bin"

@@ -95,6 +95,7 @@ pip install grip  # Github-flavored markdown previewer
 ```
 
 Install [Visual Studio](https://code.visualstudio.com/docs/setup/mac)
+Install [Postgress.app](https://postgresapp.com/)
 
 Finally, add all the symlinks
 
