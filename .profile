@@ -60,6 +60,15 @@ function jcurl {
     curl "$@" | jq '.'
 }
 
+function gpm {
+    git add .
+    git commit -a -m "$*"
+    git push
+}
+
+alias gs="git status"
+alias gap="git add -p"
+
 alias ctags="`brew --prefix`/bin/ctags"
 alias makectags="ctags -R -f ./.git/tags ."
 
