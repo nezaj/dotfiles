@@ -298,6 +298,11 @@ let g:vim_jsx_pretty_colorful_config = 1
 " Run prettier async
 let g:prettier#exec_cmd_async = 1
 
+" vim-autotag {{{2
+" Use fork instead of spawn
+" See: https://github.com/craigemery/vim-autotag/commit/066ad1b04e2d82347869f536e323605f5eb709a7
+let g:autotagStartMethod='fork'
+
 " Custom functions {{{1
 " Strip whitespace and save cursor position {{{2
 function! <SID>StripTrailingWhitespaces()
