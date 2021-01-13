@@ -25,7 +25,7 @@ brew install ctags
 
 ```
 brew install python
-pip install ipython
+pip3 install ipython
 ```
 
 ### JS setup

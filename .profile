@@ -38,6 +38,9 @@ export PATH="$TOOLS_PATH:$EXTRAS_PATH:$JDK_PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Python {{{1
+alias python=/usr/local/bin/python3
+
 # fzf {{{1
 # Load fzf configs (assuming fzf installed via brew)
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
