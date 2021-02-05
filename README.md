@@ -35,6 +35,7 @@ brew install node
 npm i -g prettier
 npm i -g yarn
 npm i -g create-react-app
+npm i -g live-server
 ```
 
 ### Java setup
