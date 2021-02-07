@@ -148,7 +148,6 @@ set winheight=999
 " Fugitive shortcuts {{{2
 :nnoremap <leader>gb :Gblame<CR>
 
-
 " Tab switching {{{2
 :nnoremap <leader>1 1gt
 :nnoremap <leader>2 2gt
@@ -201,6 +200,10 @@ cnoremap <C-h> <Left>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
+
+" Easy word swap {{{2
+:nnoremap <w dawbhP
+:nnoremap >w hdeep
 
 " Pathogen {{{1
 " Seems like vim-plug is the rage these days but I haven't gotten around
