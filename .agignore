@@ -1,18 +1,18 @@
 # General
-/lib/
-/log/
-/tmp/
-/.git/
+lib/
+log/
+tmp/
+.git/
 *.db
 *.gitignore
 
 # Javascript
-/node_modules/
-/dist/
-/build/
+node_modules/
+dist/
+build/
 
 # Python/Flask
-/.webassets-cache/
+.webassets-cache/
 .coverage
 coverage.xml
 pylintrc
@@ -22,5 +22,4 @@ pytests.xml
 /[._].*\.swp$/
 
 # Go projects
-/_vendor/
-
+_vendor/

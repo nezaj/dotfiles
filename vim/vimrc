@@ -202,8 +202,8 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
 " Easy word swap {{{2
-:nnoremap <w dawbhP
-:nnoremap >w hdeep
+:nnoremap <w dawbhPb
+:nnoremap >w hdeepb
 
 " Pathogen {{{1
 " Seems like vim-plug is the rage these days but I haven't gotten around
