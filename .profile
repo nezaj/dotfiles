@@ -30,8 +30,11 @@ EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 # Java
 JDK_PATH="/usr/local/opt/openjdk/bin"
 
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 # Export actual path
-export PATH="$TOOLS_PATH:$EXTRAS_PATH:$JDK_PATH"
+export PATH="$TOOLS_PATH:$EXTRAS_PATH:$JDK_PATH:$ANDROID_HOME"
 
 # Javascript {{{1
 ## Node Version Manager (NVM)
