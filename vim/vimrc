@@ -350,8 +350,10 @@ augroup configgroup
     au FileType python setlocal foldlevel=0
 
     " Javascript folding {{{2
-    au FileType javascript,jsx,tsx setlocal foldmethod=syntax
-    au FileType javascript,jsx,tsx setlocal foldlevel=1
+    " Temporarily disabling this since it seems to be breaking with
+    " vim-prettier
+    " au FileType javascript,jsx,tsx setlocal foldmethod=syntax
+    " au FileType javascript,jsx,tsx setlocal foldlevel=1
 
     " Clojure evaluate block {{{2
     au BufEnter *.cljs,*.clj,*.cljs.hl nmap cpb :Eval<CR>
