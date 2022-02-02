@@ -30,6 +30,8 @@ EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 # Java
 JDK_PATH="/usr/local/opt/openjdk/bin"
 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
 # Ruby
 RUBY_PATH="/usr/local/opt/ruby/bin"
 
@@ -37,12 +39,11 @@ RUBY_PATH="/usr/local/opt/ruby/bin"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # Export actual path
-export PATH="$TOOLS_PATH:$JDK_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
+export PATH="$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
 
 # Javascript {{{1
-## Node Version Manager (NVM)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+## Node Version Manager (fnm)
+[ -s "/usr/local/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
 
 # Python {{{1
 alias python=/usr/local/bin/python3
