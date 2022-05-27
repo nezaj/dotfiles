@@ -123,6 +123,9 @@ set winheight=999
 " Easy grep under cursor {{{2
 :nmap <silent><leader>r viw"ry:Ag! <C-R>r<CR><CR>
 
+" Reformat tabs/spaces {{{2
+:nmap <silent><leader>R gg=G
+
 " Easy code folding {{{2
 :nnoremap <Space> za
 
@@ -301,6 +304,7 @@ let g:vim_jsx_pretty_colorful_config = 1
 " Run prettier async
 let g:prettier#exec_cmd_async = 1
 
+
 " vim-autotag {{{2
 " Use fork instead of spawn
 " See: https://github.com/craigemery/vim-autotag/commit/066ad1b04e2d82347869f536e323605f5eb709a7
@@ -337,7 +341,7 @@ augroup configgroup
 
     " White Space Settings for different file types {{{2
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
-    autocmd FileType javascript,jsx,tsx setlocal ts=2 sts=2 sw=2 et
+    autocmd FileType javascript,jsx,tsx,typescriptreact setlocal ts=2 sts=2 sw=2 et
     autocmd FileType css setlocal ts=2 sts=2 sw=2 et
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
