@@ -26,9 +26,6 @@
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale
@@ -89,3 +86,9 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/epmatsw/ag.vim
+[submodule "vim/bundle/coc"]
+	path = vim/bundle/coc
+	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/bundle/vim/bundle/typescript-vim"]
+	path = vim/bundle/vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
