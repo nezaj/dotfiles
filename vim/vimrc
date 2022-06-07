@@ -229,6 +229,10 @@ set rtp+=/usr/local/opt/fzf
 set omnifunc=syntaxcomplete#Complete
 
 " Plugins {{{1
+
+" CoC {{{2
+" See after/plugin/coc.vim
+
 " Ag {{{2
 if executable('ag')
   " Use ag over grep
@@ -332,7 +336,6 @@ function! MyFugitive()
   endif
   return ''
 endfunction
-" }}}
 
 " Autocommands {{{1
 augroup configgroup
@@ -388,7 +391,10 @@ augroup configgroup
 
 augroup END
 
-" Source private vimrc {{{1
-if filereadable(expand("~/.vim/vimrc.private.after"))
-  source ~/.vim/vimrc.private.after
+" Source additional settings {{{1
+
+" CoC settings {{{2
+if filereadable(expand("~/.vim/after/plugin/coc.vim"))
+  source ~/.vim/after/plugin/coc.vim
 endif
+
