@@ -16,6 +16,7 @@ set fileencoding=utf-8                  " Files are written using utf-8
 set lazyredraw                          " Don't redraw on macros -- boosts performance
 set ttyfast                             " Faster redraws and smoother vim
 set modelines=1                         " Read the modeline at the top
+set signcolumn=yes                      " Show gutter at all times
 
 " Ignore these files in Vim's file explorer {{{2
 set wildignore+="/tmp/*,*.so,*.swp,*.zip
