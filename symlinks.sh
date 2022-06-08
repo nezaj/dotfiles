@@ -1,9 +1,6 @@
 # Ack
 ln -sf ~/dotfiles/.ackrc ~/.ackrc
 
-# Ag
-ln -sf ~/dotfiles/.agignore ~/.agignore
-
 # Environment settings
 ln -sf ~/dotfiles/.profile ~/.profile
 

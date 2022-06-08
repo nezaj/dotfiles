@@ -15,8 +15,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ### Dependencies
 
 ```
-brew install ack
-brew install ag
+brew install vim
+brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
+brew install burntsushi/ripgrep/ripgrep-bin
 brew install editorconfig
 brew install ctags
 ```
@@ -65,11 +66,11 @@ git submodule update --init --recursive
 
 ### Vim setup
 
+On first load install plugins
+
 ```
-brew install vim
-cd ~/dotfiles
-git submodule init
-git submodule update --init --recursive
+vim
+:PlugInstall
 ```
 
 ### Zsh setup
@@ -125,28 +126,6 @@ Taken directly from [tpm github](https://github.com/tmux-plugins/tpm)
 > All the plugins are installed to `~/.tmux/plugins/` so alternatively you can
 > find plugin directory there and remove it.
 
-### Vim plugins
-
-###### **(TODO): Migrate to using Vim-Plug, that seems to be the way to do things these days**
-
-For the list of installed vim plugins run `ls ~/dotfiles/.git/modules/vim/bundle`
-
-If you want to add a new plugin use the following command
-
-```
-git submodule add [PLUGIN_GIT_REPO] vim/bundle/[PLUGIN_NAME] cat .gitmodules
-```
-
-To delete a plugin use the following commands
-
-```
-git submodule deinit vim/bundle/[PLUGIN_NAME]
-git rm vim/bundle/[PLUGIN_NAME]
-git rm --cached vim/bundle/[PLUGIN_NAME]
-rm -rf .git/modules/vim/bundle/[PLUGIN_NAME]
-rm -rf vim/bundle/[PLUGIN_NAME]
-```
-
 ### Updating dotfiles on machine
 
 ```
@@ -159,6 +138,8 @@ git submodule update --init --recursive
 ```
 
 ### Known issues
+
+(TODO: May be out of date)
 
 -   10/22/20 -- There's an issue between `vim-fireplace` and `vim-cljfmt` where vim-cljfmt is clearing the buffer. The current fix is reverting `vim-fireplace` to commit `8a4f232e9844d73adb41eb29148f0c046c730f98` [See issue][cljfmt-issue]
 
