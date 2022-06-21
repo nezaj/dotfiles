@@ -206,6 +206,13 @@ cnoremap <C-l> <Right>
 :nnoremap >w hdeepb
 
 " Plug {{{1
+"Auto install Plug https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 
 " Language agnostic
@@ -219,7 +226,6 @@ Plug 'junegunn/fzf.vim'  " Fast fuzzy search for vim!
 Plug 'https://github.com/itchyny/lightline.vim'  " Pretty status bar
 Plug 'https://github.com/editorconfig/editorconfig-vim'  " Respect code style
 Plug 'https://github.com/mitsuhiko/vim-jinja'  " Syntax highlighting for jinja
-Plug 'metakirby5/codi.vim'  " Code scratchpad
 
 " Clojure
 Plug 'https://github.com/tpope/vim-fireplace', { 'for': 'clojure', 'commit': '8a4f232e9844d73adb41eb29148f0c046c730f98' } " REPL in vim
