@@ -24,7 +24,6 @@ set wildignore+="/tmp/*,*.so,*.swp,*.zip
 " Make clipboard the default register {{{2
 set clipboard=unnamed
 
-
 " Highlight column 81 {{{2
 set colorcolumn=81
 highlight ColorColumn ctermbg=234
@@ -220,7 +219,7 @@ Plug 'junegunn/fzf.vim'  " Fast fuzzy search for vim!
 Plug 'https://github.com/itchyny/lightline.vim'  " Pretty status bar
 Plug 'https://github.com/editorconfig/editorconfig-vim'  " Respect code style
 Plug 'https://github.com/mitsuhiko/vim-jinja'  " Syntax highlighting for jinja
-
+Plug 'metakirby5/codi.vim'  " Code scratchpad
 
 " Clojure
 Plug 'https://github.com/tpope/vim-fireplace', { 'for': 'clojure', 'commit': '8a4f232e9844d73adb41eb29148f0c046c730f98' } " REPL in vim
@@ -250,13 +249,17 @@ filetype plugin indent on
 " Set path for fzf
 set rtp+=/usr/local/opt/fzf
 
-" Use Omni-Completion
-set omnifunc=syntaxcomplete#Complete
-
 " Plugins {{{1
 
 " CoC {{{2
 let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint']
+
+" Better display for messages
+set cmdheight=2
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -407,24 +410,11 @@ augroup configgroup
     au FileType python setlocal foldmethod=indent
     au FileType python setlocal foldlevel=0
 
-    " Javascript folding {{{2
-    " Temporarily disabling this since it seems to be breaking with
-    " vim-prettier
-    " au FileType javascript,jsx,tsx setlocal foldmethod=syntax
-    " au FileType javascript,jsx,tsx setlocal foldlevel=1
-
     " Clojure evaluate block {{{2
     au BufEnter *.cljs,*.clj,*.cljs.hl nmap cpb :Eval<CR>
 
     " Rainbow-ify parens/brackets for selected file types {{{2
     au FileType javascriptreact,jsx call rainbow#load()
-
-    " Enable vim-jinja highlighting for .jinja files {{{2
-    autocmd BufNewFile,BufRead *.jinja set filetype=htmljinja
-
-    " Trigger autoread whenever I switch buffer or when focusing vim again {{{2
-    " Thanks: http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591#20418591
-    au FocusGained,BufEnter * :silent! !
 
     " Save whenever switching between windows and buffers {{{2
     au FocusLost,BufLeave,WinLeave * :silent! w
@@ -432,12 +422,6 @@ augroup configgroup
     " Run prettier async on save for front-end files
     au BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-    " Close the Omni-Completion tip window when a selection is made {{{2
-    " These lines close it on movement in insert mode or when leaving insert mode
-    " Thanks:
-    " http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
-    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-    autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " }}} End section
 
 augroup END
