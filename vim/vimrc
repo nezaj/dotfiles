@@ -9,7 +9,6 @@ set nocompatible                        " Enable Vim features
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
 let maplocalleader = ","                " Set <localleader> character
-colorscheme jellybeans                  " Favorite so far
 set term=screen-256color                " Prevent terminal bg color bleeding in
 set encoding=utf-8                      " Use utf-8 when reading files
 set fileencoding=utf-8                  " Files are written using utf-8
@@ -226,6 +225,7 @@ Plug 'junegunn/fzf.vim'  " Fast fuzzy search for vim!
 Plug 'https://github.com/itchyny/lightline.vim'  " Pretty status bar
 Plug 'https://github.com/editorconfig/editorconfig-vim'  " Respect code style
 Plug 'https://github.com/mitsuhiko/vim-jinja'  " Syntax highlighting for jinja
+Plug 'https://github.com/nanotech/jellybeans.vim' " colorscheme
 
 " Clojure
 Plug 'https://github.com/tpope/vim-fireplace', { 'for': 'clojure', 'commit': '8a4f232e9844d73adb41eb29148f0c046c730f98' } " REPL in vim
@@ -245,6 +245,8 @@ Plug 'https://github.com/prettier/vim-prettier'
 
 " Initialize plugin system
 call plug#end()
+
+colorscheme jellybeans
 
 " Enables filetype detection and loads indent files {{{2
 " Note: It's important this called after vim/bundle is added to vim's
