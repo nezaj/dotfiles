@@ -3,12 +3,55 @@
 " Nezaj's vimrc -- my magic sauce for getting things done!
 " -----------------------------------------------------------------------------
 
+" Plug {{{1
+"Auto install Plug https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+" Language agnostic
+Plug 'tpope/vim-fugitive'  " Git Blame and friends
+Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'} " Inteli-sense
+Plug 'https://github.com/scrooloose/nerdtree.git'  " File Explorer
+Plug 'https://github.com/tomtom/tcomment_vim'  " Easy commenting
+Plug 'mileszs/ack.vim'  " Enable fuzzy-search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Installs fzf for fast fuzzy search
+Plug 'junegunn/fzf.vim'  " Fast fuzzy search for vim!
+Plug 'https://github.com/itchyny/lightline.vim'  " Pretty status bar
+Plug 'https://github.com/editorconfig/editorconfig-vim'  " Respect code style
+Plug 'https://github.com/mitsuhiko/vim-jinja'  " Syntax highlighting for jinja
+Plug 'https://github.com/nanotech/jellybeans.vim' " colorscheme
+
+" Clojure
+Plug 'https://github.com/tpope/vim-fireplace', { 'for': 'clojure', 'commit': '8a4f232e9844d73adb41eb29148f0c046c730f98' } " REPL in vim
+Plug 'https://github.com/venantius/vim-cljfmt', { 'for': 'clojure' } " gofmt for clojure
+Plug 'https://github.com/clojure-vim/clojure.vim', { 'for': 'clojure' } " syntatx highlighting
+Plug 'https://github.com/guns/vim-sexp', {'for': 'clojure' }  " sexp navigation
+Plug 'https://github.com/tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure' }  " key-bindings for sexp navigation
+Plug 'https://github.com/frazrepo/vim-rainbow', " pretty ((()))
+Plug 'https://github.com/craigemery/vim-autotag'  " Code navigation
+
+" Javascript
+Plug 'https://github.com/elzr/vim-json'
+Plug 'https://github.com/pangloss/vim-javascript'
+Plug 'https://github.com/leafgarland/typescript-vim'
+Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
+Plug 'https://github.com/prettier/vim-prettier'
+
+" Initialize plugin system
+call plug#end()
+
 " Vim settings {{{1
 " Important {{{2
 set nocompatible                        " Enable Vim features
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
 let maplocalleader = ","                " Set <localleader> character
+colorscheme jellybeans                  " Favorite so far
 set term=screen-256color                " Prevent terminal bg color bleeding in
 set encoding=utf-8                      " Use utf-8 when reading files
 set fileencoding=utf-8                  " Files are written using utf-8
@@ -203,50 +246,6 @@ cnoremap <C-l> <Right>
 " Easy word swap {{{2
 :nnoremap <w dawbhPb
 :nnoremap >w hdeepb
-
-" Plug {{{1
-"Auto install Plug https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin()
-
-" Language agnostic
-Plug 'tpope/vim-fugitive'  " Git Blame and friends
-Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'} " Inteli-sense
-Plug 'https://github.com/scrooloose/nerdtree.git'  " File Explorer
-Plug 'https://github.com/tomtom/tcomment_vim'  " Easy commenting
-Plug 'mileszs/ack.vim'  " Enable fuzzy-search
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Installs fzf for fast fuzzy search
-Plug 'junegunn/fzf.vim'  " Fast fuzzy search for vim!
-Plug 'https://github.com/itchyny/lightline.vim'  " Pretty status bar
-Plug 'https://github.com/editorconfig/editorconfig-vim'  " Respect code style
-Plug 'https://github.com/mitsuhiko/vim-jinja'  " Syntax highlighting for jinja
-Plug 'https://github.com/nanotech/jellybeans.vim' " colorscheme
-
-" Clojure
-Plug 'https://github.com/tpope/vim-fireplace', { 'for': 'clojure', 'commit': '8a4f232e9844d73adb41eb29148f0c046c730f98' } " REPL in vim
-Plug 'https://github.com/venantius/vim-cljfmt', { 'for': 'clojure' } " gofmt for clojure
-Plug 'https://github.com/guns/vim-clojure-static', { 'for': 'clojure' } " clojure syntax highlighting
-Plug 'https://github.com/guns/vim-sexp', {'for': 'clojure' }  " sexp navigation
-Plug 'https://github.com/tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure' }  " key-bindings for sexp navigation
-Plug 'https://github.com/frazrepo/vim-rainbow', " pretty ((()))
-Plug 'https://github.com/craigemery/vim-autotag'  " Code navigation
-
-" Javascript
-Plug 'https://github.com/elzr/vim-json'
-Plug 'https://github.com/pangloss/vim-javascript'
-Plug 'https://github.com/leafgarland/typescript-vim'
-Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
-Plug 'https://github.com/prettier/vim-prettier'
-
-" Initialize plugin system
-call plug#end()
-
-colorscheme jellybeans
 
 " Enables filetype detection and loads indent files {{{2
 " Note: It's important this called after vim/bundle is added to vim's
