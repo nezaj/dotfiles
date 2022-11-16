@@ -41,6 +41,7 @@ Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
 Plug 'https://github.com/prettier/vim-prettier'
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 " Initialize plugin system
 call plug#end()
@@ -259,7 +260,7 @@ set rtp+=/usr/local/opt/fzf
 " Plugins {{{1
 
 " CoC {{{2
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-tailwindcss']
 
 " Better display for messages
 set cmdheight=2
@@ -309,6 +310,20 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+
+" Remove plugins not explicitly defined in g:coc_global_extensions
+" Ignore special case: friendly-snippets
+function! CocClean() abort
+  let g:extensions_to_clean = CocAction("loadedExtensions")
+      \ ->filter({idx, extension -> extension !~ 'friendly-snippets'})
+      \ ->filter({idx, extension -> index(g:coc_global_extensions, extension) == -1})
+  if len(g:extensions_to_clean)
+    exe 'CocUninstall' join(map(g:extensions_to_clean, {_, line -> split(line)[0]}))
+  else
+    echo 'Nothing to clean'
+  endif
+endfunction
+command! -nargs=0 CocClean :call CocClean()
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
