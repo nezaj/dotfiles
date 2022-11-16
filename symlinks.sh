@@ -18,7 +18,7 @@ ln -sfn ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 
 # Neovim
-ln -sfn ~/dotfiles/neovim ~/config/.nvim
+ln -sf ~/dotfiles/neovim ~/.config/.nvim
 
 # Zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
