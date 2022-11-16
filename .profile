@@ -88,6 +88,9 @@ alias gap="git add -p"
 alias ctags="`brew --prefix`/bin/ctags"
 alias makectags="ctags -R -f ./.git/tags ."
 
+# Let's use nvim from now on
+alias vim=nvim
+
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
