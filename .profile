@@ -5,7 +5,7 @@
 export MYZSH=~/.zshrc
 export MYPROFILE=~/.profile
 export MYPRIVATE=~/.private_profile
-export MYVIMRC=~/.vimrc
+export MYVIMRC=~/dotfiles/neovim/init.vim
 export MYTMUXCONF=~/.tmux.conf
 export MYTODOS=~/todos.md
 

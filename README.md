@@ -1,9 +1,5 @@
 # Migrating from vim to Neovim
 
-This was my config before moving to neovim
-
-## Readme
-
 My secret sauce for getting things done.
 
 -   [Instructions](#instructions)
@@ -21,7 +17,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ### Dependencies
 
 ```
-brew install vim
+brew install neovim
 brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
 brew install burntsushi/ripgrep/ripgrep-bin
 brew install editorconfig
@@ -72,7 +68,7 @@ git submodule init
 git submodule update --init --recursive
 ```
 
-### Vim setup
+### Neovim setup
 
 On first load install plugins
 

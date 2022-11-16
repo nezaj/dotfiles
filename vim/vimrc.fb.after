@@ -1,6 +1,0 @@
-" vim:foldmethod=marker:foldlevel=0
-
-" CtriP {{{1
-" Do not zoom to project's root, www is huge so this makes fuzzy search slow
-" Thanks: https://github.com/kien/ctrlp.vim/issues/173#issuecomment-5040299
-let g:ctrlp_working_path_mode = 0

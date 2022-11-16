@@ -13,10 +13,6 @@ ln -sf ~/dotfiles/.gitignore ~/.gitignore
 ln -sf ~/dotfiles/tmux/ ~/.tmux
 ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
-# Vim
-ln -sfn ~/dotfiles/vim ~/.vim
-ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
-
 # Neovim
 ln -sf ~/dotfiles/neovim ~/.config/.nvim
 
