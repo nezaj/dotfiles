@@ -1,2 +1,0 @@
-# ls after current directory is changed
-chpwd() { ls }

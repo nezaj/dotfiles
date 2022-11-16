@@ -89,6 +89,9 @@ cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+
+# Set hostname for iterm2
+sudo scutil --set HostName 'yourHostName'
 ```
 
 ### Additional tools
@@ -100,6 +103,7 @@ pip install grip  # Github-flavored markdown previewer
 
 Install [Visual Studio](https://code.visualstudio.com/docs/setup/mac)
 Install [Postgress.app](https://postgresapp.com/)
+Install [iterm2](https://iterm2.com/)
 
 Finally, add all the symlinks
 

@@ -163,23 +163,18 @@ set winheight=999
 " Easy clipboard paste {{{2
 :nnoremap <silent><leader>v :r !pbpaste<CR><CR>
 
-" Easy grep under cursor {{{2
-:nmap <silent><leader>r viw"ry:Ag! <C-R>r<CR><CR>
-
 " Reformat tabs/spaces {{{2
 :nmap <silent><leader>R gg=G
 
 " Easy code folding {{{2
 :nnoremap <Space> za
 
-" Focus fold {{{2
-:nnoremap <leader>f zMzA
-
 " Quick newline {{{2
 :nnoremap <CR> o<Esc>
 
 " Toggle NERDTree {{{2
 :nnoremap <leader>nt :NERDTree<CR>
+
 "
 " Toggle show formatting {{{2
 :nnoremap <leader>l :set list!<CR>
@@ -189,7 +184,7 @@ set winheight=999
 :nnoremap <leader>m :vertical resize 80<CR>
 
 " Fugitive shortcuts {{{2
-:nnoremap <leader>gb :Gblame<CR>
+:nnoremap <leader>gb :Git blame<CR>
 
 " Tab switching {{{2
 :nnoremap <leader>1 1gt
@@ -218,6 +213,9 @@ nmap <leader>p :Files<CR>
 
 " Easy Ack/Ag {{{2
 :nnoremap <leader>a :Ack!<Space>
+
+" Quick Search {{{2
+:nnoremap <silent><leader>f :Ack!<CR>
 
 " Easy commenting {{{2
 :nnoremap // :TComment<CR>
@@ -343,7 +341,7 @@ let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
 " Auto close the Quickfix list after pressing '<enter>' on a list item
 let g:ack_autoclose = 1
 
-" Any empty ack search will search for the work the cursor is on
+" Any empty ack search will search for the word the cursor is on
 let g:ack_use_cword_for_empty_search = 1
 
 " Don't jump to first match

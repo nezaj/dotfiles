@@ -70,12 +70,14 @@ function jcurl {
     curl "$@" | jq '.'
 }
 
+# Git push master
 function gpm {
     git add .
     git commit -a -m "$*"
     git push
 }
 
+# random password
 function pp {
 	openssl rand -base64 8 | md5 | head -c16 | pbcopy
 }
