@@ -64,9 +64,6 @@ export FZF_DEFAULT_OPTS='
 --color info:108,prompt:109,spinner:108,pointer:168,marker:168
 '
 
-# Neovim {{{1
-export XDG_CONFIG_HOME="~/.nvim"
-
 # Aliases {{{1
 # Pretty print json curls
 function jcurl {

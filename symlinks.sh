@@ -17,8 +17,8 @@ ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -sfn ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 
-# Vim
-ln -sf ~/dotfiles/neovim ~/.nvim
+# Neovim
+ln -sfn ~/dotfiles/neovim ~/config/.nvim
 
 # Zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc

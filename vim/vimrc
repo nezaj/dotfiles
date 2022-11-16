@@ -43,12 +43,6 @@ Plug 'https://github.com/prettier/vim-prettier'
 
 " Intellisense
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'https://github.com/neoclide/coc-tsserver', {'do': 'yarn install'}
-" Plug 'https://github.com/neoclide/coc-tsserver', {'do': 'yarn install'}
-" Plug 'https://github.com/neoclide/coc-tsserver', {'do': 'yarn install'}
-" Plug 'https://github.com/neoclide/coc-tsserver', {'do': 'yarn install'}
-Plug 'yaegassy/coc-tailwindcss3', {'do': 'yarn install'}
-
 
 " Initialize plugin system
 call plug#end()
@@ -264,7 +258,7 @@ set rtp+=/usr/local/opt/fzf
 " Plugins {{{1
 
 " CoC {{{2
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-eslint', '@yaegassy/coc-tailwindcss3']
 
 " Better display for messages
 set cmdheight=2
