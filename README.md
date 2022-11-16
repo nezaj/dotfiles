@@ -1,3 +1,9 @@
+# Migrating from vim to Neovim
+
+This was my config before moving to neovim
+
+## Readme
+
 My secret sauce for getting things done.
 
 -   [Instructions](#instructions)
