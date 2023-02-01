@@ -259,7 +259,7 @@ set rtp+=/usr/local/opt/fzf
 " Plugins {{{1
 
 " CoC {{{2
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-eslint', '@yaegassy/coc-tailwindcss3']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-eslint', '@yaegassy/coc-tailwindcss3', 'coc-clojure']
 
 " Better display for messages
 set cmdheight=2
