@@ -26,14 +26,14 @@ Plug 'https://github.com/mitsuhiko/vim-jinja'  " Syntax highlighting for jinja
 Plug 'https://github.com/nanotech/jellybeans.vim' " colorscheme
 
 " Clojure
-Plug 'https://github.com/tpope/vim-fireplace', { 'for': 'clojure', 'commit': '8a4f232e9844d73adb41eb29148f0c046c730f98' } " REPL in vim
+Plug 'Olical/conjure', {'branch': 'develop', 'for': 'clojure'}  " Better Clojure eval!
+Plug 'NoahTheDuke/coc-clojure', {'for': ['clojure']}  " clojure code-completion
+Plug 'guns/vim-clojure-highlight', {'for': ['clojure']}  " syntax highlight
 Plug 'https://github.com/venantius/vim-cljfmt', { 'for': 'clojure' } " gofmt for clojure
-Plug 'https://github.com/clojure-vim/clojure.vim', { 'for': 'clojure' } " syntatx highlighting
+Plug 'https://github.com/frazrepo/vim-rainbow' " pretty ((()))
+Plug 'https://github.com/craigemery/vim-autotag'  " Code navigation
 Plug 'https://github.com/guns/vim-sexp', {'for': 'clojure' }  " sexp navigation
 Plug 'https://github.com/tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure' }  " key-bindings for sexp navigation
-Plug 'https://github.com/frazrepo/vim-rainbow', " pretty ((()))
-Plug 'https://github.com/craigemery/vim-autotag'  " Code navigation
-Plug 'Olical/conjure' " Better Clojure Eval!
 
 " Javascript
 Plug 'https://github.com/elzr/vim-json'
@@ -44,6 +44,7 @@ Plug 'https://github.com/prettier/vim-prettier'
 
 " Intellisense
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}  " coc fzf
 
 " Initialize plugin system
 call plug#end()
@@ -258,8 +259,8 @@ set rtp+=/usr/local/opt/fzf
 
 " Plugins {{{1
 
-" CoC {{{2
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-eslint', '@yaegassy/coc-tailwindcss3', 'coc-clojure']
+" CoC {{{b
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-eslint', '@yaegassy/coc-tailwindcss3']
 
 " Better display for messages
 set cmdheight=2

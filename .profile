@@ -89,6 +89,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias makectags="ctags -R -f ./.git/tags ."
 
 # Let's use nvim from now on
+alias vi=nvim
 alias vim=nvim
 
 # Source sensitive configs I don't want in SVN {{{1

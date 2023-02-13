@@ -1,0 +1,29 @@
+{
+  "callHierarchy.splitCommand": "bel 10sp",
+  "clojure.initialization-options.semantic-tokens?": true,
+  "clojure.initialization-options.use-metadata-for-privacy?": true,
+  "clojure.lsp-check-on-start": false,
+  "clojure.startup-message": true,
+  "clojure.trace.server": "verbose",
+  "[clojure]": {
+    "semanticTokens.enable": true
+  },
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.messageLevel": "error",
+  "workspace.rootPatterns": [
+    "deps.edn",
+    "project.clj",
+    ".git",
+    ".projections.json"
+  ],
+  "coc.preferences.useQuickfixForLocations": false,
+  "codeLens.enable": true,
+  "codeLens.position": "eol",
+  "diagnostic.floatConfig": {
+    "border": true,
+    "maxWidth": 256
+  },
+  "suggest.maxCompleteItemCount": 15,
+  "suggest.removeDuplicateItems": true,
+  "suggest.snippetIndicator": "->"
+}
