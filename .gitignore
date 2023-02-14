@@ -12,3 +12,5 @@ tmux/.tmux.private*
 
 # Deritus
 .DS_STORE
+.clj-kondo
+.lsp

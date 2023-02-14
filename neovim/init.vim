@@ -34,6 +34,7 @@ Plug 'https://github.com/frazrepo/vim-rainbow' " pretty ((()))
 Plug 'https://github.com/craigemery/vim-autotag'  " Code navigation
 Plug 'https://github.com/guns/vim-sexp', {'for': 'clojure' }  " sexp navigation
 Plug 'https://github.com/tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure' }  " key-bindings for sexp navigation
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }  " I'm only using this for auto-format right now...
 
 " Javascript
 Plug 'https://github.com/elzr/vim-json'
