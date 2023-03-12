@@ -414,6 +414,23 @@ function! MyFugitive()
   return ''
 endfunction
 
+
+function! ClojureFoldText()
+    let nl = v:foldend - v:foldstart + 1
+    let comment = getline(v:foldstart+1)
+    let txt = comment . ' (lines ' . nl . ')'
+    return txt
+endfunction
+
+function! ClojureFoldMarker()
+   let thisline = getline(v:lnum)
+   if match(thisline, '^;; ---') >= 0
+      return ">1"
+   else
+      return "="
+   endif
+endfunction
+
 " Autocommands {{{1
 augroup configgroup
     " Clear previous autocmds
@@ -426,9 +443,14 @@ augroup configgroup
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
     autocmd FileType html,htmljinja setlocal ts=2 sts=2 sw=2 et
 
-
     " Wrap settings
     autocmd FileType cljc wrapmargin=80 " wrap on conjure help logs
+
+    " Fold settings
+    autocmd FileType clojure setlocal foldmethod=expr
+    autocmd FileType clojure setlocal foldexpr=ClojureFoldMarker()
+    autocmd FileType clojure setlocal foldtext=ClojureFoldText()
+
 
     " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
