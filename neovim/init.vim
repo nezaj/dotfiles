@@ -446,12 +446,6 @@ augroup configgroup
     " Wrap settings
     autocmd FileType cljc wrapmargin=80 " wrap on conjure help logs
 
-    " Fold settings
-    autocmd FileType clojure setlocal foldmethod=expr
-    autocmd FileType clojure setlocal foldexpr=ClojureFoldMarker()
-    autocmd FileType clojure setlocal foldtext=ClojureFoldText()
-
-
     " Clean up trailing white spaces {{{2
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
