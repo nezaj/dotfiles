@@ -463,7 +463,7 @@ augroup configgroup
     au FocusLost,BufLeave,WinLeave * :silent! w
 
     " Run prettier async on save for front-end files
-    au BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+    au BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 
 " }}} End section
 
