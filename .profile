@@ -14,7 +14,7 @@ export PGDATA=/usr/local/var/postgres
 
 ## Customize PATH
 # Tools Path
-LOCAL_TOOLBELT="/usr/local/bin"
+LOCAL_TOOLBELT="/opt/homebrew/bin"
 
 # (TODO): Conditionally add this to PATH to handle if PG isn't installed
 PG_PATH="/Applications/Postgres.app/Contents/Versions/latest/bin"
@@ -43,7 +43,7 @@ export PATH="$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
 
 # Javascript {{{1
 ## Node Version Manager (fnm)
-[ -s "/usr/local/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
+[ -s "/opt/homebrew/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
 
 # Python {{{1
 alias python=/usr/local/bin/python3
