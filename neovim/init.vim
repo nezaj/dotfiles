@@ -3,7 +3,7 @@
 " Nezaj's vimrc -- my magic sauce for getting things done!
 " -----------------------------------------------------------------------------
 
-" Plug {{{1
+" Plug 
 "Auto install Plug for neovim
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -50,8 +50,8 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}  " coc fzf
 " Initialize plugin system
 call plug#end()
 
-" Vim settings {{{1
-" Important {{{2
+" Vim settings 
+" Important 
 set nocompatible                        " Enable Vim features
 syntax on                               " Turn on syntax highlighting
 let mapleader = ","                     " Set <leader> character
@@ -64,17 +64,17 @@ set ttyfast                             " Faster redraws and smoother vim
 set modelines=1                         " Read the modeline at the top
 set signcolumn=yes                      " Show gutter at all times
 
-" Ignore these files in Vim's file explorer {{{2
+" Ignore these files in Vim's file explorer 
 set wildignore+="/tmp/*,*.so,*.swp,*.zip
 
-" Make clipboard the default register {{{2
+" Make clipboard the default register 
 set clipboard=unnamed
 
-" Highlight column 81 {{{2
+" Highlight column 81 
 set colorcolumn=81
 highlight ColorColumn ctermbg=234
 
-" General {{{2
+" General 
 set autoread                            " Reload files when outside changes made
 set backspace=indent,eol,start          " Allow backspace in insert mode
 set foldnestmax=2                       " Sets max fold level.
@@ -94,102 +94,102 @@ set splitbelow                          " Default horizontal split below
 set splitright                          " Default vertical split right
 set visualbell                          " Disable sounds
 
-" Wrap {{{2
+" Wrap 
 set wrap
 set linebreak                           " Wrap lines at convienent points
 set textwidth=0
 set wrapmargin=0
 
-" Searching {{{2
+" Searching 
 set hlsearch                            " highlight searching
 set incsearch                           " do incremental searching
 set ignorecase                          " searches are case insensitive
 set smartcase                           " unless you search with a capital letter
 
-" Tabs and Spaces {{{2
+" Tabs and Spaces 
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Auto adjust window sizes when they become current {{{2
+" Auto adjust window sizes when they become current 
 set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
-" }}} End section
+"  End section
 
-" Key mappings {{{1
-" Highlight initials in notes {{{2
+" Key mappings 
+" Highlight initials in notes 
 :match Todo /JA:/
 
-" Easy Navigating {{{2
+" Easy Navigating 
 :inoremap jk <Esc>
 :nnoremap j gj
 :nnoremap k gk
 
-" Easy window cycling {{{2
+" Easy window cycling 
 :nnoremap <C-h> <C-w>h
 :nnoremap <C-j> <C-w>j
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-l> <C-w>l
 
-" Easy save/quit {{{2
+" Easy save/quit 
 :noremap <leader>w :w<CR>
 :nnoremap <leader>q :q!<CR>
 :nnoremap <leader>zz :qa!<CR>
 
 
-" Reload vimrc file {{{2
+" Reload vimrc file 
 :nnoremap <silent><leader>sv :so $MYVIMRC<CR>
 
-" Edit useful files {{{2
+" Edit useful files 
 :nnoremap <silent><leader>ev :e $MYVIMRC<CR>
 :nnoremap <silent><leader>et :e $MYTMUXCONF<CR>
 :nnoremap <silent><leader>ez :e $MYZSH<CR>
 :nnoremap <silent><leader>ep :e $MYPROFILE<CR>
 :nnoremap <silent><leader>ed :e $MYTODOS<CR>
 
-" Clear search {{{2
+" Clear search 
 :nnoremap <silent><leader>/ :nohlsearch<CR>
 
-" Easy command Mode {{{2
+" Easy command Mode 
 :nnoremap ; :
 
-" Easy begin/end line navigation {{{2
+" Easy begin/end line navigation 
 :nnoremap H 0w
 :nnoremap L $
 
-" Easy clipboard copy {{{2
+" Easy clipboard copy 
 :vnoremap <silent><leader>c :w !pbcopy<CR><CR>
 
-" Easy clipboard paste {{{2
+" Easy clipboard paste 
 :nnoremap <silent><leader>v :r !pbpaste<CR><CR>
 
-" Reformat tabs/spaces {{{2
+" Reformat tabs/spaces 
 :nmap <silent><leader>R gg=G
 
-" Easy code folding {{{2
+" Easy code folding 
 :nnoremap <Space> za
 
-" Quick newline {{{2
+" Quick newline 
 :nnoremap <CR> o<Esc>
 
-" Toggle NERDTree {{{2
+" Toggle NERDTree 
 :nnoremap <leader>nt :NERDTree<CR>
 
 "
-" Toggle show formatting {{{2
+" Toggle show formatting 
 :nnoremap <leader>l :set list!<CR>
 
-" Window manipulation {{{2
+" Window manipulation 
 :nnoremap <leader>\ :vsp<CR>
 :nnoremap <leader>m :vertical resize 80<CR>
 
-" Fugitive shortcuts {{{2
+" Fugitive shortcuts 
 :nnoremap <leader>gb :Git blame<CR>
 
-" Tab switching {{{2
+" Tab switching 
 :nnoremap <leader>1 1gt
 :nnoremap <leader>2 2gt
 :nnoremap <leader>3 3gt
@@ -203,39 +203,39 @@ set winheight=999
 :nnoremap <leader>x :tabclose<CR>
 :nnoremap <leader>t :0tabnew<CR>
 
-" Easy fzf {{{2
+" Easy fzf 
 nmap ; :Buffers<CR>
 nmap <leader>p :Files<CR>
 
-" Toggle paste mode {{{2
+" Toggle paste mode 
 :nnoremap <leader>P :set invpaste!<CR>
 
-" Ctags navigation {{{2
+" Ctags navigation 
 :nnoremap <leader>g <C-]>
 :nnoremap <leader>b <C-t>
 
-" Easy Ack/Ag {{{2
+" Easy Ack/Ag 
 :nnoremap <leader>a :Ack!<Space>
 
-" Quick Search {{{2
+" Quick Search 
 :nnoremap <silent><leader>f :Ack!<CR>
 
-" Easy commenting {{{2
+" Easy commenting 
 :nnoremap // :TComment<CR>
 :vnoremap // :TComment<CR>
 
-" Prevent overwriting default register (system clipboard) when inconvenient {{{2
+" Prevent overwriting default register (system clipboard) when inconvenient 
 :vnoremap x "_x
 :vnoremap c "_c
 :vnoremap p "_dP
 
-" Don't use arrow keys in normal mode :) {{{2
+" Don't use arrow keys in normal mode :) 
 :nnoremap <Left>  <NOP>
 :nnoremap <Right> <NOP>
 :nnoremap <Up>    <NOP>
 :nnoremap <Down>  <NOP>
 
-" In insert or command mode, move normally by using Ctrl {{{2
+" In insert or command mode, move normally by using Ctrl 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -245,11 +245,11 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
-" Easy word swap {{{2
+" Easy word swap 
 :nnoremap <w dawbhPb
 :nnoremap >w hdeepb
 
-" Enables filetype detection and loads indent files {{{2
+" Enables filetype detection and loads indent files 
 " Note: It's important this called after vim/bundle is added to vim's
 " runtime path so that ftdetect will be loaded
 " Thanks:  http://stackoverflow.com/a/19314347
@@ -258,9 +258,9 @@ filetype plugin indent on
 " Set path for fzf
 set rtp+=/usr/local/opt/fzf
 
-" Plugins {{{1
+" Plugins 
 
-" CoC {{{b
+" CoC b
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-prettier', 'coc-eslint', '@yaegassy/coc-tailwindcss3']
 
 " Better display for messages
@@ -331,7 +331,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Ack {{{2
+" Ack 
 
 " Use ripgrep for searching ⚡️
 " Options include:
@@ -349,7 +349,7 @@ let g:ack_use_cword_for_empty_search = 1
 " Don't jump to first match
 cnoreabbrev Ack Ack!
 
-" Lightline {{{2
+" Lightline 
 " General settings
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
@@ -364,7 +364,7 @@ let g:lightline = {
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
 
-" NERDTree {{{2
+" NERDTree 
 " Files and directories I don't want to see
 " Note the use of vim-style regex
 let NERDTreeIgnore = [
@@ -380,18 +380,18 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-" vim-javascript {{{2
+" vim-javascript 
 
-" vim-jsx-pretty {{{2
+" vim-jsx-pretty 
 " Colorful style
 let g:vim_jsx_pretty_colorful_config = 1
 
-" vim-prettier {{{2
+" vim-prettier 
 " Run prettier async
 let g:prettier#exec_cmd_async = 1
 
-" Custom functions {{{1
-" Strip whitespace and save cursor position {{{2
+" Custom functions 
+" Strip whitespace and save cursor position 
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -404,7 +404,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-" Displays current git branch in powerline {{{2
+" Displays current git branch in powerline 
 function! MyFugitive()
   if &ft !~? 'vimfiler\|gundo' && exists("*FugitiveHead")
     let _ = FugitiveHead()
@@ -430,12 +430,12 @@ function! ClojureFoldMarker()
    endif
 endfunction
 
-" Autocommands {{{1
+" Autocommands 
 augroup configgroup
     " Clear previous autocmds
     autocmd!
 
-    " White Space Settings for different file types {{{2
+    " White Space Settings for different file types 
     autocmd FileType python setlocal ts=4 sts=4 sw=4 et
     autocmd FileType javascript,jsx,tsx,typescriptreact,typescript,json setlocal ts=2 sts=2 sw=2 et
     autocmd FileType css setlocal ts=2 sts=2 sw=2 et
@@ -445,25 +445,25 @@ augroup configgroup
     " Wrap settings
     autocmd FileType cljc wrapmargin=80 " wrap on conjure help logs
 
-    " Clean up trailing white spaces {{{2
+    " Clean up trailing white spaces 
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-    " Python folding {{{2
+    " Python folding 
     au FileType python setlocal foldmethod=indent
     au FileType python setlocal foldlevel=0
 
-    " Clojure evaluate block {{{2
+    " Clojure evaluate block 
     au BufEnter *.cljs,*.clj,*.cljs.hl nmap cpb :Eval<CR>
 
-    " Rainbow-ify parens/brackets for selected file types {{{2
+    " Rainbow-ify parens/brackets for selected file types 
     au FileType javascriptreact,jsx call rainbow#load()
 
-    " Save whenever switching between windows and buffers {{{2
+    " Save whenever switching between windows and buffers 
     au FocusLost,BufLeave,WinLeave * :silent! w
 
     " Run prettier async on save for front-end files
     au BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 
-" }}} End section
+"  End section
 
 augroup END
