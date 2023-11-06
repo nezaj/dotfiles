@@ -41,13 +41,22 @@ return require('packer').startup(function(use)
 			run = function()
 				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 				ts_update()
-			end,}
+			end
+    }
 
   -- fancy undo
   use("mbbill/undotree")
 
   -- Git things
   use("tpope/vim-fugitive")
+
+  -- Comments
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
 
   -- LSP
   use {
