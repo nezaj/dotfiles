@@ -1,5 +1,5 @@
 -- Open netrw
-vim.keymap.set("n", "<leader>nt", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>nt", vim.cmd.NERDTree)
 
 -- Move code blocks 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

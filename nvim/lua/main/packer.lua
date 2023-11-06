@@ -58,6 +58,10 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Nerdtree
+  use 'preservim/nerdtree'
+
+
   -- LSP
   use {
 	  'VonHeikemen/lsp-zero.nvim',
