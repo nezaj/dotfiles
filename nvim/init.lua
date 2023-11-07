@@ -1,7 +1,10 @@
+-- **************************************
 -- 
 -- nezaj's neovim config!
--- My attempt to get into the modern era of vim
+-- Now with lua!
+-- aka: my attempt to get into the modern era of vim
 --
+-- **************************************
 
 -------------------
 -- Settings
@@ -240,7 +243,7 @@ end)
 
 -- **************************************
 --
--- Plugins below. Beware, here be dragons
+-- Plugin settings below. Beware, here be dragons
 --
 -- **************************************
 
