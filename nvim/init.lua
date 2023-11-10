@@ -4,6 +4,10 @@
 -- Now with lua!
 -- aka: my attempt to get into the modern era of vim
 --
+-- (TODOS):
+-- * Enable format on save
+-- * Fix search so it's not case-sensitive by default
+-- * Add remaps to navigate across tabs
 -- **************************************
 
 -------------------
@@ -120,9 +124,6 @@ vim.keymap.set("n", "<leader>ed", ":e $MYTODOS<CR>", { noremap = true, silent = 
 -- Clear search
 vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", { noremap = true, silent = true })
 
--- Command Mode
-vim.keymap.set("n", ";", ":", { noremap = true })
-
 -- Begin/end line navigation
 vim.keymap.set("n", "H", "0w", { noremap = true })
 vim.keymap.set("n", "L", "$", { noremap = true })
@@ -132,6 +133,21 @@ vim.keymap.set("v", "<leader>c", ":w !pbcopy<CR><CR>", { noremap = true, silent 
 
 -- Clipboard paste
 vim.keymap.set("n", "<leader>v", ":r !pbpaste<CR><CR>", { noremap = true, silent = true })
+
+-- Tabs
+vim.api.nvim_set_keymap('n', '<leader>1', '1gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>2', '2gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>3', '3gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>4', '4gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>5', '5gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>6', '6gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>7', '7gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>8', '8gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>9', '9gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>0', ':tablast<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>x', ':tabclose<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t', ':0tabnew<CR>', { noremap = true, silent = true })
+
 
 -------------------
 -- Packer
@@ -241,6 +257,20 @@ require('packer').startup(function(use)
 
 end)
 
+-------------------
+-- Autocommands
+-------------------
+-- Autoformat
+vim.api.nvim_create_augroup('LspFormatting', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = 'LspFormatting',
+  pattern = '*',
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
+
 -- **************************************
 --
 -- Plugin settings below. Beware, here be dragons
@@ -337,7 +367,7 @@ vim.g.NERDTreeDirArrows = 1
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>p', builtin.git_files, {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', ';', builtin.buffers, {})
 vim.keymap.set('n', '<leader>a', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
