@@ -1,5 +1,5 @@
 [core]
-    editor = /usr/local/bin/vim
+    editor = /opt/homebrew/bin/nvim
 [user]
     name = Joe Averbukh
     email = joeaverbukh@gmail.com
