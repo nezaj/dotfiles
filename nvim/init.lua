@@ -23,6 +23,9 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+
+vim.o.ignorecase = true  -- Make searches case-insensitive
+vim.o.smartcase = true   -- But case-sensitive if uppercase is used in the search
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
