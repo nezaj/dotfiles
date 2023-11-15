@@ -80,9 +80,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Join lines and keep cursor
-vim.keymap.set("n", "J", "mzJ`z")
-
 -- Delete without copying to buffer
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>d", "\"_d")
