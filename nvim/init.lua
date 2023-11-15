@@ -5,9 +5,6 @@
 -- aka: my attempt to get into the modern era of vim
 --
 -- (TODOS):
--- * Enable format on save
--- * Fix search so it's not case-sensitive by default
--- * Add remaps to navigate across tabs
 -- **************************************
 
 -------------------
