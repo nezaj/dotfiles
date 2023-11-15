@@ -366,7 +366,7 @@ vim.g.NERDTreeDirArrows = 1
 -------------------
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>p', builtin.find_files, {})
-vim.keymap.set('n', ';', builtin.buffers, {})
+vim.keymap.set('n', ';', ':Telescope buffers sort_lastused=true<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>a', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
