@@ -210,12 +210,7 @@ require('packer').startup(function(use)
   use("tpope/vim-fugitive")
 
   -- Comments
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-  }
+  use 'tomtom/tcomment_vim'
 
   -- Nerdtree
   use 'preservim/nerdtree'
@@ -402,3 +397,10 @@ require'nvim-treesitter.configs'.setup {
 -- Fancy undo.
 -------------------
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-------------------
+-- Tcomment
+-- Commenting made easy!
+-------------------
+vim.api.nvim_set_keymap('n', '//', ':TComment<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '//', ':TComment<CR>', { noremap = true, silent = true })
