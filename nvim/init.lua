@@ -54,6 +54,9 @@ vim.g.netrw_winsize = 25
 -- Yank/paste to/from system clipboard
 vim.api.nvim_set_option("clipboard","unnamed")
 
+-- Auto save when switching buffers
+vim.o.autowriteall = true
+
 -- Leaders
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
