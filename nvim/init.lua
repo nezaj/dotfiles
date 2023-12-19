@@ -206,9 +206,6 @@ require('packer').startup(function(use)
 			end
     }
 
-  -- fancy undo
-  use("mbbill/undotree")
-
   -- Git things
   use("tpope/vim-fugitive")
 
@@ -396,12 +393,6 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
--------------------
--- Undotree
--- Fancy undo.
--------------------
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -------------------
 -- Tcomment

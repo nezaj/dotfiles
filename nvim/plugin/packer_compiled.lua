@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/conjure",
     url = "https://github.com/Olical/conjure"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -179,11 +184,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  undotree = {
-    loaded = true,
-    path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
     loaded = true,
