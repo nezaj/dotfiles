@@ -19,14 +19,15 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.textwidth = 80
 
 
 vim.o.ignorecase = true  -- Make searches case-insensitive
 vim.o.smartcase = true   -- But case-sensitive if uppercase is used in the search
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
-
+vim.opt.wrap = true
+vim.opt.linebreak = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
