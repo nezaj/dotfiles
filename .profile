@@ -28,9 +28,9 @@ ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 
 # Java
-JDK_PATH="/usr/local/opt/openjdk/bin"
+JDK_PATH="/opt/homebrew/Cellar/openjdk@11/11.0.21/bin"
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home"
 
 # Ruby
 RUBY_PATH="/usr/local/opt/ruby/bin"
