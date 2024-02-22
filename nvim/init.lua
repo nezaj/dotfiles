@@ -265,6 +265,20 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
+-- Autosave
+local autosave_group = vim.api.nvim_create_augroup("Autosave", { clear = true })
+
+-- Create an autocommand to autosave on buffer leave
+vim.api.nvim_create_autocmd("BufLeave", {
+  group = autosave_group,
+  pattern = "*",
+  callback = function()
+    -- Check if the buffer is modified before attempting to save
+    if vim.bo.modified then
+      vim.cmd("silent! w")
+    end
+  end,
+})
 
 -- **************************************
 --
