@@ -216,7 +216,6 @@ require('packer').startup(function(use)
   -- Nerdtree
   use 'preservim/nerdtree'
 
-
   -- LSP
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -244,6 +243,7 @@ require('packer').startup(function(use)
   -- Clojure things
   use 'Olical/conjure'
   use 'guns/vim-sexp'
+  use 'clojure-vim/clj-refactor.nvim'
   use 'tpope/vim-sexp-mappings-for-regular-people'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'

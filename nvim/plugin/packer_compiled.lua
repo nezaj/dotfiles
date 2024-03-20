@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["clj-refactor.nvim"] = {
+    loaded = true,
+    path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/clj-refactor.nvim",
+    url = "https://github.com/clojure-vim/clj-refactor.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/nezaj/.local/share/nvim/site/pack/packer/start/cmp-buffer",
