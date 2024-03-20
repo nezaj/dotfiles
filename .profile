@@ -46,7 +46,7 @@ export PATH="$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
 [ -s "/opt/homebrew/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
 
 # Python {{{1
-alias python=/usr/local/bin/python3
+alias python=/opt/homebrew/bin/python3
 
 # fzf {{{1
 # Load fzf configs (assuming fzf installed via brew)

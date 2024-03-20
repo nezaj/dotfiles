@@ -243,7 +243,6 @@ require('packer').startup(function(use)
   -- Clojure things
   use 'Olical/conjure'
   use 'guns/vim-sexp'
-  use 'clojure-vim/clj-refactor.nvim'
   use 'tpope/vim-sexp-mappings-for-regular-people'
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
@@ -415,3 +414,8 @@ require'nvim-treesitter.configs'.setup {
 -------------------
 vim.api.nvim_set_keymap('n', '//', ':TComment<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '//', ':TComment<CR>', { noremap = true, silent = true })
+
+-------------------
+-- Providers
+-------------------
+vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
