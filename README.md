@@ -70,11 +70,24 @@ git submodule update --init --recursive
 
 ### Neovim setup
 
-On first load install plugins
+First install Packer
 
 ```
-vim
-:PlugInstall
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+Then run PackerSync to install packages
+
+```
+nvim
+:PackerSync
+```
+
+You may need to re-open nvim again to install the lsp servers
+
+```
+nvim
 ```
 
 ### Zsh setup
