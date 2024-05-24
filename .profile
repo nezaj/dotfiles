@@ -14,7 +14,7 @@ export PGDATA=/usr/local/var/postgres
 
 ## Customize PATH
 # Tools Path
-LOCAL_TOOLBELT="/opt/homebrew/bin"
+LOCAL_TOOLBELT="/usr/local/bin"
 
 # (TODO): Conditionally add this to PATH to handle if PG isn't installed
 PG_PATH="/Applications/Postgres.app/Contents/Versions/latest/bin"
@@ -28,9 +28,9 @@ ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 
 # Java
-JDK_PATH="/opt/homebrew/Cellar/openjdk@11/11.0.21/bin"
+JDK_PATH="/usr/local/opt/openjdk/bin"
 
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # Ruby
 RUBY_PATH="/usr/local/opt/ruby/bin"
@@ -43,10 +43,10 @@ export PATH="$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
 
 # Javascript {{{1
 ## Node Version Manager (fnm)
-[ -s "/opt/homebrew/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
+[ -s "/usr/local/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
 
 # Python {{{1
-alias python=/opt/homebrew/bin/python3
+alias python=/usr/local/bin/python3
 
 # fzf {{{1
 # Load fzf configs (assuming fzf installed via brew)
