@@ -1,0 +1,5 @@
+pane	hack	1	:server	1	:*	0	:/Users/josephaverbukh/projects/instant	1	nvim	:nvim
+pane	hack	1	:server	1	:*	1	:/Users/josephaverbukh/projects/instant	0	zsh	:
+pane	hack	1	:server	1	:*	2	:/Users/josephaverbukh/projects/instant	0	zsh	:
+window	hack	1	1	:*	2ff2,204x45,0,0[204x41,0,0,0,204x3,0,42{102x3,0,42,1,101x3,103,42,2}]
+state	hack	

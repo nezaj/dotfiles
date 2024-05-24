@@ -1,0 +1,17 @@
+pane	hack	1	:server	0	:-	0	:/Users/josephaverbukh/projects/instant	0	nvim	:nvim
+pane	hack	1	:server	0	:-	1	:/Users/josephaverbukh/projects/instant/server	0	make	:/Library/Developer/CommandLineTools/usr/bin/make dev
+pane	hack	1	:server	0	:-	2	:/Users/josephaverbukh/projects/instant	1	zsh	:
+pane	hack	2	:local	0	:	0	:/Users/josephaverbukh/projects/instant	1	nvim	:nvim
+pane	hack	2	:local	0	:	1	:/Users/josephaverbukh/projects/instant	0	node	:node /usr/local/bin/pnpm run dev
+pane	hack	2	:local	0	:	2	:/Users/josephaverbukh/projects/instant	0	zsh	:
+pane	hack	3	:www	0	:	0	:/Users/josephaverbukh/projects/instant/www	0	zsh	:
+pane	hack	3	:www	0	:	1	:/Users/josephaverbukh/projects/instant/www	0	zsh	:
+pane	hack	3	:www	0	:	2	:/Users/josephaverbukh/projects/instant/www	1	zsh	:
+pane	hack	4	:instant-school	1	:*	0	:/Users/josephaverbukh/projects/instant-school	0	nvim	:nvim
+pane	hack	4	:instant-school	1	:*	1	:/Users/josephaverbukh/projects/instant-school	0	node	:npm run dev   
+pane	hack	4	:instant-school	1	:*	2	:/Users/josephaverbukh/projects/instant-school	1	zsh	:
+window	hack	1	0	:-	c7a9,208x48,0,0[208x42,0,0,0,208x5,0,43{104x5,0,43,1,103x5,105,43,2}]
+window	hack	2	0	:	fa45,208x48,0,0[208x41,0,0,3,208x6,0,42{104x6,0,42,4,103x6,105,42,5}]
+window	hack	3	0	:	3bc8,208x48,0,0[208x41,0,0,6,208x6,0,42{104x6,0,42,7,103x6,105,42,8}]
+window	hack	4	1	:*	c73e,208x48,0,0[208x42,0,0,9,208x5,0,43{104x5,0,43,10,103x5,105,43,11}]
+state	hack	

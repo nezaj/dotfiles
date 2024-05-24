@@ -189,6 +189,9 @@ require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use 'nvim-telescope/telescope-file-browser.nvim'
+
+
   -- colors
   use({
 	  'kabouzeid/nvim-jellybeans',
@@ -373,11 +376,37 @@ vim.g.NERDTreeDirArrows = 1
 -- Telescope
 -- Fuzzy-finder ftw!
 -------------------
+local telescope = require('telescope')
 local builtin = require('telescope.builtin')
+
+-- Function to read .gitignore and convert to ignore patterns
+local function load_gitignore_patterns()
+  local patterns = {}
+  local gitignore_path = vim.fn.findfile('.gitignore', '.;')
+  if gitignore_path ~= '' then
+    for line in io.lines(gitignore_path) do
+      if not line:match('^#') and line ~= '' then
+        table.insert(patterns, line)
+      end
+    end
+  end
+  return patterns
+end
+
+-- Configure Telescope with patterns from .gitignore
+telescope.setup {
+  defaults = {
+    file_ignore_patterns = load_gitignore_patterns()
+  }
+}
+
 vim.keymap.set('n', '<leader>p', builtin.find_files, {})
 vim.keymap.set('n', ';', ':Telescope buffers sort_lastused=true<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>a', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+	builtin.grep_string({
+    search = vim.fn.input("Grep > "),
+    file_ignore_patterns = load_gitignore_patterns()
+  })
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
