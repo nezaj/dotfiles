@@ -51,6 +51,9 @@ brew install --cask corretto
 brew install jenv
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-22.jdk/Contents/Home
 jenv global 22
+
+# Optional if installed java 11
+jenv add /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home
 ```
 
 # Clojure setup
