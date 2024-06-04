@@ -46,8 +46,11 @@ npm i -g tldr
 ### Java setup
 
 ```
-brew install java
-sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+brew tap homebrew/cask-versions
+brew install --cask corretto
+brew install jenv
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-22.jdk/Contents/Home
+jenv global 22
 ```
 
 # Clojure setup

@@ -27,11 +27,6 @@ HEROKU_TOOLBELT="/usr/local/heroku/bin"
 ETC_PATHS="/usr/bin:/bin:/usr/sbin:/sbin"
 EXTRAS_PATH="$HEROKU_TOOLBELT:$ETC_PATHS"
 
-# Java
-JDK_PATH="/opt/homebrew/Cellar/openjdk@11/11.0.21/bin"
-
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home"
-
 # Ruby
 RUBY_PATH="/usr/local/opt/ruby/bin"
 
@@ -41,9 +36,21 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 # Export actual path
 export PATH="$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
 
+
+# Java {{{1
+# Java version manager (jenv)
+if command -v jenv 1>/dev/null 2>&1; then
+  eval "$(jenv init -)"
+fi
+
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Javascript {{{1
 ## Node Version Manager (fnm)
 [ -s "/opt/homebrew/bin/fnm" ] && eval "$(fnm env --use-on-cd)"  # This loads fnm
+
+
 
 # Python {{{1
 alias python=/opt/homebrew/bin/python3
