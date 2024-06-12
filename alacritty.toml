@@ -1,7 +1,7 @@
 # Alacritty Configuration File
 
 [window]
-padding = { x = 5, y = 5 }
+padding = { x = 0, y = 0 }
 decorations = "Full"
 decorations_theme_variant = "Dark" 
 
