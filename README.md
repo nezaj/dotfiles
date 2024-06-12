@@ -103,6 +103,15 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 ```
 
+### Terminal setup
+
+First install [iterm2](https://iterm2.com/)
+
+Then install [Alacritty](https://alacritty.org/)
+```
+brew install --cask alacritty
+```
+
 ### Apple setup
 
 ```
@@ -112,7 +121,7 @@ defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
 # Set hostname for iterm2
-sudo scutil --set HostName 'yourHostName'
+sudo scutil --set HostName 'nezaj'
 ```
 
 ### Additional tools
@@ -124,7 +133,7 @@ pip install grip  # Github-flavored markdown previewer
 
 Install [Visual Studio](https://code.visualstudio.com/docs/setup/mac)
 Install [Postgress.app](https://postgresapp.com/)
-Install [iterm2](https://iterm2.com/)
+
 
 Finally, add all the symlinks
 
@@ -163,11 +172,3 @@ git submodule update --init --recursive
 . symlinks.sh
 . ~/.profile
 ```
-
-### Known issues
-
-(TODO: May be out of date)
-
--   10/22/20 -- There's an issue between `vim-fireplace` and `vim-cljfmt` where vim-cljfmt is clearing the buffer. The current fix is reverting `vim-fireplace` to commit `8a4f232e9844d73adb41eb29148f0c046c730f98` [See issue][cljfmt-issue]
-
-[cljfmt-issue]: https://github.com/venantius/vim-cljfmt/issues/48

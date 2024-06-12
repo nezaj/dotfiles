@@ -28,3 +28,6 @@ ln -sf ~/dotfiles/lein/profiles.clj ~/.lein/profiles.clj
 
 # Ctags
 ln -sf ~/dotfiles/ctags ~/.ctags
+
+# Alacritty
+ln -sf ~/dotfiles/alacritty.toml ~/.config/.alacritty.toml

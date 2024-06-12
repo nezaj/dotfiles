@@ -1,0 +1,46 @@
+# Alacritty Configuration File
+
+[window]
+padding = { x = 5, y = 5 }
+decorations = "Full"
+decorations_theme_variant = "Dark" 
+
+[font]
+normal = { family = "Monaco", style = "Regular" }
+bold = { family = "Monaco", style = "Bold" }
+italic = { family = "Monaco", style = "Italic" }
+bold_italic = { family = "Monaco", style = "Bold Italic" }
+size = 16.0
+
+[colors]
+[colors.primary]
+background = "#000000"
+foreground = "#EDEDED"
+
+[colors.cursor]
+cursor = "#FFFFFF"
+text = "#2B2B2B"
+
+[colors.selection]
+text = "#000000"
+background = "#8C8CFF"
+
+[colors.normal]
+black = "#1e1e1e"   # Slightly lighter than pure black
+red = "#ff5555"     # Bright red
+green = "#55ff55"   # Bright green
+yellow = "#ffff55"  # Bright yellow
+blue = "#5555ff"    # Bright blue
+magenta = "#ff55ff" # Bright magenta
+cyan = "#55ffff"    # Bright cyan
+white = "#ffffff"   # Pure white
+
+[colors.bright]
+black = "#666666"
+red = "#ff6666"     # Even brighter red
+green = "#66ff66"   # Even brighter green
+yellow = "#ffff66"  # Even brighter yellow
+blue = "#6666ff"    # Even brighter blue
+magenta = "#ff66ff" # Even brighter magenta
+cyan = "#66ffff"    # Even brighter cyan
+white = "#ffffff"   # Pure white
