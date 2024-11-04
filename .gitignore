@@ -14,3 +14,6 @@ tmux/.tmux.private*
 .DS_STORE
 .clj-kondo
 .lsp
+
+# Private profile
+.private_profile

@@ -3,6 +3,7 @@ ln -sf ~/dotfiles/.ackrc ~/.ackrc
 
 # Environment settings
 ln -sf ~/dotfiles/.profile ~/.profile
+ln -sf ~/dotfiles/.private_profile ~/.private_profile
 
 # Git
 rm ~/.gitconfig

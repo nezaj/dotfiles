@@ -240,6 +240,25 @@ require('packer').startup(function(use)
 	  }
   }
 
+  -- LLM pair programmer
+  use {
+    "yetone/avante.nvim",
+    build = "make",
+    lazy = false,
+    version = false,
+    BUILD_FROM_SOURCE = true,
+    config = function()
+      require("avante_lib").load()
+      require("avante").setup()
+    end,
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+  }
+
   -- Clojure things
   use 'Olical/conjure'
   use 'guns/vim-sexp'
@@ -294,7 +313,6 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
   "tailwindcss",
   "clojure_lsp",
 })
