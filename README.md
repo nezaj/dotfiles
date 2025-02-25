@@ -17,6 +17,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ### Dependencies
 
 ```
+brew install --cask font-hack-nerd-font # Nerd Font
 brew install neovim
 brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
 brew install burntsushi/ripgrep/ripgrep-bin
