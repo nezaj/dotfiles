@@ -129,9 +129,6 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>q", ":q!<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>zz", ":qa!<CR>", { noremap = true })
 
--- Reload vimrc file
-vim.keymap.set("n", "<leader>sv", ":so $MYVIMRC<CR>", { noremap = true, silent = true })
-
 -- Edit useful files
 vim.keymap.set("n", "<leader>ev", ":e $MYVIMRC<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>et", ":e $MYTMUXCONF<CR>", { noremap = true, silent = true })
@@ -190,7 +187,7 @@ require("lazy").setup({
         prompt_prefix = "  ",
         selection_caret = "  ",
         entry_prefix = "  ",
-        sorting_strategy = "ascending",
+        sorting_strategy = "descending"
         layout_strategy = "horizontal",
         layout_config = {
           horizontal = {
@@ -202,6 +199,8 @@ require("lazy").setup({
           height = 0.80,
           preview_cutoff = 120,
         },
+        results_title = false,
+        path_display = { "truncate" },
       }
     }
   },
