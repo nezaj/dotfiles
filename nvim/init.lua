@@ -187,7 +187,7 @@ require("lazy").setup({
         prompt_prefix = "  ",
         selection_caret = "  ",
         entry_prefix = "  ",
-        sorting_strategy = "descending"
+        sorting_strategy = "descending",
         layout_strategy = "horizontal",
         layout_config = {
           horizontal = {
