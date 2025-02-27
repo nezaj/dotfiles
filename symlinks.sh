@@ -16,6 +16,7 @@ ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # Neovim
 ln -sf ~/dotfiles/nvim ~/.config/nvim
+ln -sf ~/dotfiles/nvim-cursor ~/.config/nvim-cursor
 
 # Zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
@@ -23,6 +24,10 @@ ln -sf ~/dotfiles/.zshrc ~/.zshrc
 # VSCode
 ln -sf ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+# Cursor
+ln -sf ~/dotfiles/cursor/keybindings.json ~/Library/Application\ Support/Cursor/User/keybindings.json
+ln -sf ~/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/settings.json
 
 # Lein
 ln -sf ~/dotfiles/lein/profiles.clj ~/.lein/profiles.clj
