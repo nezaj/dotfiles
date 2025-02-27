@@ -1,31 +1,86 @@
 {
+  "python.pythonPath": "/usr/local/bin/python3",
   "vim.leader": ",",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/opt/homebrew/bin/nvim", // Update this to your nvim path
+  "vim.neovimUseConfigFile": false, // Don't use your regular init.lua
+  
+  // Basic Neovim settings to mirror your init.lua
+  "vim.hlsearch": false,
+  "vim.incsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.useSystemClipboard": true,
+  
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "\\"],
-      "commands": ["workbench.action.splitEditor"]
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
     },
     {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
     },
-    {
-      "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
+    // Removed leader q to avoid conflict with keybindings.json
     {
       "before": ["<leader>", "c"],
       "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["H"],
+      "after": ["0", "w"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
     }
   ],
+  
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  
+  // Editor settings
+  "editor.lineNumbers": "on",
+  "editor.tabSize": 2,
   "editor.formatOnSave": false,
+  "editor.scrollBeyondLastLine": false,
+  
+  // Per-language settings
   "[javascript]": {
     "editor.formatOnSave": true
   },
   "[css]": {
     "editor.formatOnSave": true
-  },
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
   }
 }

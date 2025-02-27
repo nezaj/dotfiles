@@ -1,30 +1,74 @@
 [
+    // Window navigation - simplified to avoid conflicts
     {
         "key": "ctrl+h",
-        "command": "workbench.action.focusLeftGroup",
+        "command": "workbench.action.navigateLeft",
         "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "ctrl+l",
-        "command": "workbench.action.focusRightGroup",
+        "command": "workbench.action.navigateRight",
         "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "ctrl+k",
-        "command": "workbench.action.focusAboveGroup",
+        "command": "workbench.action.navigateUp",
         "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "ctrl+j",
-        "command": "workbench.action.focusBelowGroup",
+        "command": "workbench.action.navigateDown",
         "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
     },
+    
+    // List navigation
     {
-        "before": ["<leader>", "q"],
-        "commands": ["workbench.action.closeActiveEditor"]
+        "key": "ctrl+j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
     },
     {
-        "before": ["<leader>", "w"],
-        "commands": ["workbench.action.files.save"]
+        "key": "ctrl+k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    
+    // Explorer navigation
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    
+    // Quickopen/suggestions navigation
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
     }
 ]
