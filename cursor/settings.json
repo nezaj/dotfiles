@@ -73,17 +73,19 @@
   // Editor settings
   "editor.lineNumbers": "on",
   "editor.tabSize": 2,
-  "editor.formatOnSave": false,
   "editor.scrollBeyondLastLine": false,
   
-  // Per-language settings
+  "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.formatOnSave": true
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[css]": {
-    "editor.formatOnSave": true
+  "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+  "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
