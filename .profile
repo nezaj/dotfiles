@@ -12,9 +12,6 @@ export MYTODOS=~/todos.md
 ## Fix PGDATA
 export PGDATA=/usr/local/var/postgres
 
-## Tell cursor to use seperate neovim
-export NVIM_APPNAME=nvim-cursor
-
 ## Customize PATH
 # Tools Path
 LOCAL_TOOLBELT="/opt/homebrew/bin"
