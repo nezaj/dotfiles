@@ -404,6 +404,7 @@ require("lazy").setup({
       lsp.ensure_installed({
         "tailwindcss",
         "clojure_lsp",
+        "ts_ls"
       })
       
       -- Fix Undefined global 'vim'
