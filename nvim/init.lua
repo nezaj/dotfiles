@@ -230,9 +230,31 @@ require("lazy").setup({
     },
   },
 
+  -- I'm not sure why but default tsx indent is broken, adding this plugin to
+  -- fix it
+  {
+    "yioneko/nvim-yati",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        yati = {
+          enable = true,
+          default_lazy = true,
+          override_by_lang = {}
+        },
+        indent = {
+          enable = false, -- disable treesitter default indent
+        }
+      })
+    end
+  },
+
+
   -- Git integration
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-rhubarb' },
+
+
   
   -- Comments
   { 
