@@ -1,5 +1,5 @@
 -- **************************************
--- 
+--
 -- nezaj's neovim config!
 -- Now with lua and lazy.nvim!
 --
@@ -39,8 +39,8 @@ vim.opt.expandtab = true
 vim.opt.textwidth = 80
 
 
-vim.o.ignorecase = true  -- Make searches case-insensitive
-vim.o.smartcase = true   -- But case-sensitive if uppercase is used in the search
+vim.o.ignorecase = true -- Make searches case-insensitive
+vim.o.smartcase = true  -- But case-sensitive if uppercase is used in the search
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -70,7 +70,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -- Yank/paste to/from system clipboard
-vim.api.nvim_set_option("clipboard","unnamed")
+vim.api.nvim_set_option("clipboard", "unnamed")
 
 -- Auto save when switching buffers
 vim.o.autowriteall = true
@@ -86,11 +86,11 @@ vim.g.maplocalleader = ','
 -- Open neo-tree
 vim.keymap.set("n", "<leader>nt", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
 
--- Move code blocks 
+-- Move code blocks
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Page up / Page down 
+-- Page up / Page down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
@@ -110,7 +110,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- Format
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
+  vim.lsp.buf.format()
 end)
 
 -- Navigation
@@ -118,7 +118,7 @@ vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "j", "gj", { noremap = true })
 vim.keymap.set("n", "k", "gk", { noremap = true })
 
--- Window cycling 
+-- Window cycling
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true })
@@ -163,6 +163,28 @@ vim.api.nvim_set_keymap('n', '<leader>0', ':tablast<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('n', '<leader>x', ':tabclose<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t', ':0tabnew<CR>', { noremap = true, silent = true })
 
+-- Better diagnostics
+local border = {
+  { "╭", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╮", "FloatBorder" },
+  { "│", "FloatBorder" },
+  { "╯", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╰", "FloatBorder" },
+  { "│", "FloatBorder" },
+}
+
+-- LSP settings
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or border
+  opts.max_width = opts.max_width or 80
+  opts.max_height = opts.max_height or 30
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- Copilot
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true }) -- Sometimes tab doesn't work
 
@@ -176,9 +198,9 @@ require("lazy").setup({
     tag = '0.1.4',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-      { '<leader>p', function() require('telescope.builtin').find_files() end },
-      { ';', '<cmd>Telescope buffers sort_lastused=true<CR>', noremap = true, silent = true },
-      { '<leader>g', function() require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") }) end },
+      { '<leader>p',  function() require('telescope.builtin').find_files() end },
+      { ';',          '<cmd>Telescope buffers sort_lastused=true<CR>',                                              noremap = true, silent = true },
+      { '<leader>g',  function() require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") }) end },
       { '<leader>vh', function() require('telescope.builtin').help_tags() end },
     },
     opts = {
@@ -249,18 +271,15 @@ require("lazy").setup({
     end
   },
 
-
   -- Git integration
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-rhubarb' },
 
-
-  
   -- Comments
-  { 
+  {
     'tomtom/tcomment_vim',
     keys = {
-      { '//', ':TComment<CR>', mode = {'n', 'v'}, noremap = true, silent = true },
+      { '//', ':TComment<CR>', mode = { 'n', 'v' }, noremap = true, silent = true },
     },
   },
 
@@ -279,7 +298,7 @@ require("lazy").setup({
     opts = function()
       -- Detect if we should use simple icons
       local use_icons = not vim.g.use_simple_icons
-      
+
       -- Configure icons based on detection
       local simple_icons = {
         default = "F",
@@ -289,7 +308,7 @@ require("lazy").setup({
         symlink = "L",
         symlink_open = "LO",
       }
-      
+
       return {
         popup_border_style = "rounded",
         enable_git_status = true,
@@ -318,7 +337,7 @@ require("lazy").setup({
           window = {
             mappings = {
               ["o"] = "open",
-              ["s"] = "order_by_type", 
+              ["s"] = "order_by_type",
             },
           },
         },
@@ -328,7 +347,7 @@ require("lazy").setup({
           mappings = {
             ["<space>"] = "none",
             ["o"] = "open",
-            ["s"] = "order_by_type", 
+            ["s"] = "order_by_type",
             -- Explicitly disable other potentially conflicting mappings
             ["O"] = "none",
             ["oc"] = "none",
@@ -350,12 +369,12 @@ require("lazy").setup({
           content_layout = "center",
           sources = {
             { source = "filesystem", display_name = use_icons and " Files" or "Files" },
-            { source = "buffers", display_name = use_icons and " Buffers" or "Buffers" },
+            { source = "buffers",    display_name = use_icons and " Buffers" or "Buffers" },
             { source = "git_status", display_name = use_icons and " Git" or "Git" },
           },
           -- Add separator between tabs
           tabs_layout = "equal",
-          separator = { left = "▏", right= "▕" },
+          separator = { left = "▏", right = "▕" },
         },
         default_component_configs = {
           icon = {
@@ -393,127 +412,55 @@ require("lazy").setup({
     end,
   },
 
-  -- LSP Configuration
+  -- 4️⃣LSPServers
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "clojure_lsp", "ts_ls", "lua_ls", "tailwindcss" },
+    },
     dependencies = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {
-        'williamboman/mason.nvim',
-        opts = {},
-      },
-      {'williamboman/mason-lspconfig.nvim'},
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
 
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
+  -- 4️⃣ Autocompletion (keeps your keymaps)
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lua',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
-      local lsp = require("lsp-zero")
-      
-      lsp.preset("recommended")
-      
-      lsp.ensure_installed({
-        "tailwindcss",
-        "clojure_lsp",
-        "ts_ls"
-      })
-      
-      -- Fix Undefined global 'vim'
-      lsp.nvim_workspace()
-      
       local cmp = require('cmp')
-      local cmp_select = {behavior = cmp.SelectBehavior.Select}
-      local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
-      })
-      
-      cmp_mappings['<Tab>'] = nil
-      cmp_mappings['<S-Tab>'] = nil
-      
-      lsp.setup_nvim_cmp({
-        mapping = cmp_mappings,
-        window = {
-          completion = cmp.config.window.bordered(border_opts),
-          documentation = cmp.config.window.bordered(border_opts),
+      local luasnip = require('luasnip')
+      require('luasnip.loaders.from_vscode').lazy_load()
+
+      cmp.setup {
+        snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
+        mapping = {
+          ['<C-p>']     = cmp.mapping.select_prev_item(cmp.SelectBehavior.Select),
+          ['<C-n>']     = cmp.mapping.select_next_item(cmp.SelectBehavior.Select),
+          ['<C-y>']     = cmp.mapping.confirm({ select = true }),
+          ['<C-Space>'] = cmp.mapping.complete(),
         },
-      })
-      
-      lsp.set_preferences({
-        suggest_lsp_servers = false,
-        sign_icons = {
-            error = 'E',
-            warn = 'W',
-            hint = 'H',
-            info = 'I'
-        }
-      })
-      
-      lsp.on_attach(function(client, bufnr)
-        local opts = {buffer = bufnr, remap = false}
-      
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-        vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
-        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set("n", "<leader>vd", function()
-            vim.diagnostic.open_float(nil, {
-                scope = "cursor",
-                focusable = true,
-                border = "rounded"
-            })
-        end, opts)
-      end)
-      
-      lsp.setup()
-      
-      -- Configure floating windows for diagnostics
-      vim.diagnostic.config({
-          virtual_text = false,
-          float = {
-            border = "rounded",
-            focusable = true,
-            style = "minimal",
-            source = "always",
-            header = "",
-            prefix = "",
-          },
-      })
-      
-      -- Configure hover and signature help windows
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, { border = "rounded" }
-      )
-      
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, { border = "rounded" }
-      )
-    end
+        sources = cmp.config.sources(
+          { { name = 'nvim_lsp' }, { name = 'luasnip' } },
+          { { name = 'buffer' }, { name = 'path' } }
+        ),
+        window = {
+          completion    = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+      }
+    end,
   },
 
   -- LLM pair programmer
   {
     "yetone/avante.nvim",
-    enabled = false,  -- Temporarily disable until we can fix the issues
     build = "make",
     config = function()
       require("avante").setup()
@@ -556,7 +503,7 @@ require("lazy").setup({
   },
 
   -- Copilot
-  { 
+  {
     'github/copilot.vim',
     event = "InsertEnter",
   }
@@ -588,6 +535,25 @@ vim.api.nvim_create_autocmd("BufLeave", {
       vim.cmd("silent! w")
     end
   end,
+})
+
+local lsp_group = vim.api.nvim_create_augroup('LspBindings', {})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = lsp_group,
+  callback = function(e)
+    local opts = { buffer = e.buf }
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+  end
 })
 
 -------------------
