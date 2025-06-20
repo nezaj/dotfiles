@@ -524,8 +524,7 @@ require("lazy").setup({
 
   -- Copilot
   {
-    'github/copilot.vim',
-    event = "InsertEnter",
+    'github/copilot.vim'
   }
 })
 
@@ -536,7 +535,7 @@ require("lazy").setup({
 vim.api.nvim_create_augroup('LspFormatting', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePre', {
   group = 'LspFormatting',
-  pattern = '*',
+  pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.lua', '*.py', '*.json', '*.css', '*.scss', '*.html', '*.md' },
   callback = function()
     vim.lsp.buf.format()
   end,
