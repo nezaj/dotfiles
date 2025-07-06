@@ -99,7 +99,11 @@ alias makectags="ctags -R -f ./.git/tags ."
 alias vi=nvim
 alias vim=nvim
 
+# Better cat
 alias b="bat"
+
+# Interactive git!
+alias lg="lazygit"
 
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
