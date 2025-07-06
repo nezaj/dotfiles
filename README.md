@@ -2,9 +2,6 @@
 
 My secret sauce for getting things done.
 
--   [Instructions](#instructions)
--   [Plugins](#vim-plugins)
-
 ## Instructions
 
 Clone this repo into `~/dotfiles`
@@ -22,8 +19,7 @@ brew install neovim
 brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
 brew install burntsushi/ripgrep/ripgrep-bin
 brew install editorconfig
-brew install ctags
-brew install autojump
+brew install bat
 ```
 
 ### Python setup
@@ -37,11 +33,12 @@ pip3 install ipython
 
 ```
 brew install node
-npm i -g prettier
-npm i -g yarn
-npm i -g create-react-app
-npm i -g live-server
-npm i -g tldr
+brew install pnpm
+pnpm i -g prettier
+pnpm i -g yarn
+pnpm i -g create-react-app
+pnpm i -g live-server
+pnpm i -g tldr
 ```
 
 ### Java setup
@@ -63,7 +60,7 @@ jenv add /opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Ho
 brew install clojure
 brew install leiningen
 brew install borkdude/brew/clj-kondo
-npm i -g shadow-cljs
+pnpm i -g shadow-cljs
 ```
 
 ### Tmux setup
@@ -73,28 +70,6 @@ brew install tmux
 cd ~/dotfiles
 git submodule init
 git submodule update --init --recursive
-```
-
-### Neovim setup
-
-First install Packer
-
-```
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-Then run PackerSync to install packages
-
-```
-nvim
-:PackerSync
-```
-
-You may need to re-open nvim again to install the lsp servers
-
-```
-nvim
 ```
 
 ### Zsh setup
@@ -109,6 +84,7 @@ cp ~/dotfiles/zsh/themes/nezaj.zsh-theme ~/.oh-my-zsh/themes/nezaj.zsh-theme
 First install [iterm2](https://iterm2.com/)
 
 Then install [Alacritty](https://alacritty.org/)
+
 ```
 brew install --cask alacritty
 ```
@@ -168,8 +144,6 @@ Taken directly from [tpm github](https://github.com/tmux-plugins/tpm)
 ```
 cd ~/dotfiles
 git pull
-git submodule init
-git submodule update --init --recursive
 . symlinks.sh
 . ~/.profile
 ```

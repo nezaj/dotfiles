@@ -99,6 +99,8 @@ alias makectags="ctags -R -f ./.git/tags ."
 alias vi=nvim
 alias vim=nvim
 
+alias b="bat"
+
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
