@@ -520,7 +520,7 @@ require("lazy").setup({
 vim.api.nvim_create_augroup('LspFormatting', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePre', {
   group = 'LspFormatting',
-  pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.lua', '*.py', '*.json', '*.css', '*.scss', '*.html', '*.md' },
+  pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.lua', '*.py', '*.json', '*.css', '*.scss', '*.html', '*.md', "*.clj", "*.cljs", "*.cljc" },
   callback = function()
     vim.lsp.buf.format()
   end,
