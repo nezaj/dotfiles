@@ -107,6 +107,53 @@ alias b="bat"
 # Interactive git!
 alias lg="lazygit"
 
+# Functions {{{1
+# Claude docs import/export functions
+claude-export() {
+  local name=${1:?Usage: claude-export <feature-name>}
+  local project=$(basename $PWD)
+  local dest=~/claude-docs/$project/$name
+  
+  # Get untracked files
+  local untracked=$(git ls-files --others --exclude-standard)
+  if [ -z "$untracked" ]; then
+    echo "No untracked files to export"
+    return 1
+  fi
+  
+  # Export files
+  mkdir -p $dest
+  echo "$untracked" | tar -czf - -T - | tar -xzf - -C $dest
+  
+  # Commit and push
+  cd ~/claude-docs && git add . && git commit -m "$project: $name" && git push && cd - > /dev/null
+  echo "✓ Exported $(echo "$untracked" | wc -l) files to $project/$name"
+}
+
+claude-import() {
+  local name=${1:?Usage: claude-import <feature-name>}
+  local project=$(basename $PWD)
+  local source=~/claude-docs/$project/$name
+  
+  if [ ! -d "$source" ]; then
+    echo "No docs found at $source"
+    echo "Available:"
+    ls ~/claude-docs/$project/ 2>/dev/null || echo "No docs for $project"
+    return 1
+  fi
+  
+  # Import files
+  cp -r $source/* .
+  echo "✓ Imported Claude docs for $name"
+}
+
+# Optional: List available imports
+claude-list() {
+  local project=$(basename $PWD)
+  echo "Available Claude docs for $project:"
+  ls ~/claude-docs/$project/ 2>/dev/null || echo "None found"
+}
+
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
