@@ -424,6 +424,32 @@ require("lazy").setup({
     },
   },
 
+  -- Navbudy!
+  -- Let's you explore symbols in a buffer, really useful for navigating large
+  -- files and getting a sense of what's inside (functions, classes, etc.)
+  {
+    "SmiteshP/nvim-navbuddy",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      local navbuddy = require("nvim-navbuddy")
+      navbuddy.setup({
+        window = {
+          size = "70%",
+        },
+        lsp = {
+          auto_attach = true,
+          preference = { "clojure_lsp", "ts_ls", "lua_ls" },
+        },
+      })
+
+      vim.api.nvim_set_keymap("n", "<leader>nv", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
+    end,
+  },
+
   -- 4️⃣ Autocompletion (keeps your keymaps)
   {
     'hrsh7th/nvim-cmp',
