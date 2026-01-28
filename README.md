@@ -21,6 +21,7 @@ brew install burntsushi/ripgrep/ripgrep-bin
 brew install editorconfig
 brew install bat
 brew install lazygit
+brew install terminal-notifier
 ```
 
 ### Python setup

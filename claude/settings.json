@@ -4,9 +4,15 @@
     "lastShownTime": 1754070222889
   },
   "hooks": {
-    "notification": [
+    "Notification": [
       {
-        "command": "~/.claude/hooks/notify.sh"
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -message 'Ready for input'"
+          }
+        ]
       }
     ]
   },
