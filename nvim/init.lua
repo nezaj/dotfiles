@@ -337,7 +337,7 @@ require("lazy").setup({
           window = {
             mappings = {
               ["o"] = "open",
-              ["s"] = "order_by_type",
+              ["z"] = "order_by_type",
             },
           },
         },
@@ -347,7 +347,7 @@ require("lazy").setup({
           mappings = {
             ["<space>"] = "none",
             ["o"] = "open",
-            ["s"] = "order_by_type",
+            ["z"] = "order_by_type",
             -- Explicitly disable other potentially conflicting mappings
             ["O"] = "none",
             ["oc"] = "none",
