@@ -36,3 +36,6 @@ ln -sf ~/dotfiles/ctags ~/.ctags
 
 # Alacritty
 ln -sf ~/dotfiles/alacritty.toml ~/.config/.alacritty.toml
+
+# Claude Code
+ln -sf ~/dotfiles/claude ~/.claude
