@@ -23,5 +23,7 @@
   },
   "[typescriptreact]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+},
+"git.openRepositoryInParentFolders": "never",
+"cursor.preferNotificationsSameAsChat": true
 }

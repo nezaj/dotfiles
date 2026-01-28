@@ -56,5 +56,7 @@
   },
   "[css]": {
     "editor.formatOnSave": true
-  }
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "claudeCode.preferredLocation": "panel"
 }
