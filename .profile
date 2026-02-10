@@ -13,6 +13,8 @@ export MYTODOS=~/todos.md
 export PGDATA=/usr/local/var/postgres
 
 ## Customize PATH
+LOCAL_BIN="$HOME/.local/bin"
+
 # Tools Path
 LOCAL_TOOLBELT="/opt/homebrew/bin"
 
@@ -34,7 +36,7 @@ RUBY_PATH="/usr/local/opt/ruby/bin"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # Export actual path
-export PATH="$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
+export PATH="$LOCAL_BIN:$TOOLS_PATH:$ANDROID_HOME:$RUBY_PATH:$EXTRAS_PATH"
 
 
 # Java {{{1
