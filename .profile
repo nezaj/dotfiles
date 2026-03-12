@@ -109,6 +109,9 @@ alias b="bat"
 # Interactive git!
 alias lg="lazygit"
 
+# yolo claude
+alias yolo="claude --dangerously-skip-permissions"
+
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile

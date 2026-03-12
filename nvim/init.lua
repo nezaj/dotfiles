@@ -108,10 +108,15 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
--- Format
+-- Focus
 vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format()
+  vim.cmd("tab split")
 end)
+
+vim.keymap.set("n", "<leader>cp", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+end, { noremap = true, silent = false, desc = "Copy file path" })
 
 -- Navigation
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
