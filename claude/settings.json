@@ -14,9 +14,13 @@
     ]
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754070222889
   },
-  "effortLevel": "high"
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/nezaj/.claude/statusline-command.sh"
+  }
 }
