@@ -112,6 +112,9 @@ alias lg="lazygit"
 # yolo claude
 alias yolo="claude --dangerously-skip-permissions"
 
+# Faster clean
+alias ilint="git diff --name-only --diff-filter=d HEAD | sed 's|^client/||' | xargs pnpm exec prettier --write"
+
 # Source sensitive configs I don't want in SVN {{{1
 if [ -f ~/.private_profile ];
     then source ~/.private_profile
