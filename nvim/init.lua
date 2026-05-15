@@ -246,34 +246,33 @@ require("lazy").setup({
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    opts = {
-      ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
-      sync_install = false,
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-    },
+    dependencies = { "yioneko/nvim-yati" },
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "python" },
+        sync_install = false,
+        auto_install = true,
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        yati = {
+          enable = true,
+          default_lazy = true,
+          override_by_lang = {},
+        },
+        indent = {
+          enable = false,
+        },
+      })
+    end,
   },
 
   -- I'm not sure why but default tsx indent is broken, adding this plugin to
   -- fix it
   {
     "yioneko/nvim-yati",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        yati = {
-          enable = true,
-          default_lazy = true,
-          override_by_lang = {}
-        },
-        indent = {
-          enable = false, -- disable treesitter default indent
-        }
-      })
-    end
+    -- no config block, handled above
   },
 
   -- Git integration
@@ -421,7 +420,7 @@ require("lazy").setup({
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "clojure_lsp", "ts_ls", "lua_ls", "tailwindcss" },
+      ensure_installed = { "clojure_lsp", "ts_ls", "lua_ls", "tailwindcss", "pyright" },
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
@@ -447,7 +446,7 @@ require("lazy").setup({
         },
         lsp = {
           auto_attach = true,
-          preference = { "clojure_lsp", "ts_ls", "lua_ls" },
+          preference = { "clojure_lsp", "ts_ls", "lua_ls", "pyright" },
         },
       })
 
